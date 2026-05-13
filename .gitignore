@@ -1,0 +1,15 @@
+.env
+*.pyc
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+.DS_Store
+
+# Generated images can be large; we commit the metadata, not the binaries.
+# Comment this out if you want full image history in git.
+drafts/*/images/*.png
+
+# Local backups
+*.sql
+*.sql.age

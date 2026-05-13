@@ -1,0 +1,33 @@
+# Theme rotation. Scout reads `current_week` to know what to source.
+# Update `current_week` weekly (Archivist does this on Sunday).
+
+current_week: 1
+
+weeks:
+  - n: 1
+    theme: halal_french_fusion
+    constraints: [halal, no_alcohol, no_pork]
+    heritage_mode: false
+    target_word_count: 1600
+    seed_keywords: ["halal french cooking", "halal tagine", "lamb shank recipe"]
+  - n: 2
+    theme: healthy_weeknight
+    constraints: [halal, under_30_min, balanced_macros]
+    heritage_mode: false
+    target_word_count: 1400
+    seed_keywords: ["20 minute dinner", "healthy weeknight recipe", "sheet pan dinner"]
+  - n: 3
+    theme: mediterranean_light
+    constraints: [halal, mediterranean, vegetable_forward]
+    heritage_mode: false
+    target_word_count: 1500
+    seed_keywords: ["mediterranean recipe", "branzino recipe", "preserved lemon"]
+  - n: 4
+    theme: subcontinental_heritage
+    constraints: [halal, traditional, regional_authenticity]
+    heritage_mode: true
+    target_word_count: 1800
+    seed_keywords: ["karahi gosht recipe", "punjabi cooking", "authentic mutton karahi"]
+
+# Loops back to week 1 after week 4.
+# To extend, append more weeks. Heritage mode triggers the longer-form, more personal prompt.

@@ -1,0 +1,126 @@
+name: weekly-pipeline
+
+on:
+  schedule:
+    # Times are UTC. France runs UTC+2 in summer, UTC+1 in winter.
+    # The cron entries below assume CEST (summer). Adjust by -1h in winter.
+    - cron: "0 7 * * WED"     # Scout      Wed 09:00 Paris (summer)
+    - cron: "0 7 * * THU"     # Writer     Thu 09:00 Paris
+    - cron: "0 9 * * THU"     # Visual     Thu 11:00 Paris
+    - cron: "0 5 * * SAT"     # Publisher  Sat 07:00 Paris
+    - cron: "0 7 * * SAT"     # Distributor Sat 09:00 Paris (after Publisher gate)
+    - cron: "0 20 * * SUN"    # Archivist  Sun 22:00 Paris
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: "Which agent to run (scout/writer/visual/publisher/distributor/archivist)"
+        required: true
+
+jobs:
+  scout:
+    if: github.event.schedule == '0 7 * * WED' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'scout')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pipeline.agents.scout
+        env:
+          EDAMAM_APP_ID: ${{ secrets.EDAMAM_APP_ID }}
+          EDAMAM_APP_KEY: ${{ secrets.EDAMAM_APP_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scout-${{ github.run_id }}
+          path: drafts/
+
+  writer:
+    if: github.event.schedule == '0 7 * * THU' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'writer')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pipeline.agents.writer
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: claude-sonnet-4-6
+
+  visual:
+    if: github.event.schedule == '0 9 * * THU' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'visual')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pipeline.agents.visual
+        env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+
+  publisher:
+    if: github.event.schedule == '0 5 * * SAT' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'publisher')
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pipeline.agents.publisher
+        env:
+          WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          AUTO_PUBLISH_ON_TIMEOUT: "true"
+          TIMEOUT_MINUTES: "120"
+
+  distributor:
+    if: github.event.schedule == '0 7 * * SAT' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'distributor')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pipeline.agents.distributor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
+
+  archivist:
+    if: github.event.schedule == '0 20 * * SUN' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'archivist')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          pip install -r pipeline/requirements.txt b2
+          sudo apt-get update && sudo apt-get install -y age default-mysql-client
+      - name: configure git
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+      - run: python -m pipeline.agents.archivist
+        env:
+          MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          MYSQL_DB: ${{ secrets.MYSQL_DB }}
+          AGE_RECIPIENT: ${{ secrets.AGE_RECIPIENT }}
+          B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          B2_APP_KEY: ${{ secrets.B2_APP_KEY }}
+          B2_BUCKET: ${{ secrets.B2_BUCKET }}
