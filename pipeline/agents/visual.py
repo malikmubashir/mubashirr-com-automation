@@ -18,6 +18,25 @@ from .common import draft_dir, env, read_yaml, write_yaml
 
 log = logging.getLogger("visual")
 
+# Browser-like User-Agent so Cloudflare's Bot Fight Mode doesn't challenge
+# our REST API uploads from GitHub Actions Azure IPs.
+BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36"
+)
+
+
+def wp_session() -> requests.Session:
+    s = requests.Session()
+    s.headers.update({
+        "User-Agent": BROWSER_UA,
+        "Accept": "application/json",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    s.auth = (env("WP_USER", required=True), env("WP_APP_PASSWORD", required=True))
+    return s
+
 # Style fingerprint that runs in every image prompt.
 BRAND_STYLE = (
     "shot on Hasselblad, natural window light from the left, soft shadows, "
@@ -72,12 +91,10 @@ def generate_with_pexels(query: str, out_path: Path) -> bool:
 
 def upload_to_wp(path: Path, alt: str) -> int | None:
     base = env("WP_BASE_URL", required=True).rstrip("/")
-    user = env("WP_USER", required=True)
-    pw = env("WP_APP_PASSWORD", required=True)
+    s = wp_session()
     with path.open("rb") as f:
-        r = requests.post(
+        r = s.post(
             f"{base}/wp-json/wp/v2/media",
-            auth=(user, pw),
             headers={
                 "Content-Disposition": f'attachment; filename="{path.name}"',
                 "Content-Type": "image/png",
@@ -90,9 +107,8 @@ def upload_to_wp(path: Path, alt: str) -> int | None:
         return None
     media_id = r.json()["id"]
     # Patch alt text.
-    requests.post(
+    s.post(
         f"{base}/wp-json/wp/v2/media/{media_id}",
-        auth=(user, pw),
         json={"alt_text": alt, "caption": alt},
         timeout=15,
     )

@@ -27,6 +27,23 @@ from .common import (
 
 log = logging.getLogger("publisher")
 
+BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36"
+)
+
+
+def wp_session() -> requests.Session:
+    s = requests.Session()
+    s.headers.update({
+        "User-Agent": BROWSER_UA,
+        "Accept": "application/json",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    s.auth = (env("WP_USER", required=True), env("WP_APP_PASSWORD", required=True))
+    return s
+
 
 def md_to_html(markdown_text: str) -> str:
     body = markdown_text.split("---", 2)[-1].strip()  # drop front matter
@@ -35,13 +52,12 @@ def md_to_html(markdown_text: str) -> str:
 
 def get_or_create_category(slug: str, name: str) -> int:
     base = env("WP_BASE_URL", required=True).rstrip("/")
-    auth = (env("WP_USER"), env("WP_APP_PASSWORD"))
-    r = requests.get(f"{base}/wp-json/wp/v2/categories", params={"slug": slug}, auth=auth)
+    s = wp_session()
+    r = s.get(f"{base}/wp-json/wp/v2/categories", params={"slug": slug})
     if r.json():
         return r.json()[0]["id"]
-    r = requests.post(
+    r = s.post(
         f"{base}/wp-json/wp/v2/categories",
-        auth=auth,
         json={"name": name, "slug": slug},
         timeout=15,
     )
@@ -50,17 +66,16 @@ def get_or_create_category(slug: str, name: str) -> int:
 
 def get_or_create_tags(tags: list[str]) -> list[int]:
     base = env("WP_BASE_URL", required=True).rstrip("/")
-    auth = (env("WP_USER"), env("WP_APP_PASSWORD"))
+    s = wp_session()
     ids = []
     for t in tags:
         slug = t.lower().replace(" ", "-")
-        r = requests.get(f"{base}/wp-json/wp/v2/tags", params={"slug": slug}, auth=auth)
+        r = s.get(f"{base}/wp-json/wp/v2/tags", params={"slug": slug})
         if r.json():
             ids.append(r.json()[0]["id"])
             continue
-        r = requests.post(
+        r = s.post(
             f"{base}/wp-json/wp/v2/tags",
-            auth=auth,
             json={"name": t, "slug": slug},
             timeout=15,
         )
@@ -71,7 +86,7 @@ def get_or_create_tags(tags: list[str]) -> list[int]:
 
 def create_wp_draft(meta: dict, html_body: str, schema: dict) -> dict:
     base = env("WP_BASE_URL", required=True).rstrip("/")
-    auth = (env("WP_USER"), env("WP_APP_PASSWORD"))
+    s = wp_session()
 
     # Inject JSON-LD schema at top of content (RankMath will not duplicate
     # if we disable its recipe schema).
@@ -106,7 +121,7 @@ def create_wp_draft(meta: dict, html_body: str, schema: dict) -> dict:
     if featured:
         payload["featured_media"] = featured
 
-    r = requests.post(f"{base}/wp-json/wp/v2/posts", auth=auth, json=payload, timeout=30)
+    r = s.post(f"{base}/wp-json/wp/v2/posts", json=payload, timeout=30)
     if r.status_code >= 300:
         raise RuntimeError(f"WP draft creation failed: {r.status_code} {r.text[:300]}")
     return r.json()
@@ -167,10 +182,9 @@ def wait_for_approval(post_id: int, timeout_min: int) -> str:
 
 def flip_status(post_id: int, status: str) -> None:
     base = env("WP_BASE_URL", required=True).rstrip("/")
-    auth = (env("WP_USER"), env("WP_APP_PASSWORD"))
-    r = requests.post(
+    s = wp_session()
+    r = s.post(
         f"{base}/wp-json/wp/v2/posts/{post_id}",
-        auth=auth,
         json={"status": status},
         timeout=15,
     )
