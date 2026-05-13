@@ -16,6 +16,11 @@ on:
         description: "Which agent to run (scout/writer/visual/publisher/distributor/archivist)"
         required: true
 
+# Every job needs to commit its outputs back to the repo so the next
+# agent (running on a different day) can read them via a fresh checkout.
+permissions:
+  contents: write
+
 jobs:
   scout:
     if: github.event.schedule == '0 7 * * WED' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'scout')
@@ -25,10 +30,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
-      - run: python -m pipeline.agents.scout
+      - name: run scout
+        run: python -m pipeline.agents.scout
         env:
           EDAMAM_APP_ID: ${{ secrets.EDAMAM_APP_ID }}
           EDAMAM_APP_KEY: ${{ secrets.EDAMAM_APP_KEY }}
+      - name: commit scout output
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+          git add drafts/
+          git diff --staged --quiet || git commit -m "scout: candidates for $(date -I)"
+          git pull --rebase
+          git push
       - uses: actions/upload-artifact@v4
         with:
           name: scout-${{ github.run_id }}
@@ -42,10 +56,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
-      - run: python -m pipeline.agents.writer
+      - name: run writer
+        run: python -m pipeline.agents.writer
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: claude-sonnet-4-6
+      - name: commit writer output
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+          git add drafts/
+          git diff --staged --quiet || git commit -m "writer: post draft for $(date -I)"
+          git pull --rebase
+          git push
 
   visual:
     if: github.event.schedule == '0 9 * * THU' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'visual')
@@ -55,13 +78,24 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
-      - run: python -m pipeline.agents.visual
+      - name: run visual
+        run: python -m pipeline.agents.visual
         env:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+      - name: commit visual metadata
+        # PNG images are gitignored; we only commit the updated meta.yaml
+        # (which now has WordPress media IDs in it).
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+          git add drafts/
+          git diff --staged --quiet || git commit -m "visual: images uploaded for $(date -I)"
+          git pull --rebase
+          git push
 
   publisher:
     if: github.event.schedule == '0 5 * * SAT' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'publisher')
@@ -72,7 +106,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
-      - run: python -m pipeline.agents.publisher
+      - name: run publisher
+        run: python -m pipeline.agents.publisher
         env:
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
@@ -81,6 +116,14 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           AUTO_PUBLISH_ON_TIMEOUT: "true"
           TIMEOUT_MINUTES: "120"
+      - name: commit publish state
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+          git add state/ drafts/
+          git diff --staged --quiet || git commit -m "publisher: post live for $(date -I)"
+          git pull --rebase
+          git push
 
   distributor:
     if: github.event.schedule == '0 7 * * SAT' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'distributor')
@@ -90,21 +133,26 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
-      - run: python -m pipeline.agents.distributor
+      - name: run distributor
+        run: python -m pipeline.agents.distributor
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
+      - name: commit distribution log
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+          git add drafts/
+          git diff --staged --quiet || git commit -m "distributor: social variants queued for $(date -I)"
+          git pull --rebase
+          git push
 
   archivist:
     if: github.event.schedule == '0 20 * * SUN' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'archivist')
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: |
@@ -114,7 +162,8 @@ jobs:
         run: |
           git config user.email "bot@mubashirr.com"
           git config user.name "mubashirr-bot"
-      - run: python -m pipeline.agents.archivist
+      - name: run archivist
+        run: python -m pipeline.agents.archivist
         env:
           MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
           MYSQL_USER: ${{ secrets.MYSQL_USER }}
