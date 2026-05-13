@@ -35,13 +35,22 @@ HARAM_BLOCK = {
 
 
 def fetch_edamam(query: str, count: int = 20) -> list[dict]:
-    """Edamam Recipe Search API. Free tier: 10 calls/min, 10000/month."""
+    """Edamam Recipe Search API v2 (Meal Planner Developer plan).
+
+    Free tier: 10 calls/min, 10000/month. Requires Edamam-Account-User
+    header on every request — value is any string identifying the
+    consuming account; we use a fixed identifier.
+    """
     app_id = env("EDAMAM_APP_ID")
     app_key = env("EDAMAM_APP_KEY")
     if not (app_id and app_key):
         log.warning("Edamam credentials missing; skipping")
         return []
     url = "https://api.edamam.com/api/recipes/v2"
+    headers = {
+        "Edamam-Account-User": env("EDAMAM_USER", default="mubashirr-com"),
+        "Accept": "application/json",
+    }
     params = {
         "type": "public",
         "q": query,
@@ -52,7 +61,7 @@ def fetch_edamam(query: str, count: int = 20) -> list[dict]:
                   "cuisineType", "mealType", "dietLabels", "healthLabels",
                   "calories", "totalNutrients", "url"],
     }
-    r = requests.get(url, params=params, timeout=15)
+    r = requests.get(url, params=params, headers=headers, timeout=15)
     r.raise_for_status()
     hits = r.json().get("hits", [])[:count]
     return [h["recipe"] for h in hits]
