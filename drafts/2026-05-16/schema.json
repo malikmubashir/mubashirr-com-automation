@@ -1,74 +1,77 @@
 {
   "@context": "https://schema.org/",
   "@type": "Recipe",
-  "name": "Vadouvan-Spiced Slow-Roasted Leg of Lamb",
+  "name": "Vadouvan-Spiced Roast Leg of Lamb",
   "author": {
     "@type": "Person",
     "name": "Dr Mubashir"
   },
-  "datePublished": "2025-01-01",
-  "description": "A semi-boneless leg of lamb coated in a vadouvan compound butter with orange zest, rosemary, and pink peppercorns, slow-roasted for a showpiece halal French cooking result. No alcohol, no pork.",
-  "image": "https://mubashirr.com/wp-content/uploads/vadouvan-leg-of-lamb-hero.jpg",
-  "prepTime": "PT30M",
-  "cookTime": "PT3H30M",
-  "totalTime": "PT4H",
-  "keywords": "halal french cooking, vadouvan lamb, slow roasted leg of lamb, halal dinner party",
-  "recipeYield": "8 servings",
+  "description": "A slow-roasted semi-boneless leg of lamb coated in a vadouvan butter paste with orange zest, rosemary, and pink peppercorn. Halal French fusion, 4 hours total.",
+  "image": "https://mubashirr.com/images/vadouvan-spiced-roast-leg-of-lamb.jpg",
   "recipeCategory": "Main Course",
   "recipeCuisine": "French-Pakistani Fusion",
+  "keywords": "halal french cooking, vadouvan lamb, roast leg of lamb, halal roast",
+  "prepTime": "PT30M",
+  "cookTime": "PT3H45M",
+  "totalTime": "PT4H15M",
+  "recipeYield": "8 servings",
+  "suitableForDiet": "https://schema.org/HalalDiet",
   "recipeIngredient": [
-    "225g (2 sticks) unsalted butter, softened",
-    "45ml (3 tbsp) vadouvan or curry powder",
-    "30ml (2 tbsp) coarsely grated orange zest",
-    "30ml (2 tbsp) fresh rosemary, finely chopped",
-    "30ml (2 tbsp) kosher salt",
-    "15ml (1 tbsp) pink peppercorns, crushed",
-    "5ml (1 tsp) freshly ground black pepper",
-    "1 semi-boneless leg of lamb, shank bone in, 3.8-4kg (8\u00bd-9 lb)",
-    "240ml (1 cup) water"
+    "225 g (2 sticks) unsalted halal butter, softened",
+    "3 tablespoons vadouvan or curry powder",
+    "2 tablespoons coarsely grated orange zest",
+    "2 tablespoons fresh rosemary, finely chopped",
+    "2 tablespoons kosher salt",
+    "1 tablespoon pink peppercorns, lightly crushed",
+    "1 teaspoon freshly ground black pepper",
+    "1 semi-boneless leg of lamb, shank bone in, approximately 3.8\u20134.1 kg (8\u00bd\u20139 lb)",
+    "240 ml (1 cup) water"
   ],
   "recipeInstructions": [
     {
       "@type": "HowToStep",
-      "text": "Make the vadouvan butter by combining softened butter with vadouvan, orange zest, rosemary, kosher salt, crushed pink peppercorns, and black pepper until uniform."
+      "text": "Remove the lamb from the refrigerator 1 hour before roasting."
     },
     {
       "@type": "HowToStep",
-      "text": "Remove lamb from refrigerator 1 hour before roasting and pat surface dry with paper towels."
+      "text": "Mix butter, vadouvan, orange zest, rosemary, salt, pink peppercorns, and black pepper into a smooth paste."
     },
     {
       "@type": "HowToStep",
-      "text": "Preheat oven to 230\u00b0C (450\u00b0F)."
+      "text": "Preheat the oven to 160 \u00b0C (325 \u00b0F), conventional heat."
     },
     {
       "@type": "HowToStep",
-      "text": "Place lamb in a large roasting pan and coat the entire surface with the compound butter."
+      "text": "Rub half the paste under any loose flaps of fat; rub the remainder over the entire exterior of the lamb."
     },
     {
       "@type": "HowToStep",
-      "text": "Roast uncovered at 230\u00b0C (450\u00b0F) for 25 minutes to set the crust."
+      "text": "Place the lamb on a rack in a roasting tin and pour 240 ml water into the base of the tin."
     },
     {
       "@type": "HowToStep",
-      "text": "Lower oven to 150\u00b0C (300\u00b0F), pour 240ml water into the bottom of the roasting pan, and return to oven."
+      "text": "Roast at 160 \u00b0C (325 \u00b0F) for 3 hours without opening the door."
     },
     {
       "@type": "HowToStep",
-      "text": "Roast at 150\u00b0C (300\u00b0F) for 2 hours 45 minutes to 3 hours, basting every 45 minutes, until internal temperature reaches 60\u00b0C (140\u00b0F) for pink or 68\u00b0C (155\u00b0F) for medium."
+      "text": "Check internal temperature; it should read 60\u201363 \u00b0C (140\u2013145 \u00b0F) at the thickest point."
     },
     {
       "@type": "HowToStep",
-      "text": "Rest the lamb loosely tented with foil for 20-30 minutes before carving."
+      "text": "Raise oven to 220 \u00b0C (425 \u00b0F) and roast for a further 20\u201325 minutes until the crust is deeply bronzed."
     },
     {
       "@type": "HowToStep",
-      "text": "Skim fat from pan juices, taste for salt, and serve alongside the carved meat."
+      "text": "Rest the lamb tented in foil for at least 20 minutes before carving."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Deglaze the roasting tin over medium heat with a splash of stock or water; strain the pan juices and serve alongside."
     }
   ],
   "nutrition": {
     "@type": "NutritionInformation",
-    "servingSize": "1 portion (approx. 250g cooked meat)",
-    "calories": "520"
-  },
-  "suitableForDiet": "https://schema.org/HalalDiet"
+    "servingSize": "1 portion (approx 280g cooked lamb)",
+    "calories": "520 kcal"
+  }
 }

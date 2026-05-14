@@ -1,60 +1,56 @@
-title: Vadouvan-Spiced Slow-Roasted Leg of Lamb
-slug: vadouvan-spiced-slow-roasted-leg-of-lamb
+title: Vadouvan-Spiced Roast Leg of Lamb
+slug: vadouvan-spiced-roast-leg-of-lamb-halal-french-fusion
 focus_keyword: halal french cooking
-meta_description: 'Vadouvan-spiced leg of lamb: French curry butter meets slow roasting
-  for a showpiece halal French cooking recipe. 4 hours, 8 people, worth it.'
-og_title: "Vadouvan Leg of Lamb \u2014 Halal French Cooking"
-og_description: A slow-roasted leg of lamb rubbed with vadouvan, orange zest, rosemary,
-  and clarified butter. French technique, South Asian spice logic, fully halal. Serves
-  8.
+meta_description: 'Vadouvan-spiced roast leg of lamb: halal French cooking meets South
+  Asian spice in a slow-roasted centrepiece. Crisp crust, yielding interior, 4 hours.'
+og_title: "Vadouvan Roast Lamb \u2014 Halal French Fusion"
+og_description: A slow-roasted leg of lamb rubbed with vadouvan, orange zest, rosemary
+  and butter. Where halal French cooking and South Asian spice meet at Sunday lunch.
 tags:
+- halal french cooking
 - lamb
 - vadouvan
-- halal french cooking
-- slow roast
-- leg of lamb
+- roast lamb
 - French technique
+- Pakistani-French fusion
+- leg of lamb
+- slow roast
 - spice rub
 - halal
-- dinner party
-- orange zest
-- rosemary
-- Pakistani-French fusion
 categories:
 - Dishes
 - French Technique
 - Halal
 image_briefs:
 - shot: hero
-  prompt: A whole slow-roasted leg of lamb on a large white oval platter, crust deeply
-    bronzed with visible spice coating in ochre and dark orange. A few sprigs of rosemary
-    and curls of orange zest nearby. Warm, directional natural light from the left.
-    Rustic linen underneath. No garnish clutter.
-  alt: Vadouvan-spiced slow-roasted leg of lamb on a white platter with orange zest
-    and rosemary
+  prompt: A burnished, deeply bronzed leg of lamb on a weathered oak carving board,
+    one or two thick slices already cut, golden-brown crust flecked with orange zest
+    and green rosemary, warm studio light from one side, pan juices in a small white
+    jug to the side, linen napkin.
+  alt: Vadouvan-spiced roast leg of lamb on a carving board with pan juices
 - shot: ingredients
-  prompt: 'Overhead flat-lay of the raw ingredients on a grey slate surface: a log
-    of compound butter, a jar of vadouvan spice blend, two whole oranges, a sprig
-    of fresh rosemary, pink peppercorns in a small ceramic bowl, and a pile of kosher
-    salt. Clean, minimal, no props.'
-  alt: 'Ingredients for vadouvan compound butter: spice blend, butter, orange, rosemary,
-    pink peppercorns'
+  prompt: 'Flat-lay overhead on white marble: softened butter, a small bowl of vadouvan
+    spice blend (golden-orange powder), orange zest on a grater, fresh rosemary sprigs,
+    pink peppercorns in a small dish, kosher salt in a pinch bowl. Clean, minimal,
+    lit by diffuse natural light.'
+  alt: 'Vadouvan butter rub ingredients laid out on marble: butter, spices, orange
+    zest, rosemary'
 - shot: process
-  prompt: Close-up hands pressing ochre vadouvan butter paste onto the surface of
-    a raw leg of lamb in a roasting pan. The butter is visibly thick and heavily coating
-    the meat. Natural light. No text or distractions.
-  alt: Applying vadouvan compound butter to a leg of lamb before roasting
+  prompt: Close-up of hands pressing a golden-orange spiced butter paste onto a raw
+    leg of lamb, the paste thick and fragrant-looking, smeared under a flap of fat.
+    Dark roasting tin partially visible. Natural side lighting, slight motion blur
+    on the hands.
+  alt: Rubbing vadouvan butter paste onto leg of lamb before roasting
 - shot: plated
-  prompt: Three thick slices of carved lamb on a white ceramic plate, showing a deep
-    bronze crust exterior and a pink-to-medium interior gradient. A small poured jus
-    beside the meat, no heavy sauce on top. A fragment of orange zest on the edge.
-    Tight crop, restaurant-style plating.
-  alt: Sliced vadouvan leg of lamb showing pink interior and spiced crust, served
-    with pan jus
-pinterest_overlay_text: 'Vadouvan Lamb: Halal French Roast'
+  prompt: "Two slices of medium-pink roast lamb on a white ceramic plate, surrounded\
+    \ by white bean pur\xE9e, a drizzle of dark amber pan juices, a few scattered\
+    \ pink peppercorns, and a small rosemary sprig. Bistro-style table setting, candlelight-adjacent\
+    \ warm tones."
+  alt: "Sliced vadouvan roast lamb on a plate with white bean pur\xE9e and pan juices"
+pinterest_overlay_text: Halal Roast Lamb with Vadouvan Butter
 email_subject: 4-hour lamb that earns the wait
 internal_link_anchors:
-- vadouvan spice blend explained
-- compound butter techniques
-- halal lamb butchery guide
+- halal French cooking techniques
+- how to make vadouvan spice blend
+- slow-roasted lamb shoulder recipe
 media_ids: {}
