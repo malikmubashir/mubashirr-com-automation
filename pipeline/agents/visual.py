@@ -14,7 +14,7 @@ from pathlib import Path
 import fal_client
 import requests
 
-from .common import draft_dir, env, read_yaml, write_yaml
+from .common import draft_dir, env, read_yaml, wp_ca_bundle, write_yaml
 
 log = logging.getLogger("visual")
 
@@ -35,6 +35,8 @@ def wp_session() -> requests.Session:
         "Accept-Language": "en-US,en;q=0.9",
     })
     s.auth = (env("WP_USER", required=True), env("WP_APP_PASSWORD", required=True))
+    # See pipeline/agents/common.py for the Cloudflare bypass mechanics.
+    s.verify = wp_ca_bundle()
     return s
 
 # Style fingerprint that runs in every image prompt.

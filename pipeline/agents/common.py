@@ -5,9 +5,14 @@ from __future__ import annotations
 import json
 import logging
 import os
+import socket
+import ssl
+import tempfile
 from datetime import date, datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
+import certifi
 import yaml
 from dotenv import load_dotenv
 
@@ -16,6 +21,7 @@ load_dotenv()
 ROOT = Path(__file__).resolve().parents[2]
 PIPELINE = ROOT / "pipeline"
 CONFIG = PIPELINE / "config"
+CERTS = PIPELINE / "certs"
 DRAFTS = ROOT / "drafts"
 STATE = ROOT / "state"
 
@@ -23,6 +29,85 @@ logging.basicConfig(
     level=os.getenv("LOG_LEVEL", "INFO"),
     format="%(asctime)s %(name)s %(levelname)s %(message)s",
 )
+
+_bypass_log = logging.getLogger("cf_bypass")
+
+
+# ---------------------------------------------------------------------------
+# Cloudflare bypass for WP REST API calls.
+#
+# Problem: Cloudflare Bot Fight Mode (enabled on the host's Cloudflare
+# account, which we don't control) challenges GitHub Actions requests to
+# /wp-json/wp/v2/* because they come from Azure IPs and lack browser TLS
+# fingerprints. Setting a browser UA wasn't enough.
+#
+# Fix: when WP_ORIGIN_IP is set, resolve the WP_BASE_URL host directly to the
+# origin IP at the socket layer. SNI still carries the real hostname so the
+# Cloudflare Origin CA certificate matches, and we pin that root for TLS
+# validation. The public site continues to be served through Cloudflare;
+# only our pipeline traffic skips the edge.
+# ---------------------------------------------------------------------------
+
+_ORIG_GETADDRINFO = socket.getaddrinfo
+_WP_CA_BUNDLE_PATH: str | None = None
+
+
+def _install_origin_dns_override() -> None:
+    origin_ip = os.getenv("WP_ORIGIN_IP", "").strip()
+    base_url = os.getenv("WP_BASE_URL", "").strip()
+    if not origin_ip or not base_url:
+        return
+
+    target_host = urlparse(base_url if "://" in base_url else f"https://{base_url}").hostname
+    if not target_host:
+        return
+
+    def _resolve(host, port, *args, **kwargs):
+        if host == target_host:
+            return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", (origin_ip, port))]
+        return _ORIG_GETADDRINFO(host, port, *args, **kwargs)
+
+    socket.getaddrinfo = _resolve
+    _bypass_log.info("Origin bypass active: %s -> %s", target_host, origin_ip)
+
+
+def _build_wp_ca_bundle() -> str | None:
+    """Concatenate certifi's bundle with Cloudflare Origin CA roots.
+
+    Returns a path usable as `requests.Session.verify`. None if bypass is off.
+    """
+    global _WP_CA_BUNDLE_PATH
+    if _WP_CA_BUNDLE_PATH:
+        return _WP_CA_BUNDLE_PATH
+    if not os.getenv("WP_ORIGIN_IP", "").strip():
+        return None
+
+    parts = [Path(certifi.where()).read_text()]
+    for name in ("origin-ca-rsa-root.pem", "origin-ca-ecc-root.pem"):
+        p = CERTS / name
+        if p.exists():
+            parts.append(p.read_text())
+        else:
+            _bypass_log.warning("Missing pinned CA bundle: %s", p)
+
+    fd, path = tempfile.mkstemp(prefix="wp-ca-", suffix=".pem")
+    os.write(fd, "\n".join(parts).encode())
+    os.close(fd)
+    _WP_CA_BUNDLE_PATH = path
+    return path
+
+
+def wp_ca_bundle() -> str | bool:
+    """Return path to a CA bundle that trusts CF Origin CA + public roots.
+
+    When WP_ORIGIN_IP is unset (production / local dev hitting the apex via
+    Cloudflare), return True so `requests` uses the system default.
+    """
+    path = _build_wp_ca_bundle()
+    return path if path else True
+
+
+_install_origin_dns_override()
 
 
 def env(key: str, default: str | None = None, required: bool = False) -> str:

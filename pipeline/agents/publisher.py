@@ -23,6 +23,7 @@ from .common import (
     read_json,
     read_yaml,
     save_history,
+    wp_ca_bundle,
 )
 
 log = logging.getLogger("publisher")
@@ -42,6 +43,12 @@ def wp_session() -> requests.Session:
         "Accept-Language": "en-US,en;q=0.9",
     })
     s.auth = (env("WP_USER", required=True), env("WP_APP_PASSWORD", required=True))
+    # When WP_ORIGIN_IP is set, common.py installs a DNS override so the WP
+    # host resolves directly to the origin IP, bypassing Cloudflare Bot Fight
+    # Mode. The origin presents a Cloudflare Origin CA cert that isn't in the
+    # public trust store, so verify against a bundle that pins the CF Origin
+    # CA roots in addition to the standard certifi bundle.
+    s.verify = wp_ca_bundle()
     return s
 
 

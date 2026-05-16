@@ -86,6 +86,7 @@ jobs:
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          WP_ORIGIN_IP: ${{ secrets.WP_ORIGIN_IP }}
       - name: commit visual metadata
         # PNG images are gitignored; we only commit the updated meta.yaml
         # (which now has WordPress media IDs in it).
@@ -112,6 +113,7 @@ jobs:
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          WP_ORIGIN_IP: ${{ secrets.WP_ORIGIN_IP }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           AUTO_PUBLISH_ON_TIMEOUT: "true"
