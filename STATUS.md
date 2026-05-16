@@ -10,27 +10,35 @@
 - **Cloudflare bypass** validated: `pipeline/agents/common.py` resolves the WP host directly to the origin IP when `WP_ORIGIN_IP` is set, with TLS validated against the pinned Cloudflare Origin CA roots in `pipeline/certs/`
 - GitHub Secrets all in place except Buffer (optional), MySQL/B2 (optional), and **`WP_ORIGIN_IP` (must be added — see below)**
 
-## Cloudflare blocker — characterized but not yet cleared (16 May 2026)
+## Architecture pivot — cron-pull on the host (16 May 2026)
 
-The site sits on **Hosting Made Easy** (cPanel reseller, origin IP `210.2.169.195` → `core43.hostingmadeeasy.com`). Authoritative DNS lives on Cloudflare nameservers (`jason.ns.cloudflare.com`, `sloan.ns.cloudflare.com`) in the host's account, which we don't control.
+The site sits on **Hosting Made Easy** (cPanel reseller, origin IP `210.2.169.195`). Authoritative DNS lives on Cloudflare nameservers (`jason.ns.cloudflare.com`, `sloan.ns.cloudflare.com`) in the host's account, which we don't control. cPanel username is `mubashir`, home at `/home/mubashir/`.
 
-**Two independent defenses are blocking GitHub Actions:**
-1. *Going through Cloudflare* — Bot Fight Mode challenges Azure egress because of TLS fingerprint and IP reputation.
-2. *Going around Cloudflare* — the origin firewall silently drops TCP SYNs from Azure egress (likely "origin lockdown" to Cloudflare IP ranges only). GH Actions hits a 60s connect timeout.
+Three blockers stacked against direct push from GH Actions:
+1. Going through Cloudflare — Bot Fight Mode challenges Azure egress on TLS fingerprint / IP reputation.
+2. Going around Cloudflare to origin — origin firewall silently drops SYNs from Azure egress (verified: GH run id `25956514581` hit 60s connect timeout on `/wp-json/wp/v2/media`).
+3. SSH is not enabled on this hosting plan.
 
-The first try (direct origin bypass via `socket.getaddrinfo` override) confirmed the bypass code loads cleanly in GH Actions (`cf_bypass INFO Origin bypass active` showed up in logs) and works fine from any IP the origin already accepts (sandbox connects in 45ms). It fails only because GH Actions Azure egress hits defense #2.
+**Pivot: host pulls instead of being pushed to.** cPanel Git Version Control clones this repo to the host. A PHP script at `host/cron/mubashirr_pull.php` runs every 10 min via cPanel Cron Jobs, reads the latest committed draft from the local checkout, sideloads images into WP media library, creates the post as draft, sends Telegram with edit/preview links. User publishes manually from WP admin.
 
-**Pivot: SSH tunnel.** Port 22 SSH is accepted by the host firewall. Workflow now opens `ssh -L 8443:127.0.0.1:443 user@host` before Visual and Publisher run, and the `WP_ORIGIN_PORT` env var redirects HTTPS through the tunnel. End-to-end traffic flow: GH Actions → SSH tunnel (port 22) → host loopback → Apache (port 443) → WP REST API. No Cloudflare, no BFM, no origin firewall in the path.
+What changed in this repo:
+- `pipeline/agents/writer.py` now writes `meta.json` alongside `meta.yaml` (cron PHP reads JSON).
+- `pipeline/agents/visual.py` skips WP upload when `WP_SKIP_UPLOAD=true` (set in workflow). Images saved locally; the workflow commits the PNGs.
+- `.gitignore` no longer excludes `drafts/*/images/*.png`.
+- `.github/workflows/weekly-pipeline.yml` — SSH tunnel step removed, Visual env trimmed to fal.ai/Pexels only, Publisher reduced to a stub for `workflow_dispatch`.
+- `host/cron/mubashirr_pull.php` — the new PHP processor.
+- `host/cron/config.php.example` — config template.
+- `host/cron/README.md` — deployment steps for cPanel.
 
-**Action required from user — add these GitHub Actions secrets:**
-- `WP_SSH_KEY` — private deploy key (full PEM contents, including BEGIN/END lines)
-- `WP_SSH_HOST` — host to SSH to (e.g. `core43.hostingmadeeasy.com` or `210.2.169.195`)
-- `WP_SSH_USER` — cPanel account username
-- `WP_SSH_PORT` — SSH port (often 22 or 2222 on Hosting Made Easy)
+**Action required from user — host-side setup:**
+1. cPanel → Git Version Control → clone the repo to `/home/mubashir/repositories/mubashirr-com-automation` (use a GitHub PAT if private).
+2. cPanel → File Manager → create `/home/mubashir/cron/`, copy in `config.php` from `config.php.example`, fill in `wp_root`, `wp_host`, and Telegram creds if desired. Chmod 600.
+3. Test once manually (see `host/cron/README.md` step 3).
+4. cPanel → Cron Jobs → add: `*/10 * * * * /usr/local/bin/php /home/mubashir/repositories/mubashirr-com-automation/host/cron/mubashirr_pull.php >> /home/mubashir/cron/cron.log 2>&1`.
 
-`WP_ORIGIN_IP` secret is no longer used (workflow now hardcodes 127.0.0.1). Leave or delete as you prefer.
+**No GH secrets needed for this path.** `WP_ORIGIN_IP`, `WP_SSH_*` from prior attempts can be deleted from repo secrets — they're no longer referenced.
 
-**Verified locally:** the patched session targeted at `127.0.0.1:8443` resolves and dispatches correctly. The actual tunnel + WP round-trip needs the SSH secrets above before it can be re-tested in GH Actions.
+**Verified locally:** Writer's meta.json output works (backfilled for 2026-05-16 draft). PHP script is syntactically reviewed; full runtime test happens on first cron run.
 
 ## Remaining blocker
 

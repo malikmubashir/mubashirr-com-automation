@@ -6,9 +6,11 @@ __pycache__/
 venv/
 .DS_Store
 
-# Generated images can be large; we commit the metadata, not the binaries.
-# Comment this out if you want full image history in git.
-drafts/*/images/*.png
+# Images ARE committed now — the host-side cron-pull PHP reads them from
+# the local git checkout (cPanel Git Version Control) and sideloads them
+# into WP media library. Direct REST upload from GH Actions is blocked
+# by the host's origin firewall (silent SYN drop on Azure egress).
+# drafts/*/images/*.png
 
 # Local backups
 *.sql

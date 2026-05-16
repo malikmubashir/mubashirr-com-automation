@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copy this to /home/mubashir/cron/config.php and edit the values.
+ * This file is OUTSIDE the git repo so secrets don't get committed.
+ *
+ *   mkdir -p /home/mubashir/cron
+ *   cp /home/mubashir/repositories/mubashirr-com-automation/host/cron/config.php.example /home/mubashir/cron/config.php
+ *   chmod 600 /home/mubashir/cron/config.php
+ *   nano /home/mubashir/cron/config.php
+ */
+
+return [
+    // Absolute path to your WordPress install (contains wp-load.php).
+    'wp_root' => '/home/mubashir/public_html',
+
+    // The hostname WordPress should believe it's running under. Used to
+    // populate $_SERVER['HTTP_HOST'] so generated URLs (preview/edit links)
+    // are correct in CLI/cron context where HTTP_HOST is otherwise unset.
+    'wp_host' => 'mubashirr.com',
+
+    // Absolute path to the cPanel-Git-cloned repo.
+    'repo_path' => '/home/mubashir/repositories/mubashirr-com-automation',
+
+    // Telegram (optional — leave empty strings to disable notifications).
+    // Bot token from @BotFather. Chat ID from a chat with the bot.
+    'telegram_token'   => '',
+    'telegram_chat_id' => '',
+];

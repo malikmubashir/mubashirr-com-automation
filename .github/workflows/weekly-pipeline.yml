@@ -78,98 +78,39 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
-      - name: open SSH tunnel to origin
-        # The host's firewall silently drops TCP SYNs from GH Actions Azure
-        # egress (origin lockdown to Cloudflare IPs). Port 22 is accepted, so
-        # we tunnel HTTPS traffic through SSH and resolve mubashirr.com to
-        # localhost:8443 via the WP_ORIGIN_IP / WP_ORIGIN_PORT bypass.
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.WP_SSH_KEY }}" > ~/.ssh/id_deploy
-          chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -p ${{ secrets.WP_SSH_PORT || '22' }} ${{ secrets.WP_SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -i ~/.ssh/id_deploy \
-              -p ${{ secrets.WP_SSH_PORT || '22' }} \
-              -o StrictHostKeyChecking=accept-new \
-              -o ServerAliveInterval=30 \
-              -fNT -L 8443:127.0.0.1:443 \
-              ${{ secrets.WP_SSH_USER }}@${{ secrets.WP_SSH_HOST }}
-          # Confirm tunnel is alive
-          for i in 1 2 3 4 5; do
-            if curl -sIk --max-time 5 --resolve mubashirr.com:8443:127.0.0.1 https://mubashirr.com:8443/wp-json/ -o /dev/null -w "tunnel check: HTTP %{http_code}\n"; then
-              break
-            fi
-            sleep 1
-          done
       - name: run visual
+        # Visual now only generates images and writes them to drafts/<date>/images/.
+        # The host-side cron-pull PHP picks them up and sideloads into WP.
+        # Direct REST upload from GH Actions is blocked by the host's origin
+        # firewall (silent SYN drop on Azure egress).
         run: python -m pipeline.agents.visual
         env:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
-          WP_USER: ${{ secrets.WP_USER }}
-          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-          WP_ORIGIN_IP: "127.0.0.1"
-          WP_ORIGIN_PORT: "8443"
-      - name: commit visual metadata
-        # PNG images are gitignored; we only commit the updated meta.yaml
-        # (which now has WordPress media IDs in it).
+          WP_SKIP_UPLOAD: "true"
+      - name: commit visual output (images + meta)
+        # PNG images are now committed (cron-pull reads them from the
+        # local git checkout on the host). Small recipe blog, ~2MB/week, fine for git.
         run: |
           git config user.email "bot@mubashirr.com"
           git config user.name "mubashirr-bot"
           git add drafts/
-          git diff --staged --quiet || git commit -m "visual: images uploaded for $(date -I)"
+          git diff --staged --quiet || git commit -m "visual: images generated for $(date -I)"
           git pull --rebase
           git push
 
   publisher:
-    if: github.event.schedule == '0 5 * * SAT' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'publisher')
+    # Publisher is disabled. Publishing now happens via cron-pull PHP on the
+    # WP host (see host/cron/mubashirr_pull.php). Keep this job stub for
+    # workflow_dispatch in case we ever need to push a notification or run
+    # a one-off REST call against WP from CI.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'publisher'
     runs-on: ubuntu-latest
-    timeout-minutes: 130
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: pip install -r pipeline/requirements.txt
-      - name: open SSH tunnel to origin
-        # See visual job above for rationale.
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.WP_SSH_KEY }}" > ~/.ssh/id_deploy
-          chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -p ${{ secrets.WP_SSH_PORT || '22' }} ${{ secrets.WP_SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -i ~/.ssh/id_deploy \
-              -p ${{ secrets.WP_SSH_PORT || '22' }} \
-              -o StrictHostKeyChecking=accept-new \
-              -o ServerAliveInterval=30 \
-              -fNT -L 8443:127.0.0.1:443 \
-              ${{ secrets.WP_SSH_USER }}@${{ secrets.WP_SSH_HOST }}
-          for i in 1 2 3 4 5; do
-            if curl -sIk --max-time 5 --resolve mubashirr.com:8443:127.0.0.1 https://mubashirr.com:8443/wp-json/ -o /dev/null -w "tunnel check: HTTP %{http_code}\n"; then
-              break
-            fi
-            sleep 1
-          done
-      - name: run publisher
-        run: python -m pipeline.agents.publisher
-        env:
-          WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
-          WP_USER: ${{ secrets.WP_USER }}
-          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-          WP_ORIGIN_IP: "127.0.0.1"
-          WP_ORIGIN_PORT: "8443"
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          AUTO_PUBLISH_ON_TIMEOUT: "true"
-          TIMEOUT_MINUTES: "120"
-      - name: commit publish state
-        run: |
-          git config user.email "bot@mubashirr.com"
-          git config user.name "mubashirr-bot"
-          git add state/ drafts/
-          git diff --staged --quiet || git commit -m "publisher: post live for $(date -I)"
-          git pull --rebase
-          git push
+      - run: |
+          echo "Publisher disabled in cron-pull architecture."
+          echo "Drafts are committed to drafts/<date>/ and pulled by /home/mubashir/cron/mubashirr_pull.php on the WP host every 10 minutes."
+          echo "Telegram notification is sent by the PHP script when a new draft is detected."
 
   distributor:
     if: github.event.schedule == '0 7 * * SAT' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'distributor')

@@ -179,7 +179,10 @@ def run() -> None:
         "media_ids": {},  # filled in by Visual
     }
     write_yaml(dd / "meta.yaml", meta)
-    log.info("Writer wrote post.md (%d words), schema.json, meta.yaml",
+    # meta.json is the canonical machine-readable form. The cron-pull PHP on
+    # the WP host reads JSON (avoids needing a YAML parser there).
+    write_json(dd / "meta.json", meta)
+    log.info("Writer wrote post.md (%d words), schema.json, meta.yaml, meta.json",
              len(post["markdown"].split()))
 
 

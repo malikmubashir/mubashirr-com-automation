@@ -123,6 +123,12 @@ def run() -> None:
     images_dir = dd / "images"
     images_dir.mkdir(exist_ok=True)
 
+    # Architecture: Visual only generates images and writes them to disk.
+    # Upload to WP happens on the host via the cron-pull PHP script — direct
+    # REST API from GH Actions is blocked by the host's origin firewall.
+    # Set WP_SKIP_UPLOAD=false to re-enable the legacy upload path.
+    skip_upload = env("WP_SKIP_UPLOAD", "true").lower() == "true"
+
     media_ids: dict[str, int] = {}
     for brief in meta["image_briefs"]:
         shot = brief["shot"]
@@ -135,14 +141,18 @@ def run() -> None:
                 log.error("All image sources failed for %s; skipping", shot)
                 continue
 
-        media_id = upload_to_wp(out, brief["alt"])
-        if media_id:
-            media_ids[shot] = media_id
+        if not skip_upload:
+            media_id = upload_to_wp(out, brief["alt"])
+            if media_id:
+                media_ids[shot] = media_id
         time.sleep(1)  # be polite to APIs
 
-    meta["media_ids"] = media_ids
-    write_yaml(dd / "meta.yaml", meta)
-    log.info("Visual completed. media_ids=%s", media_ids)
+    if not skip_upload:
+        meta["media_ids"] = media_ids
+        write_yaml(dd / "meta.yaml", meta)
+    log.info("Visual completed. generated=%d skip_upload=%s media_ids=%s",
+             len([b for b in meta["image_briefs"] if (images_dir / f'{b["shot"]}.png').exists()]),
+             skip_upload, media_ids)
 
 
 if __name__ == "__main__":
