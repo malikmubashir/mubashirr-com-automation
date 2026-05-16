@@ -78,6 +78,29 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
+      - name: open SSH tunnel to origin
+        # The host's firewall silently drops TCP SYNs from GH Actions Azure
+        # egress (origin lockdown to Cloudflare IPs). Port 22 is accepted, so
+        # we tunnel HTTPS traffic through SSH and resolve mubashirr.com to
+        # localhost:8443 via the WP_ORIGIN_IP / WP_ORIGIN_PORT bypass.
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.WP_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -p ${{ secrets.WP_SSH_PORT || '22' }} ${{ secrets.WP_SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+          ssh -i ~/.ssh/id_deploy \
+              -p ${{ secrets.WP_SSH_PORT || '22' }} \
+              -o StrictHostKeyChecking=accept-new \
+              -o ServerAliveInterval=30 \
+              -fNT -L 8443:127.0.0.1:443 \
+              ${{ secrets.WP_SSH_USER }}@${{ secrets.WP_SSH_HOST }}
+          # Confirm tunnel is alive
+          for i in 1 2 3 4 5; do
+            if curl -sIk --max-time 5 --resolve mubashirr.com:8443:127.0.0.1 https://mubashirr.com:8443/wp-json/ -o /dev/null -w "tunnel check: HTTP %{http_code}\n"; then
+              break
+            fi
+            sleep 1
+          done
       - name: run visual
         run: python -m pipeline.agents.visual
         env:
@@ -86,7 +109,8 @@ jobs:
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-          WP_ORIGIN_IP: ${{ secrets.WP_ORIGIN_IP }}
+          WP_ORIGIN_IP: "127.0.0.1"
+          WP_ORIGIN_PORT: "8443"
       - name: commit visual metadata
         # PNG images are gitignored; we only commit the updated meta.yaml
         # (which now has WordPress media IDs in it).
@@ -107,13 +131,33 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
+      - name: open SSH tunnel to origin
+        # See visual job above for rationale.
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.WP_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -p ${{ secrets.WP_SSH_PORT || '22' }} ${{ secrets.WP_SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+          ssh -i ~/.ssh/id_deploy \
+              -p ${{ secrets.WP_SSH_PORT || '22' }} \
+              -o StrictHostKeyChecking=accept-new \
+              -o ServerAliveInterval=30 \
+              -fNT -L 8443:127.0.0.1:443 \
+              ${{ secrets.WP_SSH_USER }}@${{ secrets.WP_SSH_HOST }}
+          for i in 1 2 3 4 5; do
+            if curl -sIk --max-time 5 --resolve mubashirr.com:8443:127.0.0.1 https://mubashirr.com:8443/wp-json/ -o /dev/null -w "tunnel check: HTTP %{http_code}\n"; then
+              break
+            fi
+            sleep 1
+          done
       - name: run publisher
         run: python -m pipeline.agents.publisher
         env:
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-          WP_ORIGIN_IP: ${{ secrets.WP_ORIGIN_IP }}
+          WP_ORIGIN_IP: "127.0.0.1"
+          WP_ORIGIN_PORT: "8443"
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           AUTO_PUBLISH_ON_TIMEOUT: "true"

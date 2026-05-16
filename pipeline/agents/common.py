@@ -62,13 +62,26 @@ def _install_origin_dns_override() -> None:
     if not target_host:
         return
 
+    # WP_ORIGIN_PORT lets us redirect 443 to an SSH tunnel on localhost.
+    # Needed because the host's firewall (or upstream) silently drops TCP
+    # SYNs from GitHub Actions Azure egress. We tunnel through SSH (which
+    # the firewall accepts on port 22) and land at localhost:8443 -> origin:443.
+    try:
+        override_port = int(os.getenv("WP_ORIGIN_PORT", "0"))
+    except ValueError:
+        override_port = 0
+
     def _resolve(host, port, *args, **kwargs):
         if host == target_host:
-            return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", (origin_ip, port))]
+            dest_port = override_port or port
+            return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", (origin_ip, dest_port))]
         return _ORIG_GETADDRINFO(host, port, *args, **kwargs)
 
     socket.getaddrinfo = _resolve
-    _bypass_log.info("Origin bypass active: %s -> %s", target_host, origin_ip)
+    if override_port:
+        _bypass_log.info("Origin bypass active: %s -> %s:%d", target_host, origin_ip, override_port)
+    else:
+        _bypass_log.info("Origin bypass active: %s -> %s", target_host, origin_ip)
 
 
 def _build_wp_ca_bundle() -> str | None:

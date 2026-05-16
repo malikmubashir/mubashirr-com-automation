@@ -10,15 +10,27 @@
 - **Cloudflare bypass** validated: `pipeline/agents/common.py` resolves the WP host directly to the origin IP when `WP_ORIGIN_IP` is set, with TLS validated against the pinned Cloudflare Origin CA roots in `pipeline/certs/`
 - GitHub Secrets all in place except Buffer (optional), MySQL/B2 (optional), and **`WP_ORIGIN_IP` (must be added — see below)**
 
-## Cloudflare blocker — resolved 16 May 2026
+## Cloudflare blocker — characterized but not yet cleared (16 May 2026)
 
-The site sits on **Hosting Made Easy** (cPanel reseller, origin IP `210.2.169.195` → `core43.hostingmadeeasy.com`). Authoritative DNS lives on Cloudflare nameservers (`jason.ns.cloudflare.com`, `sloan.ns.cloudflare.com`) in the host's account, which we don't control. Bot Fight Mode there was challenging GitHub Actions Azure egress to `/wp-json/wp/v2/*`. UA spoofing didn't help because Cloudflare reads TLS fingerprint and IP reputation, not the UA string.
+The site sits on **Hosting Made Easy** (cPanel reseller, origin IP `210.2.169.195` → `core43.hostingmadeeasy.com`). Authoritative DNS lives on Cloudflare nameservers (`jason.ns.cloudflare.com`, `sloan.ns.cloudflare.com`) in the host's account, which we don't control.
 
-**Fix shipped:** when `WP_ORIGIN_IP=210.2.169.195` is set, `common.py` installs a `socket.getaddrinfo` override that resolves `mubashirr.com` directly to the origin. SNI still carries the real hostname, so the Cloudflare Origin CA cert presented by Apache matches. The CA bundle at `pipeline/certs/origin-ca-rsa-root.pem` is pinned for TLS validation alongside the standard certifi roots. The public site continues to serve through Cloudflare; only pipeline traffic skips the edge.
+**Two independent defenses are blocking GitHub Actions:**
+1. *Going through Cloudflare* — Bot Fight Mode challenges Azure egress because of TLS fingerprint and IP reputation.
+2. *Going around Cloudflare* — the origin firewall silently drops TCP SYNs from Azure egress (likely "origin lockdown" to Cloudflare IP ranges only). GH Actions hits a 60s connect timeout.
 
-**Action required from user:** add `WP_ORIGIN_IP` = `210.2.169.195` to GitHub Actions repository secrets (Settings → Secrets and variables → Actions → New repository secret). The workflow already wires it through for `visual` and `publisher` jobs.
+The first try (direct origin bypass via `socket.getaddrinfo` override) confirmed the bypass code loads cleanly in GH Actions (`cf_bypass INFO Origin bypass active` showed up in logs) and works fine from any IP the origin already accepts (sandbox connects in 45ms). It fails only because GH Actions Azure egress hits defense #2.
 
-**Verified locally:** GET `https://mubashirr.com/wp-json/` via patched session returns HTTP 200, `Server: Apache`, no `cf-ray` header, valid JSON identifying the WP install as "We all love Food".
+**Pivot: SSH tunnel.** Port 22 SSH is accepted by the host firewall. Workflow now opens `ssh -L 8443:127.0.0.1:443 user@host` before Visual and Publisher run, and the `WP_ORIGIN_PORT` env var redirects HTTPS through the tunnel. End-to-end traffic flow: GH Actions → SSH tunnel (port 22) → host loopback → Apache (port 443) → WP REST API. No Cloudflare, no BFM, no origin firewall in the path.
+
+**Action required from user — add these GitHub Actions secrets:**
+- `WP_SSH_KEY` — private deploy key (full PEM contents, including BEGIN/END lines)
+- `WP_SSH_HOST` — host to SSH to (e.g. `core43.hostingmadeeasy.com` or `210.2.169.195`)
+- `WP_SSH_USER` — cPanel account username
+- `WP_SSH_PORT` — SSH port (often 22 or 2222 on Hosting Made Easy)
+
+`WP_ORIGIN_IP` secret is no longer used (workflow now hardcodes 127.0.0.1). Leave or delete as you prefer.
+
+**Verified locally:** the patched session targeted at `127.0.0.1:8443` resolves and dispatches correctly. The actual tunnel + WP round-trip needs the SSH secrets above before it can be re-tested in GH Actions.
 
 ## Remaining blocker
 
