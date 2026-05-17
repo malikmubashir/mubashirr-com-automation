@@ -138,8 +138,19 @@ def this_saturday() -> date:
 
 
 def draft_dir(target: date | None = None) -> Path:
-    d = target or this_saturday()
-    out = DRAFTS / d.isoformat()
+    """Resolve the draft directory.
+
+    Precedence: explicit `target` arg > `DRAFT_DATE` env var (YYYY-MM-DD) >
+    upcoming Saturday. The env var is useful for one-off re-runs and for
+    backfilling images against a past Saturday's draft.
+    """
+    if target is None:
+        override = os.getenv("DRAFT_DATE", "").strip()
+        if override:
+            target = date.fromisoformat(override)
+        else:
+            target = this_saturday()
+    out = DRAFTS / target.isoformat()
     out.mkdir(parents=True, exist_ok=True)
     return out
 

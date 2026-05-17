@@ -15,6 +15,10 @@ on:
       agent:
         description: "Which agent to run (scout/writer/visual/publisher/distributor/archivist)"
         required: true
+      draft_date:
+        description: "Override draft date (YYYY-MM-DD). Empty = upcoming Saturday. Used by Scout/Writer/Visual for re-runs and backfills."
+        required: false
+        default: ""
 
 # Every job needs to commit its outputs back to the repo so the next
 # agent (running on a different day) can read them via a fresh checkout.
@@ -88,6 +92,7 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           WP_SKIP_UPLOAD: "true"
+          DRAFT_DATE: ${{ github.event.inputs.draft_date }}
       - name: commit visual output (images + meta)
         # PNG images are now committed (cron-pull reads them from the
         # local git checkout on the host). Small recipe blog, ~2MB/week, fine for git.
