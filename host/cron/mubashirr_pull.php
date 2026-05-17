@@ -70,56 +70,59 @@ $repo_branch = $cfg['repo_branch'] ?? 'main';
 $github_token = $cfg['github_token'] ?? ''; // optional, raises rate limit
 
 // --- GitHub fetch helpers -------------------------------------------------
-// The host disables exec/shell_exec/proc_open, so `git pull` isn't an option.
-// We pull required files via the GitHub Contents API + raw.githubusercontent
-// straight into a temp directory and process from there.
+// This host's outbound firewall lets raw.githubusercontent.com through but
+// blocks api.github.com (cURL returns HTTP 0). So we avoid the Contents API
+// entirely: probe for a draft directory by trying recent Saturdays in order
+// and using HEAD checks on raw URLs to detect file presence.
 
-function gh_curl(string $url, string $token = '', bool $expect_json = true) {
-    $ch = curl_init($url);
-    $headers = ['User-Agent: mubashirr-cron/1.0', 'Accept: application/vnd.github.v3+json'];
-    if ($token) $headers[] = 'Authorization: Bearer ' . $token;
-    curl_setopt_array($ch, [
-        CURLOPT_HTTPHEADER     => $headers,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_TIMEOUT        => 30,
-    ]);
-    $body = curl_exec($ch);
-    $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $err  = curl_error($ch);
-    curl_close($ch);
-    if ($body === false) fatal("curl error: $err for $url");
-    if ($code !== 200) fatal("GitHub HTTP $code for $url: " . substr((string) $body, 0, 300));
-    return $expect_json ? json_decode($body, true) : $body;
-}
-
-function gh_raw(string $owner, string $repo, string $branch, string $path, string $token = ''): string {
-    // raw.githubusercontent works for public files without auth; for private
-    // repos pass a token. We currently use a public repo.
-    return gh_curl("https://raw.githubusercontent.com/$owner/$repo/$branch/$path", $token, false);
-}
-
-function gh_list_dir(string $owner, string $repo, string $branch, string $path, string $token = '') {
-    return gh_curl("https://api.github.com/repos/$owner/$repo/contents/$path?ref=$branch", $token);
-}
-
-// --- Discover latest draft directory on the remote ------------------------
-log_msg('INFO', "checking $repo_owner/$repo_name@$repo_branch for latest draft...");
-$listing = gh_list_dir($repo_owner, $repo_name, $repo_branch, 'drafts', $github_token);
-
-$dates = [];
-foreach ($listing as $entry) {
-    if (($entry['type'] ?? '') === 'dir' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $entry['name'] ?? '')) {
-        $dates[] = $entry['name'];
+function gh_fetch(string $owner, string $repo, string $branch, string $path, string $token = '', bool $head_only = false) {
+    $url = "https://raw.githubusercontent.com/$owner/$repo/$branch/$path";
+    $headers = "User-Agent: mubashirr-cron/1.0\r\n";
+    if ($token) $headers .= "Authorization: Bearer $token\r\n";
+    $ctx = stream_context_create(['http' => [
+        'method'  => $head_only ? 'HEAD' : 'GET',
+        'timeout' => 20,
+        'header'  => $headers,
+        'ignore_errors' => true,
+    ]]);
+    $body = @file_get_contents($url, false, $ctx);
+    $code = 0;
+    if (isset($http_response_header[0]) && preg_match('#HTTP/\S+\s+(\d+)#', $http_response_header[0], $m)) {
+        $code = (int) $m[1];
     }
+    return ['code' => $code, 'body' => $body === false ? '' : (string) $body];
 }
-if (!$dates) fatal("no dated draft directories on remote");
-rsort($dates);
-$latest = $dates[0];
+
+function gh_exists(string $owner, string $repo, string $branch, string $path, string $token = ''): bool {
+    $r = gh_fetch($owner, $repo, $branch, $path, $token, true);
+    return $r['code'] === 200;
+}
+
+function gh_get(string $owner, string $repo, string $branch, string $path, string $token = ''): string {
+    $r = gh_fetch($owner, $repo, $branch, $path, $token, false);
+    if ($r['code'] !== 200) fatal("github fetch $path failed: HTTP " . $r['code']);
+    return $r['body'];
+}
+
+// --- Discover latest draft directory by probing recent Saturdays ----------
+log_msg('INFO', "probing $repo_owner/$repo_name@$repo_branch for latest draft meta.json...");
+$latest = null;
+$probe_date = new DateTimeImmutable('today');
+// Search back 8 weeks worth of Saturdays.
+for ($i = 0; $i < 60; $i++) {
+    if ((int) $probe_date->format('w') === 6) {
+        if (gh_exists($repo_owner, $repo_name, $repo_branch, "drafts/" . $probe_date->format('Y-m-d') . "/meta.json", $github_token)) {
+            $latest = $probe_date->format('Y-m-d');
+            break;
+        }
+    }
+    $probe_date = $probe_date->sub(new DateInterval('P1D'));
+}
+if (!$latest) fatal("no draft meta.json found in last 60 days of Saturdays");
 log_msg('INFO', "latest draft: $latest");
 
 // --- Read meta.json from remote ------------------------------------------
-$meta_raw = gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/meta.json", $github_token);
+$meta_raw = gh_get($repo_owner, $repo_name, $repo_branch, "drafts/$latest/meta.json", $github_token);
 $meta = json_decode($meta_raw, true);
 if (!is_array($meta) || empty($meta['slug'])) {
     fatal("invalid meta.json on remote for $latest (Writer may not have committed JSON form yet)");
@@ -139,17 +142,12 @@ if (in_array($meta['slug'], $state['processed'] ?? [], true)) {
 // marked done — images would then never be picked up. So we exit cleanly
 // here and try next tick.
 $missing = [];
-$images_listing = [];
-try {
-    $images_listing = gh_list_dir($repo_owner, $repo_name, $repo_branch, "drafts/$latest/images", $github_token);
-} catch (Throwable $e) {
-    // images dir doesn't exist yet
-}
-$image_names = array_column(is_array($images_listing) ? $images_listing : [], 'name');
 foreach (($meta['image_briefs'] ?? []) as $brief) {
     $shot = $brief['shot'] ?? '';
     if (!$shot) continue;
-    if (!in_array("$shot.png", $image_names, true)) $missing[] = $shot;
+    if (!gh_exists($repo_owner, $repo_name, $repo_branch, "drafts/$latest/images/$shot.png", $github_token)) {
+        $missing[] = $shot;
+    }
 }
 if ($missing) {
     log_msg('INFO', "waiting for images on remote: " . implode(',', $missing) . ". Will retry next tick.");
@@ -162,16 +160,14 @@ if (!@mkdir($work_dir, 0700, true)) fatal("cannot create work dir $work_dir");
 @mkdir("$work_dir/images", 0700, true);
 
 file_put_contents("$work_dir/meta.json", $meta_raw);
-file_put_contents("$work_dir/post.md", gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/post.md", $github_token));
-try {
-    file_put_contents("$work_dir/schema.json", gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/schema.json", $github_token));
-} catch (Throwable $e) {
-    log_msg('WARN', "schema.json fetch failed: " . $e->getMessage());
+file_put_contents("$work_dir/post.md", gh_get($repo_owner, $repo_name, $repo_branch, "drafts/$latest/post.md", $github_token));
+if (gh_exists($repo_owner, $repo_name, $repo_branch, "drafts/$latest/schema.json", $github_token)) {
+    file_put_contents("$work_dir/schema.json", gh_get($repo_owner, $repo_name, $repo_branch, "drafts/$latest/schema.json", $github_token));
 }
 foreach (($meta['image_briefs'] ?? []) as $brief) {
     $shot = $brief['shot'] ?? '';
     if (!$shot) continue;
-    file_put_contents("$work_dir/images/$shot.png", gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/images/$shot.png", $github_token));
+    file_put_contents("$work_dir/images/$shot.png", gh_get($repo_owner, $repo_name, $repo_branch, "drafts/$latest/images/$shot.png", $github_token));
 }
 $dir = $work_dir; // downstream code reads $dir/...
 
