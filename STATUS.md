@@ -10,35 +10,70 @@
 - **Cloudflare bypass** validated: `pipeline/agents/common.py` resolves the WP host directly to the origin IP when `WP_ORIGIN_IP` is set, with TLS validated against the pinned Cloudflare Origin CA roots in `pipeline/certs/`
 - GitHub Secrets all in place except Buffer (optional), MySQL/B2 (optional), and **`WP_ORIGIN_IP` (must be added — see below)**
 
-## Architecture pivot — cron-pull on the host (16 May 2026)
+## Architecture — cron-pull on the host (working as of 17 May 2026)
 
-The site sits on **Hosting Made Easy** (cPanel reseller, origin IP `210.2.169.195`). Authoritative DNS lives on Cloudflare nameservers (`jason.ns.cloudflare.com`, `sloan.ns.cloudflare.com`) in the host's account, which we don't control. cPanel username is `mubashir`, home at `/home/mubashir/`.
+The site sits on **Hosting Made Easy** (cPanel reseller, origin IP `210.2.169.195`, cPanel user `mubashir`). Authoritative DNS lives on Cloudflare nameservers (`jason.ns.cloudflare.com`, `sloan.ns.cloudflare.com`) in the host's account, which we don't control.
 
-Three blockers stacked against direct push from GH Actions:
+### Why cron-pull
+
+Four independent blockers killed every attempt to push from GH Actions:
 1. Going through Cloudflare — Bot Fight Mode challenges Azure egress on TLS fingerprint / IP reputation.
-2. Going around Cloudflare to origin — origin firewall silently drops SYNs from Azure egress (verified: GH run id `25956514581` hit 60s connect timeout on `/wp-json/wp/v2/media`).
-3. SSH is not enabled on this hosting plan.
+2. Going around Cloudflare to origin — origin firewall silently drops SYNs from Azure egress (verified: GH run `25956514581` hit 60s connect timeout on `/wp-json/wp/v2/media`).
+3. SSH access is not on this plan and the host won't enable it (Nexus Technologies reply 17 May 2026 — VPS upgrade required).
+4. Even via cPanel Git Version Control, the host disables `exec/shell_exec/proc_open/system` in PHP, so `git pull` isn't callable. AND the host's outbound firewall blocks `api.github.com` while permitting `raw.githubusercontent.com`.
 
-**Pivot: host pulls instead of being pushed to.** cPanel Git Version Control clones this repo to the host. A PHP script at `host/cron/mubashirr_pull.php` runs every 10 min via cPanel Cron Jobs, reads the latest committed draft from the local checkout, sideloads images into WP media library, creates the post as draft, sends Telegram with edit/preview links. User publishes manually from WP admin.
+### The shape that works
 
-What changed in this repo:
-- `pipeline/agents/writer.py` now writes `meta.json` alongside `meta.yaml` (cron PHP reads JSON).
-- `pipeline/agents/visual.py` skips WP upload when `WP_SKIP_UPLOAD=true` (set in workflow). Images saved locally; the workflow commits the PNGs.
-- `.gitignore` no longer excludes `drafts/*/images/*.png`.
-- `.github/workflows/weekly-pipeline.yml` — SSH tunnel step removed, Visual env trimmed to fal.ai/Pexels only, Publisher reduced to a stub for `workflow_dispatch`.
-- `host/cron/mubashirr_pull.php` — the new PHP processor.
-- `host/cron/config.php.example` — config template.
-- `host/cron/README.md` — deployment steps for cPanel.
+```
+GitHub repo (public)                  cPanel host (mubashirr.com)
+─────────────────                     ──────────────────────────
+Scout    (Wed)  → commits scout.json   ┐
+Writer   (Thu)  → commits post.md +    │   every 10 min cron:
+                  meta.json +          │     /usr/local/bin/php
+                  schema.json          ├──► /home/mubashir/repositories/.../host/cron/mubashirr_pull.php
+Visual   (Thu)  → commits images PNGs  │       │
+                                       │       │ bootstrap: file_get_contents
+                                       │       │  https://raw.githubusercontent.com/.../host/cron/mubashirr_pull.php
+                                       │       │  → /tmp/mubashirr_pull_latest.php
+                                       │       │  require it
+                                       │       ▼
+                                       │     main script:
+                                       │       probes last 60 days of Saturdays for drafts/<date>/meta.json
+                                       │       fetches meta.json, post.md, schema.json, images via raw URLs
+                                       │       wp_insert_post(status=draft) + media_handle_sideload x4
+                                       │       set_post_thumbnail(hero)
+                                       │       Telegram notify (if configured)
+                                       │       state.json marks slug processed
+                                       │
+                                       │   You: review in WP admin, click Publish
+```
 
-**Action required from user — host-side setup:**
-1. cPanel → Git Version Control → clone the repo to `/home/mubashir/repositories/mubashirr-com-automation` (use a GitHub PAT if private).
-2. cPanel → File Manager → create `/home/mubashir/cron/`, copy in `config.php` from `config.php.example`, fill in `wp_root`, `wp_host`, and Telegram creds if desired. Chmod 600.
-3. Test once manually (see `host/cron/README.md` step 3).
-4. cPanel → Cron Jobs → add: `*/10 * * * * /usr/local/bin/php /home/mubashir/repositories/mubashirr-com-automation/host/cron/mubashirr_pull.php >> /home/mubashir/cron/cron.log 2>&1`.
+### Key implementation details
 
-**No GH secrets needed for this path.** `WP_ORIGIN_IP`, `WP_SSH_*` from prior attempts can be deleted from repo secrets — they're no longer referenced.
+- **Repo is public.** Private+cPanel-Git failed because cPanel rejects URLs containing credentials (`https://user:pass@github.com/`) and the host blocks SSH. Public repo skips the auth problem entirely.
+- **Bootstrap pattern.** The PHP file at the cron's target path is a 30-line bootstrap that fetches the real script from `raw.githubusercontent.com` and runs it. Updates to the script land on the host on the next cron tick — no manual host-side file syncing.
+- **No api.github.com.** The host blocks it. We probe for the latest draft by iterating Saturday dates (last 60 days) and HEAD-checking `drafts/<date>/meta.json` via raw URLs.
+- **No `git pull` on host.** Everything fetched via `file_get_contents` over HTTPS to `raw.githubusercontent.com`.
+- **Wait-for-images guard.** Cron exits cleanly if any expected image PNG isn't yet on remote — prevents creating a post without images and locking out future image attachments.
+- **State file at** `/home/mubashir/cron/state.json` tracks processed slugs. Idempotent.
 
-**Verified locally:** Writer's meta.json output works (backfilled for 2026-05-16 draft). PHP script is syntactically reviewed; full runtime test happens on first cron run.
+### Verified end-to-end (17 May 2026, 13:08 UTC)
+
+First successful run: draft post ID 80 created from `drafts/2026-05-16/` (Vadouvan-spiced leg of lamb). 4 images sideloaded (media_ids 76-79), featured image set, state.json updated.
+
+### Files of interest
+
+- `host/cron/mubashirr_pull.php` — the cron processor (canonical source; raw-URL-fetched by the bootstrap)
+- `host/cron/config.php.example` — config template
+- `host/cron/README.md` — cPanel setup walkthrough
+- `pipeline/agents/common.py` — `DRAFT_DATE` env var support for backfill runs
+- `pipeline/agents/visual.py` — `WP_SKIP_UPLOAD=true` mode (the only mode in current workflow)
+- `.github/workflows/weekly-pipeline.yml` — workflow_dispatch accepts `draft_date` input
+
+### Long-term housekeeping
+
+- The host's restrictions (no SSH, exec disabled, api.github.com blocked, etc.) make it a poor fit. A €5-10/mo VPS (Hetzner CX22, Scaleway DEV1) would let you own the stack and remove most of this complexity. Not urgent but budget for it after launch.
+- Public repo means architecture docs and content calendar are world-readable. If that becomes a concern, the alternative is migrating to a host where private clone over SSH works.
 
 ## Remaining blocker
 
