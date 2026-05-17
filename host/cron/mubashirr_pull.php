@@ -40,7 +40,13 @@ function log_msg(string $level, string $msg): void {
     global $LOG_FILE;
     $line = date('c') . " [$level] $msg" . PHP_EOL;
     @file_put_contents($LOG_FILE, $line, FILE_APPEND | LOCK_EX);
-    fwrite(STDOUT, $line);
+    // STDOUT is a resource only under CLI SAPI; under FPM/Apache (e.g. when
+    // invoked via the kickoff shim) it's undefined.
+    if (PHP_SAPI === 'cli' && defined('STDOUT') && is_resource(STDOUT)) {
+        fwrite(STDOUT, $line);
+    } else {
+        echo $line;
+    }
 }
 
 function fatal(string $msg, int $code = 1): void {
