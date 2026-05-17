@@ -97,6 +97,21 @@ if (in_array($meta['slug'], $state['processed'] ?? [], true)) {
     exit(0);
 }
 
+// Wait for all expected images to land before processing. Visual commits
+// images to the repo on its own schedule; if we process before they arrive,
+// the post is created without images AND the slug is marked done — images
+// would then never be picked up. So we exit cleanly here and try next tick.
+$missing = [];
+foreach (($meta['image_briefs'] ?? []) as $brief) {
+    $shot = $brief['shot'] ?? '';
+    if (!$shot) continue;
+    if (!is_readable("$dir/images/$shot.png")) $missing[] = $shot;
+}
+if ($missing) {
+    log_msg('INFO', "waiting for images: " . implode(',', $missing) . ". Will retry next tick.");
+    exit(0);
+}
+
 log_msg('INFO', "new draft to process: slug=" . $meta['slug']);
 
 // --- Load WordPress -------------------------------------------------------
