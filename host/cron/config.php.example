@@ -18,8 +18,13 @@ return [
     // are correct in CLI/cron context where HTTP_HOST is otherwise unset.
     'wp_host' => 'mubashirr.com',
 
-    // Absolute path to the cPanel-Git-cloned repo.
-    'repo_path' => '/home/mubashir/repositories/mubashirr-com-automation',
+    // GitHub repo identity. Override these if you fork or rename.
+    'repo_owner'  => 'malikmubashir',
+    'repo_name'   => 'mubashirr-com-automation',
+    'repo_branch' => 'main',
+    // GitHub token: required only if the repo becomes private again, or to
+    // raise the 60 req/hr unauthenticated rate limit. Leave empty for public.
+    'github_token' => '',
 
     // Telegram (optional — leave empty strings to disable notifications).
     // Bot token from @BotFather. Chat ID from a chat with the bot.

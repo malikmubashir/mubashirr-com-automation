@@ -2,19 +2,24 @@
 /**
  * mubashirr.com cron-pull publisher
  *
- * Reads the latest committed draft from the local Git checkout, sideloads
- * images into WordPress media, creates a draft post, and sends a Telegram
- * notification. User publishes manually from WP admin.
+ * Fetches the latest committed draft from the public GitHub repo via the
+ * REST API + raw URLs, sideloads images into WordPress media, creates a
+ * draft post, sends a Telegram notification. User publishes manually
+ * from WP admin.
  *
  * Architecture: GitHub Actions agents (Scout/Writer/Visual) commit content
- * to the repo. cPanel Git Version Control clones the repo locally. This
- * script runs every 10 min via cPanel Cron Jobs, reads new content from the
- * local checkout, and creates WP drafts via WordPress internal APIs.
+ * to the public mubashirr-com-automation repo. This script runs every 10
+ * min via cPanel Cron Jobs, polls GitHub for new content, downloads what's
+ * needed into /tmp, then uses WordPress internal APIs to create the draft.
  *
- * Why cron-pull: direct REST from GH Actions is blocked by the host's
- * origin firewall (silent SYN drop on Azure egress). SSH access is not
- * available on this hosting plan. Cron-pull avoids inbound traffic from
- * external networks entirely.
+ * Why GitHub API rather than `git pull`: this shared host disables
+ * exec/shell_exec/proc_open/system, so running git from PHP isn't possible.
+ *
+ * Why cron-pull at all: direct REST from GH Actions is blocked by the
+ * host's origin firewall (silent SYN drop on Azure egress) AND Cloudflare
+ * Bot Fight Mode AND the host doesn't offer SSH on this plan. Pulling
+ * from the host outward (over plain HTTPS to github.com) is the only
+ * direction the host's network allows reliably.
  *
  * Idempotency: tracks processed slugs in state.json. A slug is processed
  * exactly once.
@@ -48,46 +53,71 @@ if (!is_readable($CONFIG_FILE)) {
 }
 
 $cfg = require $CONFIG_FILE;
-foreach (['wp_root', 'repo_path'] as $k) {
+foreach (['wp_root'] as $k) {
     if (empty($cfg[$k])) fatal("config missing required key: $k");
 }
 
-// --- git pull -------------------------------------------------------------
-function git_pull(string $repo_path): void {
-    if (!is_dir($repo_path)) fatal("repo_path missing: $repo_path");
-    chdir($repo_path);
-    exec('git fetch --quiet origin main 2>&1 && git reset --hard origin/main 2>&1', $out, $code);
-    $tail = implode(' | ', array_slice($out, -3));
-    log_msg($code === 0 ? 'INFO' : 'WARN', "git sync (code=$code): $tail");
-    if ($code !== 0) fatal("git sync failed");
+// Repo identity for GitHub API. Defaults to the public mubashirr repo.
+$repo_owner = $cfg['repo_owner'] ?? 'malikmubashir';
+$repo_name  = $cfg['repo_name']  ?? 'mubashirr-com-automation';
+$repo_branch = $cfg['repo_branch'] ?? 'main';
+$github_token = $cfg['github_token'] ?? ''; // optional, raises rate limit
+
+// --- GitHub fetch helpers -------------------------------------------------
+// The host disables exec/shell_exec/proc_open, so `git pull` isn't an option.
+// We pull required files via the GitHub Contents API + raw.githubusercontent
+// straight into a temp directory and process from there.
+
+function gh_curl(string $url, string $token = '', bool $expect_json = true) {
+    $ch = curl_init($url);
+    $headers = ['User-Agent: mubashirr-cron/1.0', 'Accept: application/vnd.github.v3+json'];
+    if ($token) $headers[] = 'Authorization: Bearer ' . $token;
+    curl_setopt_array($ch, [
+        CURLOPT_HTTPHEADER     => $headers,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_TIMEOUT        => 30,
+    ]);
+    $body = curl_exec($ch);
+    $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $err  = curl_error($ch);
+    curl_close($ch);
+    if ($body === false) fatal("curl error: $err for $url");
+    if ($code !== 200) fatal("GitHub HTTP $code for $url: " . substr((string) $body, 0, 300));
+    return $expect_json ? json_decode($body, true) : $body;
 }
 
-git_pull($cfg['repo_path']);
+function gh_raw(string $owner, string $repo, string $branch, string $path, string $token = ''): string {
+    // raw.githubusercontent works for public files without auth; for private
+    // repos pass a token. We currently use a public repo.
+    return gh_curl("https://raw.githubusercontent.com/$owner/$repo/$branch/$path", $token, false);
+}
 
-// --- Discover latest draft ------------------------------------------------
-$drafts_dir = rtrim($cfg['repo_path'], '/') . '/drafts';
-if (!is_dir($drafts_dir)) fatal("drafts directory not found: $drafts_dir");
+function gh_list_dir(string $owner, string $repo, string $branch, string $path, string $token = '') {
+    return gh_curl("https://api.github.com/repos/$owner/$repo/contents/$path?ref=$branch", $token);
+}
 
-$entries = array_filter(scandir($drafts_dir), function ($d) use ($drafts_dir) {
-    return $d !== '.' && $d !== '..'
-        && is_dir("$drafts_dir/$d")
-        && preg_match('/^\d{4}-\d{2}-\d{2}$/', $d);
-});
-if (!$entries) fatal("no dated draft directories found in $drafts_dir");
+// --- Discover latest draft directory on the remote ------------------------
+log_msg('INFO', "checking $repo_owner/$repo_name@$repo_branch for latest draft...");
+$listing = gh_list_dir($repo_owner, $repo_name, $repo_branch, 'drafts', $github_token);
 
-rsort($entries);
-$latest = $entries[0];
-$dir = "$drafts_dir/$latest";
+$dates = [];
+foreach ($listing as $entry) {
+    if (($entry['type'] ?? '') === 'dir' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $entry['name'] ?? '')) {
+        $dates[] = $entry['name'];
+    }
+}
+if (!$dates) fatal("no dated draft directories on remote");
+rsort($dates);
+$latest = $dates[0];
 log_msg('INFO', "latest draft: $latest");
 
-$meta_path = "$dir/meta.json";
-if (!is_readable($meta_path)) {
-    log_msg('INFO', "no meta.json in $latest (Writer hasn't run yet or pre-dates JSON output). Exiting.");
-    exit(0);
+// --- Read meta.json from remote ------------------------------------------
+$meta_raw = gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/meta.json", $github_token);
+$meta = json_decode($meta_raw, true);
+if (!is_array($meta) || empty($meta['slug'])) {
+    fatal("invalid meta.json on remote for $latest (Writer may not have committed JSON form yet)");
 }
-
-$meta = json_decode(file_get_contents($meta_path), true);
-if (!is_array($meta) || empty($meta['slug'])) fatal("invalid meta.json: $meta_path");
 
 $state = is_readable($STATE_FILE) ? json_decode(file_get_contents($STATE_FILE), true) : null;
 if (!is_array($state)) $state = ['processed' => []];
@@ -97,20 +127,47 @@ if (in_array($meta['slug'], $state['processed'] ?? [], true)) {
     exit(0);
 }
 
-// Wait for all expected images to land before processing. Visual commits
-// images to the repo on its own schedule; if we process before they arrive,
-// the post is created without images AND the slug is marked done — images
-// would then never be picked up. So we exit cleanly here and try next tick.
+// --- Wait for all expected images on the remote --------------------------
+// Visual commits images to the repo on its own schedule; if we process
+// before they arrive, the post is created without images AND the slug is
+// marked done — images would then never be picked up. So we exit cleanly
+// here and try next tick.
 $missing = [];
+$images_listing = [];
+try {
+    $images_listing = gh_list_dir($repo_owner, $repo_name, $repo_branch, "drafts/$latest/images", $github_token);
+} catch (Throwable $e) {
+    // images dir doesn't exist yet
+}
+$image_names = array_column(is_array($images_listing) ? $images_listing : [], 'name');
 foreach (($meta['image_briefs'] ?? []) as $brief) {
     $shot = $brief['shot'] ?? '';
     if (!$shot) continue;
-    if (!is_readable("$dir/images/$shot.png")) $missing[] = $shot;
+    if (!in_array("$shot.png", $image_names, true)) $missing[] = $shot;
 }
 if ($missing) {
-    log_msg('INFO', "waiting for images: " . implode(',', $missing) . ". Will retry next tick.");
+    log_msg('INFO', "waiting for images on remote: " . implode(',', $missing) . ". Will retry next tick.");
     exit(0);
 }
+
+// --- Download required files into a temp work dir ------------------------
+$work_dir = sys_get_temp_dir() . '/mubashirr_' . $latest . '_' . uniqid();
+if (!@mkdir($work_dir, 0700, true)) fatal("cannot create work dir $work_dir");
+@mkdir("$work_dir/images", 0700, true);
+
+file_put_contents("$work_dir/meta.json", $meta_raw);
+file_put_contents("$work_dir/post.md", gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/post.md", $github_token));
+try {
+    file_put_contents("$work_dir/schema.json", gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/schema.json", $github_token));
+} catch (Throwable $e) {
+    log_msg('WARN', "schema.json fetch failed: " . $e->getMessage());
+}
+foreach (($meta['image_briefs'] ?? []) as $brief) {
+    $shot = $brief['shot'] ?? '';
+    if (!$shot) continue;
+    file_put_contents("$work_dir/images/$shot.png", gh_raw($repo_owner, $repo_name, $repo_branch, "drafts/$latest/images/$shot.png", $github_token));
+}
+$dir = $work_dir; // downstream code reads $dir/...
 
 log_msg('INFO', "new draft to process: slug=" . $meta['slug']);
 
@@ -309,3 +366,9 @@ $state['last_post_id'] = $post_id;
 $state['last_run']     = date('c');
 file_put_contents($STATE_FILE, json_encode($state, JSON_PRETTY_PRINT));
 log_msg('INFO', "done. processed_count=" . count($state['processed']));
+
+// --- Clean up temp work dir ----------------------------------------------
+foreach (glob("$work_dir/images/*") ?: [] as $f) @unlink($f);
+@rmdir("$work_dir/images");
+foreach (glob("$work_dir/*") ?: [] as $f) @unlink($f);
+@rmdir($work_dir);
