@@ -1,0 +1,184 @@
+{
+  "generated_at": "2026-05-20T10:27:52.435003Z",
+  "theme": {
+    "n": 1,
+    "theme": "halal_french_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1600,
+    "seed_keywords": [
+      "halal french cooking",
+      "halal tagine",
+      "lamb shank recipe"
+    ]
+  },
+  "top_candidate": {
+    "source": "edamam",
+    "title": "Lamb In Red Mole Sauce",
+    "ingredients": [
+      "2 chipotle peppers, dried",
+      "2 pasilla peppers, roasted",
+      "8 plum tomatoes, roasted",
+      "3 cloves garlic, roasted",
+      "1 teaspoon oregano",
+      "1 teaspoon cinnamon",
+      "1 tablespoon sesame seeds",
+      "1/2 teaspoon pepper",
+      "2 tablespoons canola oil",
+      "1 1/2 ounces Mexican chocolate",
+      "1/2 teaspoon salt",
+      "8 ounces tomato sauce",
+      "3 tablespoons canola oil",
+      "1 lamb shoulder, or 4 lamb shanks",
+      "salt and pepper"
+    ],
+    "total_time_min": 0.0,
+    "servings": 4.0,
+    "cuisine": [
+      "mexican"
+    ],
+    "meal_type": [
+      "lunch/dinner"
+    ],
+    "calories": 1432.7884905367468,
+    "source_url": "http://www.foodista.com/recipe/LT73VNJR/lamb-in-red-mole-sauce",
+    "seo_score": 0.6
+  },
+  "alternates": [
+    {
+      "source": "edamam",
+      "title": "Pear-Marinated Roast Leg of Lamb",
+      "ingredients": [
+        "1 (10\u201312-lb.) bone-in leg of lamb, shank bone exposed",
+        "Kosher salt and freshly ground black pepper, to taste",
+        "1\u20443 cup extra-virgin olive oil",
+        "1\u20443 cup roughly chopped rosemary",
+        "2 tbsp. roughly chopped thyme",
+        "6 cloves garlic, unpeeled and crushed",
+        "Zest of 1 lemon, using a vegetable peeler",
+        "1 Asian pear, peeled and coarsely grated",
+        "1\u20444 cup canola oil",
+        "8 tbsp. unsalted butter, cubed"
+      ],
+      "total_time_min": 0.0,
+      "servings": 14.0,
+      "cuisine": [
+        "mediterranean"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 10466.96311020001,
+      "source_url": "https://www.saveur.com/article/recipes/pear-marinated-roast-leg-of-lamb/",
+      "seo_score": 0.6
+    },
+    {
+      "source": "edamam",
+      "title": "Slow Cooked Lamb Shanks Recipe",
+      "ingredients": [
+        "2-4 Lamb Shanks",
+        "180 g Speck (chopped into chunks)",
+        "1 large Onion (chopped into chunks)",
+        "2 Tomatoes (quartered)",
+        "4 cloves of Garlic (smashed with skin on)",
+        "2 Carrots (chopped into chunks)",
+        "2 Celery Sticks (chopped into chunks)",
+        "1 Bay Leaf",
+        "2 sprigs of Thyme",
+        "2 cups of Chicken or Beef Stock",
+        "2 Tbsp of Pearl Barley",
+        "1 Tbsp of Olive Oil",
+        "Salt & Pepper"
+      ],
+      "total_time_min": 0.0,
+      "servings": 12.0,
+      "cuisine": [
+        "middle eastern"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 3647.4679999986242,
+      "source_url": "http://msihua.com/2013/07/slow-cooked-lamb-shanks-recipe-the-perfect-winter-dish/",
+      "seo_score": 0.6
+    },
+    {
+      "source": "edamam",
+      "title": "Southwest Braised Lamb Shanks in Adobo Sau",
+      "ingredients": [
+        "* 6 lamb shank (approximately 4 pound)",
+        "* 2 tablespoon olive oil or canola oil",
+        "* 8 garlic clove, minced",
+        "* 4 dried ancho chile*, stemmed and seeded",
+        "* 4 cup orange juice",
+        "* 2 tablespoon brown sugar",
+        "* 1 tablespoon dried oregano",
+        "* 2 tablespoon apple cider vinegar",
+        "* 2 teaspoon kosher salt",
+        "* 2 teaspoon ground cumin",
+        "* 1 teaspoon ancho chile powder",
+        "* 1 teaspoon freshly ground black pepper",
+        "* 1/2 teaspoon ground cinnamon",
+        "* 1/8 teaspoon ground clove",
+        "* 2 dried bay leaf",
+        "* creamy cheddar jalapeno polenta (recipe below)",
+        "* cilantro, for garnish",
+        "for the creamy cheddar jalapeno polenta",
+        "* 3 tablespoon butter",
+        "* 1 cup corn kernel",
+        "* 2 jalapenos, minced",
+        "* 1 cup whole milk",
+        "* 2-3 cup water",
+        "* 1 cup cornmeal (medium grind)",
+        "* 1 tablespoon extra virgin olive oil",
+        "* 1 cup sharp white cheddar cheese, shredded",
+        "* kosher salt"
+      ],
+      "total_time_min": 0.0,
+      "servings": 22.0,
+      "cuisine": [
+        "mediterranean"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 8284.402232775243,
+      "source_url": "http://sharedappetite.com/recipes/southwest-braised-lamb-shanks-in-adobo-sauce/",
+      "seo_score": 0.3
+    },
+    {
+      "source": "edamam",
+      "title": "Slow Cooker Lamb Shanks \u2013 This Recipe Is A Winner",
+      "ingredients": [
+        "1 tsp Bertolli olive oil",
+        "1 onion, diced",
+        "4 cloves garlic, crushed",
+        "2 tbsp Hunt\u2019s tomato paste",
+        "2 x 400g tin diced tomatoes",
+        "2 tbsp sundried tomato pesto",
+        "1 cup College Inn beef stock",
+        "6 lamb shanks",
+        "1 tbsp fresh rosemary leaves"
+      ],
+      "total_time_min": 0.0,
+      "servings": 16.0,
+      "cuisine": [
+        "middle eastern"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 5832.173666666667,
+      "source_url": "https://reciperoost.com/2017/08/15/slow-cooker-lamb-shanks-recipe-winner/2",
+      "seo_score": 0.3
+    }
+  ],
+  "stats": {
+    "candidates_fetched": 20,
+    "candidates_after_filter": 8
+  }
+}
