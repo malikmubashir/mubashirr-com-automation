@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Lamb Shanks in Red Mole Sauce",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "Lamb shanks braised in a red mole of chipotle, pasilla peppers, roasted tomatoes, and Mexican chocolate. A slow braise with a French-method sear and a Mexican sauce.",
+  "prepTime": "PT30M",
+  "cookTime": "PT2H15M",
+  "totalTime": "PT2H45M",
+  "recipeYield": "4 servings",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Mexican-Halal Fusion",
+  "keywords": "lamb shank recipe, halal lamb, mole sauce, chipotle, Mexican chocolate, braised lamb",
+  "recipeIngredient": [
+    "2 dried chipotle peppers",
+    "2 pasilla peppers, roasted and seeded",
+    "8 plum tomatoes, roasted",
+    "3 cloves garlic, roasted",
+    "1 tsp dried oregano",
+    "1 tsp ground cinnamon",
+    "1 tbsp sesame seeds, toasted",
+    "1/2 tsp black pepper",
+    "240 ml (8 oz) tomato sauce",
+    "42 g (1.5 oz) Mexican chocolate, roughly chopped",
+    "1/2 tsp fine salt",
+    "2 tbsp canola oil (for mole)",
+    "4 lamb shanks",
+    "Fine salt and black pepper (for lamb)",
+    "3 tbsp canola oil (for searing)"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Rehydrate chipotles",
+      "text": "Soak dried chipotle peppers in just-boiled water for 20 minutes. Drain, stem, and remove seeds for less heat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Roast aromatics",
+      "text": "Char plum tomatoes and garlic on a dry skillet. Blister pasilla peppers flat on the skillet for 15-20 seconds per side."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Blend mole base",
+      "text": "Blend chipotles, pasilla peppers, roasted tomatoes, garlic, oregano, cinnamon, sesame seeds, black pepper, and tomato sauce until completely smooth."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Fry the mole",
+      "text": "Heat 2 tbsp oil in a Dutch oven over medium-high heat. Fry blended mole for 8 minutes, stirring frequently, until rust-brick in color. Season with salt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sear the lamb",
+      "text": "Season lamb shanks with salt and pepper. Sear in 3 tbsp oil over high heat, in batches, 3-4 minutes per side until deep mahogany."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Braise",
+      "text": "Return shanks to pot. Pour mole over and add 240 ml water. Bring to a simmer, cover, and braise at 160\u00b0C (325\u00b0F) for 2 to 2.5 hours, turning once."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish with chocolate",
+      "text": "Remove pot from oven. Set over low heat. Add chopped Mexican chocolate and stir until melted. Do not boil after this point."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Rest and serve",
+      "text": "Return shanks to sauce, spoon over mole, and rest 5 minutes before serving with rice or corn tortillas."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 lamb shank with sauce"
+  },
+  "suitableForDiet": "https://schema.org/HalalDiet"
+}
