@@ -1,0 +1,80 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Braised Lamb Shank and Escarole Warm Salad",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "Slow-braised halal lamb shanks with a cider vinegar and thyme reduction dressing, served warm over escarole with feta and tomato.",
+  "image": "https://mubashirr.com/images/halal-lamb-shank-warm-escarole-salad-hero.jpg",
+  "recipeYield": "4 servings",
+  "prepTime": "PT20M",
+  "cookTime": "PT150M",
+  "totalTime": "PT170M",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Mediterranean, Halal French Fusion",
+  "keywords": "lamb shank recipe, halal french cooking, warm lamb salad, escarole, braised lamb",
+  "recipeIngredient": [
+    "4 lamb shanks (roughly 400 g / 14 oz each)",
+    "1/4 tsp fine salt",
+    "Freshly ground black pepper",
+    "1 Tbsp olive oil",
+    "1 large onion, thinly sliced",
+    "2 cloves garlic, finely chopped",
+    "2 tsp fresh thyme leaves (or 1/2 tsp dried)",
+    "3/4 tsp dry mustard powder",
+    "80 ml (1/3 cup) cider vinegar",
+    "450 g (1 lb) escarole, trimmed and cut into 2.5 cm strips",
+    "1 large ripe tomato, cored and cut into thin wedges",
+    "45 g (1.5 oz) feta cheese, crumbled"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Pat the lamb shanks dry with kitchen paper. Season all surfaces with salt and black pepper."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Heat olive oil in a large heavy casserole over medium-high heat. Sear shanks in two batches, 4-5 minutes per side, until deep mahogany. Remove and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reduce heat to medium. Cook the sliced onion in the same pan for 10-12 minutes until soft and beginning to colour."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add garlic and cook 90 seconds. Add thyme and dry mustard, stir for 30 seconds."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Deglaze with cider vinegar, scraping up the fond. Let bubble for 1 minute."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Return shanks to the casserole, add 240 ml water. Bring to a gentle simmer, cover, and braise on low heat for 2 to 2.5 hours."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Remove shanks and rest covered. Skim fat from the braising liquid."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Boil the braising liquid over medium-high heat for 5-8 minutes until it coats the back of a spoon. Taste and correct salt."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Place escarole and tomato wedges in a large bowl or platter. Remove lamb from bones in large pieces and arrange over the greens. Pour the hot dressing over immediately."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Crumble feta over the top and serve within ten minutes."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 lamb shank with salad",
+    "calories": "520"
+  },
+  "suitableForDiet": "https://schema.org/HalalDiet"
+}
