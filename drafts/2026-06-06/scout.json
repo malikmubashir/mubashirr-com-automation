@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-06-03T12:00:43.905594Z",
+  "theme": {
+    "n": 1,
+    "theme": "halal_french_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1600,
+    "seed_keywords": [
+      "halal french cooking",
+      "halal tagine",
+      "lamb shank recipe"
+    ]
+  },
+  "top_candidate": {
+    "source": "edamam",
+    "title": "Scotch Broth Recipe",
+    "ingredients": [
+      "1 pound lamb shanks (about 2 medium shanks)",
+      "Kosher salt and freshly ground black pepper",
+      "2 tablespoons vegetable oil",
+      "2 bay leaves",
+      "3 medium cloves garlic",
+      "1 medium onion, finely chopped (about 1 cup)",
+      "8 cups homemade or store-bought low sodium chicken broth",
+      "2 medium carrots, finely diced (about 1 1/2 cups)",
+      "1 medium parsnip, finely diced (about 3/4 cup)",
+      "1 medium russet potato, finely diced (about 1 1/4 cups)",
+      "1/3 cup pearl barley",
+      "2 tablespoons finely chopped fresh parsley leaves"
+    ],
+    "total_time_min": 0.0,
+    "servings": 4.0,
+    "cuisine": [
+      "american"
+    ],
+    "meal_type": [
+      "lunch/dinner"
+    ],
+    "calories": 3322.695351499999,
+    "source_url": "https://www.seriouseats.com/scotch-broth-recipe",
+    "seo_score": 0.8
+  },
+  "alternates": [
+    {
+      "source": "edamam",
+      "title": "Warm Mediterranean Lamb Salad",
+      "ingredients": [
+        "4 lamb shanks",
+        "1/4 tsp salt",
+        "\u00b7 freshly ground pepper",
+        "1 Tbsp olive oil",
+        "1 large onion, thinly sliced",
+        "2 clove garlic, finely chopped",
+        "2 tsp fresh thyme or 1/2 tsp. dried thyme leaves",
+        "3/4 tsp dry mustard",
+        "1/3 c cider vinegar",
+        "1 lb escarole (about 1 head), trimmed, washed, dried and cut crosswise into 1\" wide strips",
+        "1 large ripe tomato, cored and cut into thin wedges",
+        "1 1/2 oz feta cheese"
+      ],
+      "total_time_min": 170.0,
+      "servings": 4.0,
+      "cuisine": [
+        "mediterranean"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 4023.1726127855727,
+      "source_url": "https://www.justapinch.com/recipes/main-course/other-main-course/warm-mediterranean-lamb-salad.html",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Lamb Shanks & Orzo recipes",
+      "ingredients": [
+        "4 lamb shanks",
+        "\u00bd tsp. salt",
+        "\u00bd tsp. black pepper",
+        "\u00bc tsp. ground cumin",
+        "\u00bc tsp. ground coriander",
+        "\u00bd tsp. dried oregano",
+        "2 tbs. olive oil",
+        "1 \u00bd cups walnuts \u2013 chopped",
+        "2 cups flour",
+        "2 tsp. baking powder",
+        "1 tsp. ground cinnamon",
+        "\u00bd tsp. ground cloves",
+        "\u00bd tsp. salt",
+        "1 tsp. vanilla",
+        "2 eggs",
+        "1 cup brown sugar",
+        "\u00bd cup sour cream",
+        "\u00bd cup milk",
+        "\u00bd cup olive oil",
+        "powdered sugar",
+        "\u00bd cup orange juice",
+        "\u00bd cup brown sugar",
+        "1 anise star"
+      ],
+      "total_time_min": 190.0,
+      "servings": 5.0,
+      "cuisine": [
+        "middle eastern"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 8414.504342999999,
+      "source_url": "http://livingthegourmet.com/2015/12/lamb-shanks-karithopita-and-tea.html",
+      "seo_score": 0.6
+    },
+    {
+      "source": "edamam",
+      "title": "Roast Leg of Lamb with Apples and Fennel",
+      "ingredients": [
+        "1 (5-lb.) bone-in leg of lamb, shank bone exposed",
+        "Kosher salt and freshly ground black pepper, to taste",
+        "10 cloves garlic, peeled and halved crosswise",
+        "1\u20443 cup rosemary leaves",
+        "6 small, firm, tart apples, such as Fuji, Gala, or Granny Smith, left whole and cored with an apple corer",
+        "1 small yellow onion, quartered",
+        "1 medium bulb fennel, trimmed and cut into 3/4\u2033 wedges",
+        "1 cup red currant jelly, plus more for serving",
+        "1 cup apple juice",
+        "1\u20442 cup pomegranate molasses",
+        "Zest and juice of 1 lemon",
+        "Mint leaves, to garnish (optional)"
+      ],
+      "total_time_min": 0.0,
+      "servings": 10.0,
+      "cuisine": [
+        "american"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 6071.49907536919,
+      "source_url": "https://www.saveur.com/article/Recipes/Roast-Lamb-Apples-Fennel/",
+      "seo_score": 0.3
+    },
+    {
+      "source": "edamam",
+      "title": "BARBECUED PULLED AMERICAN LAMB SHANK ON CRUSTY ROLLS recipes",
+      "ingredients": [
+        "Two tablespoons olive oil",
+        "Four American lamb foreshanks",
+        "One and one-half teaspoons salt",
+        "One teaspoon freshly ground pepper",
+        "Two medium yellow onions, peeled, cored and sliced in 1/2-inch thick wedges",
+        "Four cups fat-free chicken broth",
+        "Two teaspoons dried oregano leaves, crushed",
+        "Three-fourths cup prepared barbecue sauce",
+        "Six crusty rolls"
+      ],
+      "total_time_min": 80.0,
+      "servings": 6.0,
+      "cuisine": [
+        "american"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 5700.1990000000005,
+      "source_url": "http://www.westcoastprimemeats.com/bbq-pulled-lamb-sandwiches-recipe",
+      "seo_score": 0.3
+    }
+  ],
+  "stats": {
+    "candidates_fetched": 20,
+    "candidates_after_filter": 6
+  }
+}
