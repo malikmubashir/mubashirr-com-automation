@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Lamb Shank Scotch Broth with Pearl Barley",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "mubashirr.com"
+  },
+  "description": "A deeply savory halal lamb shank broth built on French searing technique, with pearl barley and root vegetables simmered low until silky and tender.",
+  "prepTime": "PT20M",
+  "cookTime": "PT2H10M",
+  "totalTime": "PT2H30M",
+  "recipeYield": "4 servings",
+  "recipeCategory": "Soup",
+  "recipeCuisine": "Scottish / Halal French Fusion",
+  "suitableForDiet": "https://schema.org/HalalDiet",
+  "keywords": "lamb shank recipe, halal french cooking, scotch broth, pearl barley soup",
+  "recipeIngredient": [
+    "450 g (1 lb) lamb shanks, about 2 medium shanks",
+    "Salt and freshly ground black pepper",
+    "2 tablespoons vegetable oil",
+    "2 bay leaves",
+    "3 medium garlic cloves, peeled and lightly crushed",
+    "1 medium onion (about 200 g), finely chopped",
+    "1.9 litres (8 cups) low-sodium chicken or lamb stock",
+    "2 medium carrots (about 220 g), finely diced",
+    "1 medium parsnip (about 130 g), finely diced",
+    "1 medium russet potato (about 220 g), finely diced",
+    "65 g (\u2153 cup) pearl barley",
+    "2 tablespoons flat-leaf parsley, finely chopped"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Season the lamb shanks generously with salt and pepper on all sides."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Heat vegetable oil in a large heavy-bottomed pot over high heat until shimmering. Add shanks and sear without moving for 3 minutes per side until deep mahogany all over, about 8 to 10 minutes total. Remove and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Reduce heat to medium. Add onion and garlic to the same pot. Cook, stirring occasionally, until softened and lightly coloured, about 6 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add bay leaves and return the shanks to the pot. Pour in the stock, ensuring the meat is covered by at least 2 cm. Bring to a bare simmer."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Simmer partially covered for 1 hour."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add pearl barley, carrots, parsnip, and potato. Continue simmering partially covered for 45 to 55 minutes until barley is tender and vegetables have softened."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Remove shanks, pull meat from bones in rough chunks, and return meat to pot. Discard bones, bay leaves, and garlic."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Taste and adjust seasoning. Stir in chopped parsley and serve."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 bowl (approximately 500 ml)"
+  }
+}
