@@ -1,0 +1,97 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Lamb Shank Scotch Broth with Pearl Barley",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A slow-simmered halal lamb shank broth with pearl barley, turnip, leek, and carrots. Classic Scottish technique, fully halal.",
+  "image": "https://mubashirr.com/images/lamb-shank-scotch-broth-hero.jpg",
+  "totalTime": "PT3H30M",
+  "prepTime": "PT25M",
+  "cookTime": "PT3H5M",
+  "recipeYield": "4 servings",
+  "recipeCategory": "Soup",
+  "recipeCuisine": "Scottish",
+  "keywords": "lamb shank recipe, scotch broth, halal soup, pearl barley soup",
+  "suitableForDiet": "https://schema.org/HalalDiet",
+  "recipeIngredient": [
+    "1 lamb shank (about 450 g / 1 lb), halal",
+    "2 tsp canola oil",
+    "1 litre (4 cups) cold water",
+    "800 ml reduced-sodium halal beef or lamb stock",
+    "1 medium onion, halved",
+    "1 medium carrot, halved",
+    "1 celery rib, halved",
+    "2 whole cloves",
+    "1 bay leaf",
+    "1/4 tsp dried rosemary, crushed",
+    "1/4 tsp dried thyme",
+    "1/4 tsp whole black peppercorns",
+    "30 g fresh flat-leaf parsley, minced",
+    "75 g (1/3 cup) medium pearl barley",
+    "200 g (1.5 cups) turnip, peeled and julienned",
+    "2 medium carrots, coarsely chopped",
+    "1 medium leek, white part only, thinly sliced",
+    "1/4 tsp fine salt",
+    "1/4 tsp ground black pepper"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Sear the shank",
+      "text": "Heat canola oil in a heavy pot over medium-high heat. Pat lamb shank dry and sear on all sides until deep mahogany, about 3-4 minutes per side. Remove and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the broth base",
+      "text": "Press cloves into the cut faces of the onion halves. Add onion, halved carrot, and celery to the pot without extra fat. Let sit 2 minutes to pick up colour from the fond."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add liquid and aromatics",
+      "text": "Return the shank to the pot. Pour in water and stock. Add bay leaf, rosemary, thyme, and peppercorns. Bring to a strong simmer then reduce to low."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Skim",
+      "text": "Skim grey foam from the surface every 5 minutes for the first 20 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Simmer the shank",
+      "text": "Cook partially covered at a gentle simmer for 1 hour 30 minutes to 2 hours, until the meat pulls away from the bone easily."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Extract and strain",
+      "text": "Lift out the shank and set aside. Strain the broth through a fine-mesh sieve into a clean pot, pressing on the solids. Discard solids."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Pull the meat",
+      "text": "Pull the lamb meat off the bone in rough chunks. Discard bone, cartilage, and excess fat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the barley",
+      "text": "Bring the strained broth to a simmer. Add rinsed pearl barley and cook uncovered for 20 minutes, stirring occasionally."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add vegetables and meat",
+      "text": "Add turnip, chopped carrots, sliced leek, and pulled lamb. Season with salt and pepper. Simmer 25 to 30 minutes until barley is tender."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Stir in minced parsley. Taste and adjust salt. Ladle into deep bowls."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 bowl (approx 400 ml)",
+    "calories": "320 kcal"
+  }
+}
