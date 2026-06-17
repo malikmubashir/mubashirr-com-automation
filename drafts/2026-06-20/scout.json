@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-06-17T11:55:17.198506Z",
+  "theme": {
+    "n": 1,
+    "theme": "halal_french_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1600,
+    "seed_keywords": [
+      "halal french cooking",
+      "halal tagine",
+      "lamb shank recipe"
+    ]
+  },
+  "top_candidate": {
+    "source": "edamam",
+    "title": "Beef & Olive Tagine",
+    "ingredients": [
+      "1 Large onion (either thinly sliced or chopped)",
+      "1 Handful chopped parsley or coriander",
+      "2 tsp Salt (to taste)",
+      "1/2 tsp Ground black pepper",
+      "1 green cayenne chilli pepper (optional)",
+      "1 tsp Ground ginger powder",
+      "1 tsp Tumeric",
+      "1 pinch Saffron threads (optional)",
+      "3 cloves Garlic (grated or crushed)",
+      "1/3 cup Olive Oil (extra virgin is prefered)",
+      "1/2 kilo Lean Halal Beef (washed & diced into chunky cubes)",
+      "700 grams Potatoes (peeled, washed & sliced into wedges)",
+      "1 Large handful of green or red olives",
+      "1/2 Preserved lemon (quartered long ways)",
+      "3 cups Water"
+    ],
+    "total_time_min": 60.0,
+    "servings": 5.0,
+    "cuisine": [
+      "mediterranean"
+    ],
+    "meal_type": [
+      "lunch/dinner"
+    ],
+    "calories": 1974.542125000174,
+    "source_url": "https://www.ahlanwasahlan.co.uk/easy-moroccan-beef-potatoe-olive-dajin/",
+    "seo_score": 0.8
+  },
+  "alternates": [
+    {
+      "source": "edamam",
+      "title": "Kuzu Kapama Recipe",
+      "ingredients": [
+        "4 lamb shanks,",
+        "1 cup of rice,",
+        "2.5 cups of boiling water,",
+        "2-3 tablespoons of olive oil,",
+        "Salt to taste."
+      ],
+      "total_time_min": 30.0,
+      "servings": 4.0,
+      "cuisine": [
+        "mediterranean"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 4642.470000000001,
+      "source_url": "https://turkishstylecooking.com/kuzu-kapama-recipe.html",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Mexican Birria Recipe",
+      "ingredients": [
+        "5 ancho peppers stems and seeds removed",
+        "5 guajillo peppers stems and seeds removed",
+        "2-3 chiles de arbol optional, for spicier",
+        "1 tablespoon olive oil",
+        "1 large white onion chopped",
+        "3 large tomatoes chopped",
+        "5 cloves garlic chopped",
+        "1 tablespoon dried Mexican oregano",
+        "1 tablespoon sea salt or to taste",
+        "1 teaspoon cinnamon",
+        "1 teaspoon cumin",
+        "1 teaspoon ground ginger",
+        "1 teaspoon black pepper",
+        "\u00bd cup apple cider vinegar",
+        "2 large roasted tomatoes chopped",
+        "4 cups beef stock separated",
+        "3.5 pound lamb shoulder or you can use beef shank or chuck roast"
+      ],
+      "total_time_min": 340.0,
+      "servings": 8.0,
+      "cuisine": [
+        "mediterranean",
+        "mexican"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2835.1875953776434,
+      "source_url": "https://tiredtexanbbq.com/blog/mexican-birria-recipe/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Yakhni Shorba",
+      "ingredients": [
+        "500 gms Boneless lamb meat (cut into 2 inch size pieces)",
+        "500 gms Lamb shank bones (cut into 2 inch size pieces)",
+        "8 cups Water",
+        "1 tbsp Sugar",
+        "3/4 tsp Salt",
+        "2 cups Beaten curd",
+        "1/4 tsp Saffron",
+        "1 Fine cloth",
+        "2 inch Ginger (chopped)",
+        "2 tbsp Saunf",
+        "2 inch Cinnamon stick (broken into half)",
+        "8 Cloves",
+        "6 Black cardamom (cracked open)",
+        "10 Black peppercorn",
+        "2 Bay leaf",
+        "1 tsp Cumin seeds",
+        "2 tsp Coriander seeds"
+      ],
+      "total_time_min": 120.0,
+      "servings": 10.0,
+      "cuisine": [
+        "american"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2952.9696491167597,
+      "source_url": "https://www.awesomecuisine.com/recipes/2469/yakhni-shorba/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Omani lamb qubooli",
+      "ingredients": [
+        "50g/1\u00beoz whole black peppercorns",
+        "35g/1\u00bcoz cardamom pods",
+        "20g/\u00beoz whole nutmeg",
+        "50g/1\u00beoz cinnamon sticks",
+        "25g/1oz cloves",
+        "75g/2\u00bdoz cumin seeds",
+        "50g/1\u00beoz coriander seeds",
+        "1 tsp saffron",
+        "1 tbsp caster sugar",
+        "200g/7oz raisins or dried barberries",
+        "4 tbsp vegetable oil, for frying",
+        "1 onion, thinly sliced",
+        "2 tbsp garlic paste",
+        "1 tbsp ginger paste",
+        "1 tbsp coriander seeds",
+        "1 tbsp freshly ground black pepper",
+        "1 tbsp ground cumin",
+        "1 tbsp dried chilies",
+        "1 tbsp baharat spice blend (see above or use shop bought)",
+        "1 tbsp cardamom pods",
+        "1 tbsp cloves",
+        "6 bay leaves",
+        "2 dried limes, pierced",
+        "2 cinnamon sticks",
+        "4 lamb shanks (300g/10\u00bdoz each)",
+        "pinch salt",
+        "2 tbsp vegetable oil, for frying",
+        "2 onion, sliced",
+        "1 tbsp baharat spice blend (see above or use shop bought)",
+        "660g/1lb 7oz rice",
+        "400g tin chickpeas, drained and rinsed",
+        "50g/1\u00beoz cashew nuts",
+        "400g tinned chickpeas",
+        "handful fresh coriander, chopped, to garnish",
+        "pomegranate seeds, to garnish"
+      ],
+      "total_time_min": 0.0,
+      "servings": 4.0,
+      "cuisine": [
+        "indian"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 9416.191499999444,
+      "source_url": "https://www.bbc.co.uk/food/recipes/omani_lamb_qabooli_73435",
+      "seo_score": 0.8
+    }
+  ],
+  "stats": {
+    "candidates_fetched": 21,
+    "candidates_after_filter": 9
+  }
+}
