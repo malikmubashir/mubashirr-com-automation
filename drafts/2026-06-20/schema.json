@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Beef and Olive Tagine with Preserved Lemon",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "datePublished": "2024-01-15",
+  "description": "A slow-cooked Moroccan halal beef tagine with saffron, waxy potatoes, green olives, and preserved lemon. Built on French braising discipline, finished with North African aromatics.",
+  "image": "https://mubashirr.com/images/halal-beef-olive-tagine-preserved-lemon-hero.jpg",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Moroccan",
+  "keywords": "halal tagine, beef tagine, preserved lemon, halal french cooking, moroccan beef",
+  "prepTime": "PT15M",
+  "cookTime": "PT45M",
+  "totalTime": "PT60M",
+  "recipeYield": "5 servings",
+  "suitableForDiet": "https://schema.org/HalalDiet",
+  "recipeIngredient": [
+    "1 large onion, thinly sliced",
+    "3 garlic cloves, grated",
+    "80 ml extra-virgin olive oil",
+    "1 tsp ground ginger",
+    "1 tsp ground turmeric",
+    "\u00bd tsp ground black pepper",
+    "2 tsp fine salt",
+    "1 pinch saffron threads, bloomed in 2 tbsp warm water",
+    "1 green cayenne chilli, whole (optional)",
+    "500 g lean halal beef, diced into 4 cm cubes",
+    "700 g waxy potatoes, peeled and cut into wedges",
+    "700 ml water",
+    "1 large handful green or red olives, rinsed",
+    "\u00bd preserved lemon, rind only, quartered",
+    "1 handful flat-leaf parsley or coriander, roughly chopped"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Build the base",
+      "text": "In a large heavy casserole over medium heat, warm the olive oil. Add the sliced onion and cook, stirring occasionally, until softened and beginning to colour, about 8 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Toast the spices",
+      "text": "Add the grated garlic, ginger, turmeric, black pepper, and salt. Stir continuously for 90 seconds until fragrant."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sear the beef",
+      "text": "Add the beef cubes and turn in the spiced onion mixture until all surfaces are coated and starting to colour, about 4 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add liquid and saffron",
+      "text": "Pour in the water and add the bloomed saffron with its soaking liquid. Add the whole chilli if using. Bring to a gentle simmer, cover, and cook for 20 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add the potatoes",
+      "text": "Nestle the potato wedges into the braise. Replace the lid and continue cooking over low heat for 20 to 25 minutes, until potatoes are tender and beef gives easily."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish with olives and preserved lemon",
+      "text": "Add the rinsed olives and preserved lemon rind. Cook uncovered for a final 5 minutes to concentrate the broth."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Adjust and serve",
+      "text": "Taste for salt, adjusting only after the preserved lemon has cooked in. Scatter fresh parsley or coriander over the top and serve."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion",
+    "calories": "420 calories"
+  }
+}
