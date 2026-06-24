@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-06-24T10:26:18.835176Z",
+  "theme": {
+    "n": 1,
+    "theme": "halal_french_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1600,
+    "seed_keywords": [
+      "halal french cooking",
+      "halal tagine",
+      "lamb shank recipe"
+    ]
+  },
+  "top_candidate": {
+    "source": "edamam",
+    "title": "Beef & Olive Tagine",
+    "ingredients": [
+      "1 Large onion (either thinly sliced or chopped)",
+      "1 Handful chopped parsley or coriander",
+      "2 tsp Salt (to taste)",
+      "1/2 tsp Ground black pepper",
+      "1 green cayenne chilli pepper (optional)",
+      "1 tsp Ground ginger powder",
+      "1 tsp Tumeric",
+      "1 pinch Saffron threads (optional)",
+      "3 cloves Garlic (grated or crushed)",
+      "1/3 cup Olive Oil (extra virgin is prefered)",
+      "1/2 kilo Lean Halal Beef (washed & diced into chunky cubes)",
+      "700 grams Potatoes (peeled, washed & sliced into wedges)",
+      "1 Large handful of green or red olives",
+      "1/2 Preserved lemon (quartered long ways)",
+      "3 cups Water"
+    ],
+    "total_time_min": 60.0,
+    "servings": 5.0,
+    "cuisine": [
+      "mediterranean"
+    ],
+    "meal_type": [
+      "lunch/dinner"
+    ],
+    "calories": 1974.542125000174,
+    "source_url": "https://www.ahlanwasahlan.co.uk/easy-moroccan-beef-potatoe-olive-dajin/",
+    "seo_score": 0.8
+  },
+  "alternates": [
+    {
+      "source": "edamam",
+      "title": "Kleftiko Recipe",
+      "ingredients": [
+        "Cumin seeds",
+        "Dried bay leaves",
+        "Dried thyme",
+        "Dried oregano",
+        "Ground cinnamon",
+        "Salt",
+        "2 lamb shanks",
+        "Olive oil"
+      ],
+      "total_time_min": 180.0,
+      "servings": 2.0,
+      "cuisine": [
+        "mediterranean"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2001.353094,
+      "source_url": "http://www.grouprecipes.com/91228/kleftiko.html",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Curried Goat Stew",
+      "ingredients": [
+        "2 1/2 -3 lbs bone in goat shoulder (cubed)",
+        "1/4 cup vegetable oil",
+        "1 medium onion (diced)",
+        "5 garlic cloves (minced)",
+        "1 tbsp ginger (minced)",
+        "4 Roma tomatoes (diced)",
+        "4 tsp curry powder",
+        "1 tsp white pepper",
+        "1 tsp smoked paprika",
+        "2 tsp thyme",
+        "2 tsp salt",
+        "1 habanero pepper",
+        "2 green onions (chopped )",
+        "2 tbsp cilantro (chopped)"
+      ],
+      "total_time_min": 0.0,
+      "servings": 4.0,
+      "cuisine": [
+        "indian"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2044.2857957500366,
+      "source_url": "https://stonedsoup.net/curried-goat-stew/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Iraqi Quzi Recipe",
+      "ingredients": [
+        "Lamb shanks (or lamb shoulder cut into smaller pieces) - 5 lbs",
+        "Cinnamon sticks - 3 sticks",
+        "Green cardamom - 6 pods",
+        "Bay leaves - 3",
+        "Cloves (whole) - 8",
+        "Allspice berries (whole) - 8",
+        "Black peppercorns (whole) - 8",
+        "Salt - 2 tsp",
+        "Basmati rice - 4 cups",
+        "Lamb broth - 6 cups",
+        "Salt - \u00bd tsp",
+        "Vegetable oil - 4 Tbsp",
+        "Turmeric powder - 1 tsp",
+        "Slivered almonds - \u00be cup",
+        "Vegetable oil - 1 Tbsp",
+        "Raisins (gold or brown) - \u00bd cup",
+        "Parsley (finely chopped) - \u00bc cup"
+      ],
+      "total_time_min": 250.0,
+      "servings": 8.0,
+      "cuisine": [
+        "indian"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 8858.334842115399,
+      "source_url": "https://travelfoodatlas.com/iraqi-quzi-recipe",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Quesabirria Tacos Recipe",
+      "ingredients": [
+        "2 pounds beef chuck roast (beef shank, short ribs, goat or lamb)",
+        "24 ounces beef broth",
+        "4 tablespoons Tomato Sauce",
+        "2-3 cloves Garlic, minced",
+        "2 tablespoons chili powder",
+        "1 1/2 teaspoons smoked paprika",
+        "1 teaspoon Mexican Oregano",
+        "1/2 teaspoon ground cinnamon",
+        "1/2 teaspoon Salt",
+        "1-2 bay leaves",
+        "2 tablespoons olive oil",
+        "2 tablespoons apple cider vinegar",
+        "1 cup Shredded Cheese (mozzarella, cotija )",
+        "8 corn tortillas"
+      ],
+      "total_time_min": 210.0,
+      "servings": 8.0,
+      "cuisine": [
+        "mexican"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2503.296216349752,
+      "source_url": "https://remakemyplate.com/quesabirria-tacos-recipe-beef-birria/",
+      "seo_score": 0.8
+    }
+  ],
+  "stats": {
+    "candidates_fetched": 21,
+    "candidates_after_filter": 11
+  }
+}
