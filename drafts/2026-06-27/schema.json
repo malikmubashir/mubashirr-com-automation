@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Moroccan Beef and Olive Tagine",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "datePublished": "2025-01-01",
+  "description": "A Moroccan beef and olive tagine built on French braising logic. Halal, deeply spiced with turmeric, ginger, and saffron, finished with preserved lemon and olives. Ready in 60 minutes.",
+  "image": "https://mubashirr.com/images/moroccan-beef-olive-tagine-hero.jpg",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Moroccan",
+  "keywords": "halal french cooking, tagine, beef tagine, olive tagine, preserved lemon",
+  "prepTime": "PT20M",
+  "cookTime": "PT45M",
+  "totalTime": "PT60M",
+  "recipeYield": "5 servings",
+  "recipeIngredient": [
+    "1 large onion (about 200 g), thinly sliced",
+    "3 cloves garlic, grated",
+    "1 tsp ground ginger",
+    "1 tsp ground turmeric",
+    "1/2 tsp ground black pepper",
+    "2 tsp fine salt",
+    "1 pinch saffron threads",
+    "80 ml extra-virgin olive oil",
+    "500 g lean halal beef, cut into 4-5 cm cubes",
+    "700 g waxy potatoes, peeled and cut into thick wedges",
+    "700 ml water",
+    "1 large handful green or red olives",
+    "1/2 preserved lemon, rind only, quartered",
+    "1 small handful flat-leaf parsley or coriander",
+    "1 green cayenne chilli (optional)"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Make the spice base",
+      "text": "In the base of your tagine or Dutch oven, combine the olive oil, sliced onion, garlic, ginger, turmeric, black pepper, salt, and dissolved saffron water. Stir to coat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add the beef",
+      "text": "Place the beef cubes into the spice-and-onion mixture. Turn each piece so it picks up colour from the turmeric. Do not brown the beef first."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Layer the potatoes",
+      "text": "Arrange the potato wedges on top of and around the beef. Pour the water over everything."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook, covered, on low heat",
+      "text": "Place the lid on and cook over low-medium heat for 40 minutes. Do not lift the lid for the first 30 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check doneness",
+      "text": "At 40 minutes, a knife should meet the beef with no resistance. If not tender, cover and cook another 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add olives and preserved lemon",
+      "text": "Nestle the olives into the stew and lay the preserved lemon rind strips across the top. Cover and cook for a final 5 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Taste for salt. Scatter chopped parsley or coriander over the top. Serve directly from the tagine or pot."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 serving",
+    "calories": "420 calories"
+  },
+  "suitableForDiet": "https://schema.org/HalalDiet"
+}
