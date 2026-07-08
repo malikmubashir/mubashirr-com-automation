@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-07-08T09:29:48.425962Z",
+  "theme": {
+    "n": 1,
+    "theme": "halal_french_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1600,
+    "seed_keywords": [
+      "halal french cooking",
+      "halal tagine",
+      "lamb shank recipe"
+    ]
+  },
+  "top_candidate": {
+    "source": "edamam",
+    "title": "Beef & Olive Tagine",
+    "ingredients": [
+      "1 Large onion (either thinly sliced or chopped)",
+      "1 Handful chopped parsley or coriander",
+      "2 tsp Salt (to taste)",
+      "1/2 tsp Ground black pepper",
+      "1 green cayenne chilli pepper (optional)",
+      "1 tsp Ground ginger powder",
+      "1 tsp Tumeric",
+      "1 pinch Saffron threads (optional)",
+      "3 cloves Garlic (grated or crushed)",
+      "1/3 cup Olive Oil (extra virgin is prefered)",
+      "1/2 kilo Lean Halal Beef (washed & diced into chunky cubes)",
+      "700 grams Potatoes (peeled, washed & sliced into wedges)",
+      "1 Large handful of green or red olives",
+      "1/2 Preserved lemon (quartered long ways)",
+      "3 cups Water"
+    ],
+    "total_time_min": 60.0,
+    "servings": 5.0,
+    "cuisine": [
+      "mediterranean"
+    ],
+    "meal_type": [
+      "lunch/dinner"
+    ],
+    "calories": 1974.542125000174,
+    "source_url": "https://www.ahlanwasahlan.co.uk/easy-moroccan-beef-potatoe-olive-dajin/",
+    "seo_score": 0.8
+  },
+  "alternates": [
+    {
+      "source": "edamam",
+      "title": "Roasted Lamb Shanks Recipe",
+      "ingredients": [
+        "5 to 6 lamb shanks (rinsed and dried)",
+        "15 garlic cloves (peeled)",
+        "2 tsp. cumin powder",
+        "2 tsp. onion powder",
+        "\u00bd cup fresh lemon juice",
+        "\u00bd cup olive oil + more for drizzling",
+        "3 tsp. dried oregano",
+        "1 cup water",
+        "Sea salt and freshly ground black pepper"
+      ],
+      "total_time_min": 165.0,
+      "servings": 4.0,
+      "cuisine": [
+        "middle eastern"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 6119.296614420846,
+      "source_url": "https://paleoleap.com/roasted-lamb-shanks/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Scotch Broth Recipe",
+      "ingredients": [
+        "1 pound lamb shanks (about 2 medium shanks)",
+        "Kosher salt and freshly ground black pepper",
+        "2 tablespoons vegetable oil",
+        "2 bay leaves",
+        "3 medium cloves garlic",
+        "1 medium onion, finely chopped (about 1 cup)",
+        "8 cups homemade or store-bought low sodium chicken broth",
+        "2 medium carrots, finely diced (about 1 1/2 cups)",
+        "1 medium parsnip, finely diced (about 3/4 cup)",
+        "1 medium russet potato, finely diced (about 1 1/4 cups)",
+        "1/3 cup pearl barley",
+        "2 tablespoons finely chopped fresh parsley leaves"
+      ],
+      "total_time_min": 0.0,
+      "servings": 4.0,
+      "cuisine": [
+        "american"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 3322.695351499999,
+      "source_url": "https://www.seriouseats.com/scotch-broth-recipe",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Split Pea Soup recipes",
+      "ingredients": [
+        "500g/1.1 pounds Split Peas",
+        "coconut oil",
+        "1 Onion, peeled and diced",
+        "2 Garlic Cloves, peeled and diced",
+        "2 Lamb Shanks",
+        "2 Carrots, finely diced",
+        "2 Small Potatoes, finely diced"
+      ],
+      "total_time_min": 105.0,
+      "servings": 4.0,
+      "cuisine": [
+        "american"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 4254.322688,
+      "source_url": "http://www.yummyinspirations.net/2016/06/split-pea-soup/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Lamb Shanks, Moroccan Style",
+      "ingredients": [
+        "4 lamb shanks (small)",
+        "flour",
+        "salt",
+        "pepper",
+        "1 cup water",
+        "1 cup prunes (pitted and cooked)",
+        "1 cup dried apricots (cooked)",
+        "1/4 cup honey",
+        "1/2 teaspoon cinnamon",
+        "1/2 teaspoon allspice",
+        "1/4 teaspoon cloves",
+        "2 tablespoons lemon juice",
+        "1/2 teaspoon lemon peel (grated)",
+        "1/4 teaspoon salt"
+      ],
+      "total_time_min": 125.0,
+      "servings": 4.0,
+      "cuisine": [
+        "middle eastern"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 4744.6297322985865,
+      "source_url": "https://www.cookingnook.com/recipe/lamb-shanks/",
+      "seo_score": 0.8
+    }
+  ],
+  "stats": {
+    "candidates_fetched": 21,
+    "candidates_after_filter": 11
+  }
+}
