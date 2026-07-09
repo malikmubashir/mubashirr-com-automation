@@ -1,0 +1,83 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Moroccan Beef and Olive Tagine",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A slow-braised Moroccan beef and olive tagine with preserved lemon, saffron, and potato wedges. Halal, no alcohol, built on classical braising technique.",
+  "image": "https://mubashirr.com/images/moroccan-beef-olive-tagine-hero.jpg",
+  "prepTime": "PT15M",
+  "cookTime": "PT45M",
+  "totalTime": "PT60M",
+  "recipeYield": "5 servings",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Moroccan",
+  "keywords": "halal tagine, beef olive tagine, preserved lemon, saffron, halal french cooking, Moroccan braise",
+  "suitableForDiet": "https://schema.org/HalalDiet",
+  "recipeIngredient": [
+    "1 large onion, thinly sliced",
+    "3 garlic cloves, grated",
+    "1 tsp ground ginger",
+    "1 tsp ground turmeric",
+    "1/2 tsp ground black pepper",
+    "2 tsp salt",
+    "1 pinch saffron threads",
+    "1 green cayenne chilli (optional)",
+    "500 g lean halal beef, cut into 4 cm cubes",
+    "700 g waxy potatoes, peeled and cut into wedges",
+    "80 ml extra-virgin olive oil",
+    "700 ml water",
+    "1 large handful green or red olives",
+    "1/2 preserved lemon, cut into long quarters",
+    "1 small handful flat-leaf parsley or coriander"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Coat beef with spices",
+      "text": "In a wide, heavy-bottomed pot, combine the beef cubes, sliced onion, grated garlic, ginger, turmeric, black pepper, salt, chilli if using, and olive oil. Mix until the beef is thoroughly coated."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sweat aromatics",
+      "text": "Place over medium heat and cook, stirring occasionally, for about eight minutes until the onion softens and the spices bloom in the oil."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add water and saffron",
+      "text": "Pour in 700 ml water and crumble in the saffron. Bring to a gentle boil, then reduce to a steady simmer. Cover with a lid slightly ajar."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Braise beef",
+      "text": "Braise for 20 minutes undisturbed."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add potatoes",
+      "text": "Arrange potato wedges over and around the beef. Replace the lid, still ajar, and simmer for 20 more minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check and reduce if needed",
+      "text": "Test the potatoes with a paring knife. If the sauce is very thin, remove the lid and increase heat for five minutes to reduce."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add preserved lemon and olives",
+      "text": "Lay the preserved lemon quarters and olives over the top. Replace the lid for three to four minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Scatter parsley or coriander over the top and serve directly from the pot with couscous or bread."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approximately 350g)",
+    "calories": "420 kcal"
+  }
+}
