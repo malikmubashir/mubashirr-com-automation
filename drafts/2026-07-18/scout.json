@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-07-15T09:15:04.468456Z",
+  "theme": {
+    "n": 1,
+    "theme": "halal_french_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1600,
+    "seed_keywords": [
+      "halal french cooking",
+      "halal tagine",
+      "lamb shank recipe"
+    ]
+  },
+  "top_candidate": {
+    "source": "edamam",
+    "title": "Beef & Olive Tagine",
+    "ingredients": [
+      "1 Large onion (either thinly sliced or chopped)",
+      "1 Handful chopped parsley or coriander",
+      "2 tsp Salt (to taste)",
+      "1/2 tsp Ground black pepper",
+      "1 green cayenne chilli pepper (optional)",
+      "1 tsp Ground ginger powder",
+      "1 tsp Tumeric",
+      "1 pinch Saffron threads (optional)",
+      "3 cloves Garlic (grated or crushed)",
+      "1/3 cup Olive Oil (extra virgin is prefered)",
+      "1/2 kilo Lean Halal Beef (washed & diced into chunky cubes)",
+      "700 grams Potatoes (peeled, washed & sliced into wedges)",
+      "1 Large handful of green or red olives",
+      "1/2 Preserved lemon (quartered long ways)",
+      "3 cups Water"
+    ],
+    "total_time_min": 60.0,
+    "servings": 5.0,
+    "cuisine": [
+      "mediterranean"
+    ],
+    "meal_type": [
+      "lunch/dinner"
+    ],
+    "calories": 1974.542125000174,
+    "source_url": "https://www.ahlanwasahlan.co.uk/easy-moroccan-beef-potatoe-olive-dajin/",
+    "seo_score": 0.8
+  },
+  "alternates": [
+    {
+      "source": "edamam",
+      "title": "Curried Goat Stew",
+      "ingredients": [
+        "2 1/2 -3 lbs bone in goat shoulder (cubed)",
+        "1/4 cup vegetable oil",
+        "1 medium onion (diced)",
+        "5 garlic cloves (minced)",
+        "1 tbsp ginger (minced)",
+        "4 Roma tomatoes (diced)",
+        "4 tsp curry powder",
+        "1 tsp white pepper",
+        "1 tsp smoked paprika",
+        "2 tsp thyme",
+        "2 tsp salt",
+        "1 habanero pepper",
+        "2 green onions (chopped )",
+        "2 tbsp cilantro (chopped)"
+      ],
+      "total_time_min": 0.0,
+      "servings": 4.0,
+      "cuisine": [
+        "indian"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2044.2857957500366,
+      "source_url": "https://stonedsoup.net/curried-goat-stew/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Warm Mediterranean Lamb Salad",
+      "ingredients": [
+        "4 lamb shanks",
+        "1/4 tsp salt",
+        "\u00b7 freshly ground pepper",
+        "1 Tbsp olive oil",
+        "1 large onion, thinly sliced",
+        "2 clove garlic, finely chopped",
+        "2 tsp fresh thyme or 1/2 tsp. dried thyme leaves",
+        "3/4 tsp dry mustard",
+        "1/3 c cider vinegar",
+        "1 lb escarole (about 1 head), trimmed, washed, dried and cut crosswise into 1\" wide strips",
+        "1 large ripe tomato, cored and cut into thin wedges",
+        "1 1/2 oz feta cheese"
+      ],
+      "total_time_min": 170.0,
+      "servings": 4.0,
+      "cuisine": [
+        "mediterranean"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 4023.1726127855727,
+      "source_url": "https://www.justapinch.com/recipes/main-course/other-main-course/warm-mediterranean-lamb-salad.html",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Quzi (Authentic Iraqi Recipe)",
+      "ingredients": [
+        "6 lamb shanks (bone-in, (or lamb shoulder cut into smaller pieces), approx. 2kg)",
+        "3 cinnamon sticks",
+        "6 whole cardamom pods (green)",
+        "3 bay leaves",
+        "8 whole cloves",
+        "8 whole allspice berries (optional)",
+        "8 whole black peppercorns (optional)",
+        "2 teaspoons salt",
+        "4 cups basmati rice",
+        "6 cups lamb broth",
+        "1 1/2 teaspoons salt",
+        "4 tablespoons vegetable oil",
+        "1 teaspoon turmeric powder",
+        "3/4 cup slivered almonds",
+        "1 tablespoon vegetable oil",
+        "1/2 cup raisins (gold or brown)",
+        "1/4 cup parsley (finely chopped )"
+      ],
+      "total_time_min": 0.0,
+      "servings": 6.0,
+      "cuisine": [
+        "indian"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 6076.056690399999,
+      "source_url": "https://www.hungrypaprikas.com/iraqi-quzi/",
+      "seo_score": 0.8
+    },
+    {
+      "source": "edamam",
+      "title": "Adlah Recipe",
+      "ingredients": [
+        "12 pieces lamb shanks",
+        "6 Numbers green cardamom",
+        "4 Numbers clove",
+        "2 Numbers bay leaf",
+        "1 teaspoon cumin seeds",
+        "350 grams onion sliced",
+        "1 teaspoon turmeric powdered",
+        "5 1/4 teaspoon garlic paste",
+        "3 1/2 teaspoon ginger paste",
+        "150 grams yoghurt (curd)",
+        "6 tablespoon ghee",
+        "1/2 teaspoon green cardamom powdered",
+        "1/4 teaspoon mace powder",
+        "1/8 teaspoon nutmeg powder",
+        "1/8 teaspoon cinnamon powdered",
+        "1/8 teaspoon clove powder",
+        "0 As required salt",
+        "0 As required water",
+        "150 grams clotted cream"
+      ],
+      "total_time_min": 105.0,
+      "servings": 12.0,
+      "cuisine": [
+        "indian"
+      ],
+      "meal_type": [
+        "lunch/dinner"
+      ],
+      "calories": 2852.0055,
+      "source_url": "https://recipes.timesofindia.com/us/recipes/adlah-by-jiggs-kalra/rs60707461.cms",
+      "seo_score": 0.8
+    }
+  ],
+  "stats": {
+    "candidates_fetched": 21,
+    "candidates_after_filter": 14
+  }
+}
