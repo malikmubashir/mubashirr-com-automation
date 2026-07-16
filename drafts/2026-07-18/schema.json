@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Beef and Olive Tagine with Preserved Lemon",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "datePublished": "2025-01-01",
+  "description": "A Moroccan-rooted halal beef tagine braised with saffron, green olives, potatoes, and preserved lemon. One pot, sixty minutes, no alcohol.",
+  "image": "https://mubashirr.com/images/halal-beef-olive-tagine-preserved-lemon-hero.jpg",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Moroccan, Mediterranean",
+  "keywords": "halal french cooking, beef tagine, preserved lemon, moroccan beef, olive tagine",
+  "prepTime": "PT15M",
+  "cookTime": "PT45M",
+  "totalTime": "PT60M",
+  "recipeYield": "5 servings",
+  "suitableForDiet": "https://schema.org/HalalDiet",
+  "recipeIngredient": [
+    "1 large onion, thinly sliced",
+    "3 garlic cloves, grated",
+    "1 tsp ground ginger",
+    "1 tsp ground turmeric",
+    "1/2 tsp ground black pepper",
+    "2 tsp salt",
+    "1 pinch saffron threads (about 20 threads)",
+    "1 green cayenne chilli, whole (optional)",
+    "80 ml extra-virgin olive oil",
+    "500 g lean halal beef, cut into 4 cm cubes",
+    "700 g potatoes, peeled and cut into wedges",
+    "1 large handful green or red olives",
+    "1/2 preserved lemon, rind only, quartered lengthwise",
+    "700 ml water",
+    "1 small handful flat-leaf parsley or coriander, roughly chopped"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Bloom the saffron",
+      "text": "Place saffron threads in a small bowl with 2 tbsp warm water. Set aside for ten minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the base",
+      "text": "In a wide heavy-bottomed pot, combine olive oil, onion, garlic, ginger, turmeric, black pepper, and salt. Cook over medium heat for eight minutes until the onion is pale gold."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add the beef",
+      "text": "Add beef cubes and stir to coat. Cook for five minutes until the outside of the meat is sealed in the spice paste."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add liquid and potatoes",
+      "text": "Pour in 700 ml water and the bloomed saffron. Add potato wedges and whole cayenne chilli. Bring to a boil, then reduce to a simmer. Cover and cook for thirty minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add olives and preserved lemon",
+      "text": "Scatter olives into the pot and lay preserved lemon rind on top. Cook covered for ten more minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Adjust and finish",
+      "text": "Taste and adjust salt. Reduce sauce uncovered if needed. Scatter parsley or coriander and serve."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approx 400g)",
+    "calories": "420 kcal"
+  }
+}
