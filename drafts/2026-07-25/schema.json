@@ -1,0 +1,84 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Beef and Olive Tagine with Preserved Lemon",
+  "description": "A Moroccan beef tagine with green olives, preserved lemon, saffron, and waxy potatoes. Cooked using French braising discipline. Halal, no alcohol.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "datePublished": "2025-01-01",
+  "image": "https://mubashirr.com/images/beef-olive-tagine-preserved-lemon.jpg",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Moroccan",
+  "keywords": "halal french cooking, beef tagine, olive tagine, preserved lemon, moroccan beef",
+  "prepTime": "PT15M",
+  "cookTime": "PT45M",
+  "totalTime": "PT60M",
+  "recipeYield": "5 servings",
+  "suitableForDiet": "https://schema.org/HalalDiet",
+  "recipeIngredient": [
+    "500 g lean halal beef, cut into 4 cm chunks",
+    "700 g waxy potatoes, peeled and cut into wedges",
+    "1 large onion, thinly sliced",
+    "3 cloves garlic, grated",
+    "1 tsp ground ginger",
+    "1 tsp turmeric",
+    "1/2 tsp ground black pepper",
+    "2 tsp salt",
+    "1 pinch saffron threads",
+    "80 ml extra-virgin olive oil",
+    "1 large handful green olives",
+    "1/2 preserved lemon, rind only, quartered",
+    "1 green cayenne chilli, whole (optional)",
+    "720 ml water",
+    "1 handful fresh flat-leaf parsley or coriander"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Bloom the saffron threads in 2 tbsp warm water for 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Warm olive oil in a heavy-bottomed pot over medium heat. Cook the sliced onion until soft and translucent, about 7 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add garlic, ginger, turmeric, black pepper, and salt. Stir for 90 seconds until fragrant."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add beef chunks and turn to coat. Cook over medium-high heat for 5 minutes until the exterior loses its raw colour."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Pour in the water and bloomed saffron. Add whole chilli if using. Bring to a simmer, reduce to low-medium."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cover tightly and braise for 20 minutes at a gentle simmer."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add potato wedges and olives. Stir gently, replace lid, cook for 15 more minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add preserved lemon rind pieces. Cook uncovered for 10 minutes to reduce the sauce slightly."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Taste for salt, remove chilli, rest off heat for 5 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Scatter chopped parsley or coriander over the top and serve with flatbread."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion",
+    "calories": "420 kcal"
+  }
+}
