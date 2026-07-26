@@ -1,0 +1,465 @@
+# Curated recipe queue for mubashirr.com. Scout consumes one per week, in order,
+# indexed by whole weeks since anchor_date (mod list length) so it always advances
+# and never repeats. Replaces Edamam keyword scraping (which produced duplicates).
+# Each recipe: focus_keyword + secondary_keywords drive SEO/AEO targeting.
+
+anchor_date: '2026-08-01'
+target_word_count: 1500
+constraints:
+- halal
+- no_alcohol
+- no_pork
+recipes:
+- n: 1
+  group: Fusion Main
+  title: Harissa Tikka Roast Chicken
+  concept: French roast chicken (poulet rôti) rubbed with garlic, yogurt, tikka spices and a touch of
+    rose harissa.
+  focus_keyword: harissa tikka roast chicken
+  secondary_keywords:
+  - halal roast chicken recipe
+  - french pakistani fusion chicken
+  - tikka roast chicken
+- n: 2
+  group: Fusion Main
+  title: Magret de Canard Karahi
+  concept: Sliced French duck breast (magret de canard) cooked fast in a spiced tomato, ginger and green
+    chilli gravy.
+  focus_keyword: duck breast karahi
+  secondary_keywords:
+  - magret de canard curry
+  - halal duck karahi
+  - french duck curry
+- n: 3
+  group: Fusion Main
+  title: Guinea Fowl Korma
+  concept: French guinea fowl (pintade) braised slowly in a rich almond and cardamom korma sauce.
+  focus_keyword: guinea fowl korma
+  secondary_keywords:
+  - pintade korma
+  - almond cardamom korma
+  - halal guinea fowl recipe
+- n: 4
+  group: Fusion Main
+  title: Ratatouille Masala
+  concept: Provencal courgette, aubergine and pepper stew tempered with cumin, mustard seeds and turmeric.
+  focus_keyword: ratatouille masala
+  secondary_keywords:
+  - spiced ratatouille
+  - indian french vegetable stew
+  - masala ratatouille recipe
+- n: 5
+  group: Fusion Main
+  title: Steak au Poivre Nihari
+  concept: French peppered beef steak served over a reduced, velvet-smooth nihari-spiced jus.
+  focus_keyword: steak au poivre nihari
+  secondary_keywords:
+  - nihari steak
+  - french pakistani beef steak
+  - peppered steak nihari jus
+- n: 6
+  group: Fusion Main
+  title: Rabbit White Korma
+  concept: French rabbit (lapin) stew in a delicate white korma of cashews, cream and white pepper.
+  focus_keyword: rabbit white korma
+  secondary_keywords:
+  - lapin korma
+  - white korma recipe
+  - halal rabbit curry
+- n: 7
+  group: Fusion Main
+  title: Beef Bourguignon Pasanda
+  concept: French beef marinated in papaya and yogurt, slow-cooked pasanda-style with whole spices and
+    shallots.
+  focus_keyword: beef bourguignon pasanda
+  secondary_keywords:
+  - beef pasanda recipe
+  - french pakistani beef stew
+  - bourguignon pasanda
+- n: 8
+  group: Fusion Main
+  title: Goat Cheese Stuffed Baingan
+  concept: Baby aubergines stuffed with crushed walnuts, spice mix and warm French goat cheese (chevre).
+  focus_keyword: goat cheese stuffed aubergine
+  secondary_keywords:
+  - stuffed baingan recipe
+  - chevre aubergine
+  - walnut stuffed eggplant
+- n: 9
+  group: Fusion Main
+  title: Merguez Biryani
+  concept: Basmati rice layered with spiced merguez lamb sausages and caramelised onions.
+  focus_keyword: merguez biryani
+  secondary_keywords:
+  - lamb sausage biryani
+  - french pakistani biryani
+  - merguez rice recipe
+- n: 10
+  group: Fusion Main
+  title: Trout in Coconut Mustard Gravy
+  concept: Fresh mountain trout poached in a coconut milk, mustard seed and curry leaf reduction.
+  focus_keyword: trout coconut curry
+  secondary_keywords:
+  - coconut mustard fish
+  - french trout curry
+  - mustard curry leaf fish
+- n: 11
+  group: Fusion Main
+  title: Quiche Lorraine Tikka
+  concept: Whole-wheat quiche loaded with spiced chicken tikka cubes, leeks and Gruyere.
+  focus_keyword: chicken tikka quiche
+  secondary_keywords:
+  - tikka quiche lorraine
+  - halal quiche recipe
+  - spiced chicken quiche
+- n: 12
+  group: Fusion Main
+  title: Cod Curry en Papillote
+  concept: Fresh cod baked in paper with coconut oil, ginger, lemon and Kashmiri chilli.
+  focus_keyword: cod curry en papillote
+  secondary_keywords:
+  - baked cod curry
+  - fish en papillote curry
+  - kashmiri cod recipe
+- n: 13
+  group: Fusion Main
+  title: Lamb Shank Tagine Haleem
+  concept: Slow-cooked lamb shanks with barley, lentils and aromatic garam masala.
+  focus_keyword: lamb shank haleem
+  secondary_keywords:
+  - tagine haleem
+  - lamb shank barley stew
+  - halal haleem recipe
+- n: 14
+  group: Fusion Main
+  title: Butternut Veloute with Roasted Cumin
+  concept: Butternut squash soup (veloute) finished with tempered ghee and roasted cumin seeds.
+  focus_keyword: butternut squash cumin soup
+  secondary_keywords:
+  - veloute de courge
+  - roasted cumin squash soup
+  - spiced butternut soup
+- n: 15
+  group: Fusion Main
+  title: Cauliflower Steak with Green Chutney Glaze
+  concept: Oven-roasted cauliflower slices brushed with mint, coriander and garlic chutney.
+  focus_keyword: cauliflower steak chutney
+  secondary_keywords:
+  - roasted cauliflower steak
+  - green chutney cauliflower
+  - vegetarian cauliflower steak
+- n: 16
+  group: High-Protein Low-Carb
+  title: Chicken Malai Boti Skewers with Dijon Yogurt
+  concept: Lean chicken breast marinated in cream cheese, green chillies and French Dijon mustard.
+  focus_keyword: chicken malai boti skewers
+  secondary_keywords:
+  - malai boti recipe
+  - high protein chicken skewers
+  - dijon yogurt chicken
+- n: 17
+  group: High-Protein Low-Carb
+  title: Beef Seekh Kebab Lettuce Wraps
+  concept: Minced beef seekh kebabs in butterhead lettuce wraps with mint yogurt sauce.
+  focus_keyword: beef seekh kebab lettuce wraps
+  secondary_keywords:
+  - low carb seekh kebab
+  - kebab lettuce wrap
+  - keto beef kebab
+- n: 18
+  group: High-Protein Low-Carb
+  title: Chana Dal and Egg White Omelette
+  concept: High-fibre spiced lentil patties folded into an egg-white omelette.
+  focus_keyword: chana dal egg white omelette
+  secondary_keywords:
+  - high protein lentil omelette
+  - egg white breakfast recipe
+  - chana dal omelette
+- n: 19
+  group: High-Protein Low-Carb
+  title: Grilled Salmon Tikka over Rocket
+  concept: Wild salmon marinated in turmeric and lemon, served over rocket and olive oil.
+  focus_keyword: salmon tikka salad
+  secondary_keywords:
+  - grilled salmon tikka
+  - salmon rocket salad
+  - turmeric salmon recipe
+- n: 20
+  group: High-Protein Low-Carb
+  title: Tandoori Turkey Breast Cutlets
+  concept: Lean turkey fillets marinated in tandoori spices and grilled on a skillet.
+  focus_keyword: tandoori turkey cutlets
+  secondary_keywords:
+  - tandoori turkey breast
+  - lean turkey recipe
+  - high protein turkey cutlets
+- n: 21
+  group: High-Protein Low-Carb
+  title: Paneer Bhurji with Faisselle
+  concept: Crumbled French faisselle or paneer scrambled with tomatoes, onions and green chilli.
+  focus_keyword: paneer bhurji recipe
+  secondary_keywords:
+  - faisselle bhurji
+  - cottage cheese scramble
+  - high protein paneer
+- n: 22
+  group: High-Protein Low-Carb
+  title: Herb-Crusted Lamb Chops
+  concept: French-cut lamb chops crusted with crushed coriander seeds, black pepper and rosemary.
+  focus_keyword: herb crusted lamb chops
+  secondary_keywords:
+  - spiced lamb chops
+  - french lamb chops recipe
+  - rosemary lamb chops
+- n: 23
+  group: High-Protein Low-Carb
+  title: Egg Chaud-Froid Masala
+  concept: Hard-boiled eggs coated in a spicy tomato and garlic reduction.
+  focus_keyword: masala egg recipe
+  secondary_keywords:
+  - egg chaud froid
+  - spiced boiled eggs
+  - tomato garlic eggs
+- n: 24
+  group: High-Protein Low-Carb
+  title: Prawns in Garlic Curry Butter
+  concept: King prawns tossed in French butter, garlic, fresh curry leaves and red pepper flakes.
+  focus_keyword: garlic curry butter prawns
+  secondary_keywords:
+  - curry butter prawns
+  - garlic prawns recipe
+  - spiced king prawns
+- n: 25
+  group: High-Protein Low-Carb
+  title: Turkey Palak Kofta
+  concept: Lean turkey meatballs simmered in a smooth spiced spinach puree.
+  focus_keyword: turkey palak kofta
+  secondary_keywords:
+  - spinach turkey meatballs
+  - palak kofta recipe
+  - high protein kofta
+- n: 26
+  group: High-Protein Low-Carb
+  title: Greek Yogurt Tandoori Chicken Thighs
+  concept: Skinless thighs marinated in zero-fat Greek yogurt and smoked paprika.
+  focus_keyword: tandoori chicken thighs
+  secondary_keywords:
+  - greek yogurt tandoori chicken
+  - healthy tandoori chicken
+  - smoked paprika chicken
+- n: 27
+  group: High-Protein Low-Carb
+  title: Beef Shami Kebab Meal-Prep Bowls
+  concept: High-protein beef and lentil shami patties over cauliflower rice.
+  focus_keyword: shami kebab meal prep
+  secondary_keywords:
+  - beef shami kebab
+  - meal prep kebab bowl
+  - cauliflower rice kebab
+- n: 28
+  group: High-Protein Low-Carb
+  title: Grilled Halloumi and Mint Salad
+  concept: Warm halloumi with coriander, mint, cucumber and roasted cumin vinaigrette.
+  focus_keyword: halloumi mint salad
+  secondary_keywords:
+  - grilled halloumi salad
+  - cumin vinaigrette salad
+  - halloumi cucumber salad
+- n: 29
+  group: High-Protein Low-Carb
+  title: Baked Sea Bass with Turmeric and Thyme
+  concept: Sea bass fillets rubbed with olive oil, turmeric, sea salt and fresh thyme.
+  focus_keyword: turmeric baked sea bass
+  secondary_keywords:
+  - baked sea bass recipe
+  - turmeric thyme fish
+  - healthy sea bass
+- n: 30
+  group: High-Protein Low-Carb
+  title: Protein Chapli Kebabs
+  concept: Minced chicken or beef with crushed flaxseeds, pomegranate seeds and herbs.
+  focus_keyword: protein chapli kebab
+  secondary_keywords:
+  - chapli kebab recipe
+  - flaxseed kebab
+  - high protein chapli
+- n: 31
+  group: Diabetic-Friendly
+  title: Cauliflower Rice Chicken Biryani
+  concept: Classic biryani flavours cooked with grated cauliflower instead of rice.
+  focus_keyword: cauliflower rice biryani
+  secondary_keywords:
+  - low carb biryani
+  - diabetic biryani recipe
+  - cauliflower chicken biryani
+- n: 32
+  group: Diabetic-Friendly
+  title: Karela and Onion Fry with Olive Oil
+  concept: Thinly sliced bitter gourd sauteed with onions, green chilli and amchoor.
+  focus_keyword: karela fry recipe
+  secondary_keywords:
+  - bitter gourd fry
+  - diabetic karela recipe
+  - bitter gourd stir fry
+- n: 33
+  group: Diabetic-Friendly
+  title: Dal Palak Kale Soup
+  concept: Yellow mung lentils cooked with fresh kale, garlic and a dash of lemon.
+  focus_keyword: dal palak kale soup
+  secondary_keywords:
+  - lentil kale soup
+  - dal palak recipe
+  - diabetic lentil soup
+- n: 34
+  group: Diabetic-Friendly
+  title: Barley Roti Wrap with Mint Chicken
+  concept: High-fibre barley wraps stuffed with grilled mint chicken and salad.
+  focus_keyword: barley roti wrap
+  secondary_keywords:
+  - barley wrap recipe
+  - mint chicken wrap
+  - high fibre roti
+- n: 35
+  group: Diabetic-Friendly
+  title: Roasted Chickpea and Avocado Chaat
+  concept: Boiled chickpeas with avocado, red onion, tomato and chaat masala.
+  focus_keyword: chickpea avocado chaat
+  secondary_keywords:
+  - avocado chaat recipe
+  - roasted chickpea chaat
+  - healthy chaat
+- n: 36
+  group: Diabetic-Friendly
+  title: Okra Stir-Fry with Mustard Oil
+  concept: Fresh okra crisp-cooked with dry spices and garlic in mustard oil.
+  focus_keyword: okra stir fry
+  secondary_keywords:
+  - bhindi recipe
+  - mustard oil okra
+  - diabetic okra fry
+- n: 37
+  group: Diabetic-Friendly
+  title: Moong Dal Chilla with Spinach
+  concept: Savoury mung bean crepes filled with sauteed spinach.
+  focus_keyword: moong dal chilla
+  secondary_keywords:
+  - mung bean crepe
+  - savoury chilla recipe
+  - diabetic pancake
+- n: 38
+  group: Diabetic-Friendly
+  title: Chicken Yakhni with Leeks
+  concept: Traditional chicken bone broth simmered with leeks, ginger, black pepper and cloves.
+  focus_keyword: chicken yakhni recipe
+  secondary_keywords:
+  - chicken bone broth
+  - yakhni soup
+  - leek chicken broth
+- n: 39
+  group: Diabetic-Friendly
+  title: Zucchini Noodles in Lentil Bolognese
+  concept: Courgette zoodles tossed with a spiced red lentil bolognese.
+  focus_keyword: lentil bolognese zoodles
+  secondary_keywords:
+  - zucchini noodle bolognese
+  - low carb bolognese
+  - lentil zoodles recipe
+- n: 40
+  group: Diabetic-Friendly
+  title: Spiced Quinoa Pilaf with Vegetables
+  concept: High-fibre quinoa cooked with whole cloves, cinnamon, peas and carrots.
+  focus_keyword: spiced quinoa pilaf
+  secondary_keywords:
+  - quinoa pilaf recipe
+  - diabetic quinoa
+  - vegetable quinoa pilaf
+- n: 41
+  group: Dessert
+  title: Cardamom and Saffron Panna Cotta
+  concept: French panna cotta sweetened with erythritol and flavoured with green cardamom and saffron.
+  focus_keyword: cardamom panna cotta
+  secondary_keywords:
+  - saffron panna cotta
+  - sugar free panna cotta
+  - low carb panna cotta
+- n: 42
+  group: Dessert
+  title: Kheer Tartlets with Almond Crust
+  concept: Low-carb almond flour crust filled with sugar-free almond-milk kheer.
+  focus_keyword: kheer tartlets
+  secondary_keywords:
+  - almond flour tartlet
+  - sugar free kheer
+  - low carb kheer dessert
+- n: 43
+  group: Dessert
+  title: Rosewater and Pistachio Mousse
+  concept: Whipped light cream or ricotta infused with rose extract and crushed pistachios.
+  focus_keyword: rosewater pistachio mousse
+  secondary_keywords:
+  - pistachio mousse recipe
+  - rose mousse
+  - low carb mousse
+- n: 44
+  group: Dessert
+  title: Chia Mango Kulfi Pudding
+  concept: Chia seeds soaked in unsweetened coconut milk, cardamom and a little fresh mango.
+  focus_keyword: chia kulfi pudding
+  secondary_keywords:
+  - mango chia pudding
+  - kulfi chia recipe
+  - healthy kulfi
+- n: 45
+  group: Dessert
+  title: Sugar-Free Gajar Halwa Parfait
+  concept: Grated carrots cooked in almond milk, sweetened with monk fruit, layered with Greek yogurt.
+  focus_keyword: sugar free gajar halwa
+  secondary_keywords:
+  - carrot halwa parfait
+  - diabetic gajar halwa
+  - low carb carrot dessert
+- n: 46
+  group: Dessert
+  title: Berry and Saffron Clafoutis
+  concept: Low-carb almond flour clafoutis with blueberries, raspberries and saffron.
+  focus_keyword: almond flour clafoutis
+  secondary_keywords:
+  - low carb clafoutis
+  - berry clafoutis recipe
+  - saffron clafoutis
+- n: 47
+  group: Dessert
+  title: Baked Cinnamon-Clove Apples
+  concept: Sliced apples baked with cinnamon, cloves and a drizzle of sugar-free maple syrup.
+  focus_keyword: baked cinnamon apples
+  secondary_keywords:
+  - sugar free baked apples
+  - cinnamon clove apples
+  - diabetic apple dessert
+- n: 48
+  group: Dessert
+  title: Avocado Cocoa Shahi Tukda Pots
+  concept: Sugar-free chocolate avocado mousse over toasted low-carb whole-grain squares.
+  focus_keyword: avocado chocolate mousse
+  secondary_keywords:
+  - shahi tukda healthy
+  - avocado cocoa dessert
+  - low carb shahi tukda
+- n: 49
+  group: Dessert
+  title: Fennel and Mint Sorbet
+  concept: Sugar-free sorbet made with infused fennel seeds, lemon and fresh mint.
+  focus_keyword: fennel mint sorbet
+  secondary_keywords:
+  - sugar free sorbet
+  - mint sorbet recipe
+  - fennel dessert
+- n: 50
+  group: Dessert
+  title: Dark Chocolate Bark with Almonds and Kashmiri Chilli
+  concept: 85% dark chocolate topped with toasted almonds, sea salt and a pinch of chilli.
+  focus_keyword: dark chocolate chilli bark
+  secondary_keywords:
+  - chocolate almond bark
+  - kashmiri chilli chocolate
+  - low carb chocolate bark

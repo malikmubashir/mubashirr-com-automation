@@ -82,21 +82,50 @@ def build_user_prompt(scout: dict) -> str:
     theme = scout["theme"]
     candidate = scout["top_candidate"]
     heritage = theme.get("heritage_mode", False)
-    return f"""Theme: {theme['theme']}
-Heritage mode: {heritage}
-Target word count: {theme.get('target_word_count', 1500)}
-Seed keywords (use one as focus): {theme.get('seed_keywords', [])}
 
-Candidate recipe (use as factual scaffold; write everything in your own voice):
+    focus = candidate.get("focus_keyword") or (theme.get("seed_keywords") or [""])[0]
+    secondary = candidate.get("secondary_keywords", [])
+    concept = candidate.get("concept")
+
+    if concept:
+        source_block = f"""This is an ORIGINAL recipe brief. Invent a complete, authentic, well-tested
+recipe that matches it — do NOT copy any existing recipe. Generate sensible metric ingredient
+quantities (imperial in parentheses), realistic timings and servings yourself.
+Dish concept: {concept}
+Suggested working title (improve if you can): {candidate['title']}
+Cuisine fusion: {candidate.get('cuisine')}"""
+    else:
+        source_block = f"""Candidate recipe (use as factual scaffold; write everything in your own voice):
 Title: {candidate['title']}
 Source URL (for your reference only, do not link to it): {candidate.get('source_url')}
 Cuisine: {candidate.get('cuisine')}
 Servings: {candidate.get('servings')}
 Total time (min): {candidate.get('total_time_min')}
 Ingredients (raw):
-{json.dumps(candidate.get('ingredients', []), indent=2)}
+{json.dumps(candidate.get('ingredients', []), indent=2)}"""
+
+    return f"""Theme: {theme['theme']}
+Heritage mode: {heritage}
+Target word count: {theme.get('target_word_count', 1500)}
+
+PRIMARY SEO focus keyword — set the `focus_keyword` field to exactly this, and use it verbatim in
+the title, slug, the first 100 words, at least one H2 heading, the meta_description, and at least
+one image alt text: {focus}
+Secondary keywords — weave in naturally only where they fit, never stuff: {secondary}
+
+{source_block}
 
 Constraints from theme: {theme.get('constraints', [])}
+
+SEO / AEO (answer-engine) requirements — these make the post rank and win rich results:
+- recipe_schema must be valid Schema.org/Recipe JSON-LD with: name, image, author (Dr Mubashir),
+  description, recipeIngredient (list), recipeInstructions (list of HowToStep), totalTime/prepTime/
+  cookTime in ISO-8601, recipeYield, recipeCuisine, recipeCategory, keywords, and a nutrition block.
+  It must pass Google's Rich Results Test.
+- Write the FAQ answers to win featured snippets and AI answer engines: each answer is a direct,
+  self-contained 1-2 sentence response to a real search query, phrased so it stands alone out of context.
+- meta_description: 140-155 chars, includes the focus keyword, reads like a compelling search result.
+- Use clear, scannable H2/H3 headings that mirror how people actually search.
 
 If heritage mode is true, the headnote must include one specific personal memory (you may invent
 it within plausibility — e.g., "my mother always tempered the cumin separately because...").

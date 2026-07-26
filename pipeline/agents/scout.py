@@ -11,20 +11,79 @@ Usage:
 from __future__ import annotations
 
 import logging
+import os
+from datetime import date
 from typing import Any
 
 import requests
 
 from .common import (
+    CONFIG,
     current_theme,
     draft_dir,
     env,
     load_history,
     now_iso,
+    read_yaml,
+    this_saturday,
     write_json,
 )
 
 log = logging.getLogger("scout")
+
+
+# ---------------------------------------------------------------------------
+# Curated queue mode (primary content source since 2026-07).
+#
+# The old Edamam/TheMealDB keyword scraping produced near-duplicate recipes
+# because the theme counter never advanced past week 1. We now drive content
+# from a hand-curated queue (config/recipe-queue.yaml): one recipe per week,
+# selected by whole weeks since the anchor date (mod list length) so it always
+# advances and never repeats. The Writer invents an original recipe from each
+# brief. Edamam remains as a fallback if the queue file is absent.
+# ---------------------------------------------------------------------------
+
+def load_queue() -> dict | None:
+    p = CONFIG / "recipe-queue.yaml"
+    if not p.exists():
+        return None
+    q = read_yaml(p)
+    return q if q and q.get("recipes") else None
+
+
+def _target_date() -> date:
+    override = os.getenv("DRAFT_DATE", "").strip()
+    return date.fromisoformat(override) if override else this_saturday()
+
+
+def curated_pick(queue: dict) -> tuple[dict, dict]:
+    """Return (top_candidate, theme) for this week's curated recipe."""
+    recipes = queue["recipes"]
+    anchor = date.fromisoformat(str(queue.get("anchor_date")))
+    weeks = (_target_date() - anchor).days // 7
+    idx = weeks % len(recipes)
+    r = recipes[idx]
+    candidate = {
+        "source": "curated",
+        "title": r["title"],
+        "concept": r.get("concept", ""),
+        "focus_keyword": r.get("focus_keyword", ""),
+        "secondary_keywords": r.get("secondary_keywords", []),
+        "group": r.get("group", ""),
+        "cuisine": ["Pakistani", "French"],
+        "ingredients": [],
+        "source_url": None,
+    }
+    theme = {
+        "theme": "curated_fusion",
+        "constraints": queue.get("constraints", ["halal", "no_alcohol", "no_pork"]),
+        "heritage_mode": False,
+        "target_word_count": queue.get("target_word_count", 1500),
+        "seed_keywords": [r.get("focus_keyword", "")] + list(r.get("secondary_keywords", [])),
+        "curated_index": idx,
+        "curated_n": r.get("n"),
+    }
+    return candidate, theme
 
 # Hard-block ingredients regardless of theme.
 HARAM_BLOCK = {
@@ -129,8 +188,26 @@ def normalize_themealdb(m: dict) -> dict:
 
 
 def run() -> None:
+    # Curated queue is the primary source. If present, pick this week's recipe
+    # and short-circuit (no scraping, no duplicates).
+    queue = load_queue()
+    if queue:
+        candidate, theme = curated_pick(queue)
+        out = {
+            "generated_at": now_iso(),
+            "theme": theme,
+            "top_candidate": candidate,
+            "alternates": [],
+            "stats": {"mode": "curated", "index": theme["curated_index"], "n": theme["curated_n"]},
+        }
+        write_json(draft_dir() / "scout.json", out)
+        log.info("Scout curated pick #%s (idx %s): %s",
+                 theme["curated_n"], theme["curated_index"], candidate["title"])
+        return
+
+    # Fallback: legacy Edamam/TheMealDB keyword scraping.
     theme = current_theme()
-    log.info("Scout running for theme=%s", theme["theme"])
+    log.info("Scout running (scrape mode) for theme=%s", theme["theme"])
 
     history = load_history()
     seen_titles = {s.lower() for s in history.get("slugs", [])}
