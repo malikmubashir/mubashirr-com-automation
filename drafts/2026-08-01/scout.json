@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-29T09:42:47.499881Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "harissa tikka roast chicken",
+      "halal roast chicken recipe",
+      "french pakistani fusion chicken",
+      "tikka roast chicken"
+    ],
+    "curated_index": 0,
+    "curated_n": 1
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Harissa Tikka Roast Chicken",
+    "concept": "French roast chicken (poulet r\u00f4ti) rubbed with garlic, yogurt, tikka spices and a touch of rose harissa.",
+    "focus_keyword": "harissa tikka roast chicken",
+    "secondary_keywords": [
+      "halal roast chicken recipe",
+      "french pakistani fusion chicken",
+      "tikka roast chicken"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 0,
+    "n": 1
+  }
+}
