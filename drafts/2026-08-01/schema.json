@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Harissa Tikka Roast Chicken",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/harissa-tikka-roast-chicken-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A whole halal chicken dry-brined, then coated in a yogurt, tikka spice, and rose harissa marinade and roasted French poulet r\u00f4ti style for crackling skin and deeply spiced, juicy meat.",
+  "prepTime": "PT20M",
+  "cookTime": "PT70M",
+  "totalTime": "PT570M",
+  "recipeYield": "4 servings",
+  "recipeCuisine": [
+    "Pakistani",
+    "French"
+  ],
+  "recipeCategory": "Main Course",
+  "keywords": "harissa tikka roast chicken, halal roast chicken recipe, french pakistani fusion chicken, tikka roast chicken, poulet roti, rose harissa chicken",
+  "recipeIngredient": [
+    "1 whole chicken, 1.5\u20131.7 kg (3.3\u20133.7 lb), halal",
+    "1.5 tsp fine sea salt for dry salting",
+    "120 g (\u00bd cup) full-fat plain yogurt",
+    "2 tbsp rose harissa",
+    "4 garlic cloves, grated to a paste",
+    "2 tsp fresh ginger, grated",
+    "1.5 tsp Kashmiri red chilli powder",
+    "1 tsp cumin powder",
+    "1 tsp coriander powder",
+    "\u00bd tsp garam masala",
+    "\u00bd tsp smoked paprika",
+    "\u00bd tsp turmeric",
+    "\u00bc tsp hing",
+    "1.5 tsp fine sea salt",
+    "2 tbsp neutral oil",
+    "Juice of half a lemon",
+    "1 medium onion, halved",
+    "1 lemon, halved",
+    "4 garlic cloves, unpeeled",
+    "2 tbsp unsalted butter, softened",
+    "Flaky salt, to finish"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Dry-salt the chicken",
+      "text": "Pat the chicken dry with paper towels inside and out. Sprinkle 1.5 tsp fine salt over the outside and cavity. Place on a wire rack over a tray and refrigerate uncovered for 8\u201324 hours."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the tikka harissa marinade",
+      "text": "Combine yogurt, rose harissa, garlic paste, ginger, Kashmiri chilli, cumin, coriander, garam masala, smoked paprika, turmeric, hing, 1.5 tsp salt, oil, and lemon juice. Whisk until smooth and taste for seasoning."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Marinate the chicken",
+      "text": "Rub the marinade firmly over the entire chicken, including inside the cavity and under the neck flap. Return to the rack, uncovered, and refrigerate for at least 8 hours and up to 24 hours."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bring to room temperature",
+      "text": "Remove the chicken from the refrigerator 45 minutes before roasting."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Preheat oven and prepare the tin",
+      "text": "Preheat the oven to 220\u00b0C (425\u00b0F). Arrange halved onion, lemon, and unpeeled garlic cloves in a roasting tin to act as a trivet."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Butter and position the chicken",
+      "text": "Smear softened butter over the breast and legs. Set the chicken breast-side up on the trivet in the roasting tin."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Roast at high heat",
+      "text": "Roast at 220\u00b0C for 45 minutes without opening the oven or basting."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish roasting",
+      "text": "Reduce temperature to 190\u00b0C (375\u00b0F) and roast for a further 20\u201325 minutes until a probe thermometer reads 74\u00b0C (165\u00b0F) in the thickest part of the thigh."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Rest the chicken",
+      "text": "Transfer to a warm plate and rest for 15 minutes before carving."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make a quick pan sauce and serve",
+      "text": "Squeeze roasted lemon over the tin juices, press out the roasted garlic, and stir together. Spoon over carved chicken. Finish with flaky salt."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approximately 350g cooked chicken with skin)",
+    "calories": "480 kcal",
+    "proteinContent": "42 g",
+    "fatContent": "30 g",
+    "saturatedFatContent": "9 g",
+    "carbohydrateContent": "7 g",
+    "sugarContent": "3 g",
+    "sodiumContent": "780 mg"
+  }
+}
