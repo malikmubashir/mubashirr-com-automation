@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-05T09:41:21.127364Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "duck breast karahi",
+      "magret de canard curry",
+      "halal duck karahi",
+      "french duck curry"
+    ],
+    "curated_index": 1,
+    "curated_n": 2
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Magret de Canard Karahi",
+    "concept": "Sliced French duck breast (magret de canard) cooked fast in a spiced tomato, ginger and green chilli gravy.",
+    "focus_keyword": "duck breast karahi",
+    "secondary_keywords": [
+      "magret de canard curry",
+      "halal duck karahi",
+      "french duck curry"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 1,
+    "n": 2
+  }
+}
