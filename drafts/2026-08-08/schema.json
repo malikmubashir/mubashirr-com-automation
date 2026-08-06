@@ -1,0 +1,90 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Duck Breast Karahi (Magret de Canard)",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/duck-breast-karahi-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "French magret de canard sliced and cooked fast in a spiced tomato, ginger and green chilli karahi gravy. Halal, no alcohol, ready in 40 minutes.",
+  "prepTime": "PT10M",
+  "cookTime": "PT30M",
+  "totalTime": "PT40M",
+  "recipeYield": "2-3 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "duck breast karahi, halal duck karahi, magret de canard curry, french duck curry, Pakistani fusion",
+  "recipeIngredient": [
+    "2 halal duck breasts (magret de canard), approximately 300 g each",
+    "1 tsp fine sea salt",
+    "\u00bd tsp coarsely cracked black pepper",
+    "4 medium tomatoes, roughly chopped (about 400 g)",
+    "30 g fresh ginger, peeled and cut into thin matchsticks",
+    "4 green chillies, slit lengthwise",
+    "1 tsp cumin seeds",
+    "1 tsp coriander powder",
+    "\u00bd tsp Kashmiri red chilli powder",
+    "\u00bd tsp garam masala",
+    "\u00bc tsp turmeric",
+    "1 tsp fine sea salt",
+    "Small bunch fresh coriander, roughly chopped",
+    "1 green chilli, sliced thin on the diagonal",
+    "1 tsp lemon juice"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Score the duck skin",
+      "text": "Cut a crosshatch pattern through the skin and fat of each breast, 1 cm apart, down to but not into the flesh. Season the skin side with half the salt and all the black pepper."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Render the fat",
+      "text": "Place duck breasts skin-side down in a cold wok or karahi. Turn heat to medium. Render slowly for 8\u201310 minutes until skin is deep golden and fat has pooled in the pan."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sear the flesh side",
+      "text": "Increase heat to medium-high. Flip and sear the flesh side for 90 seconds. Remove duck to a board, leaving all rendered fat in the pan."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bloom the spices",
+      "text": "Add cumin seeds to the hot duck fat. After 30 seconds, add coriander powder, Kashmiri chilli, and turmeric. Stir for 20 seconds."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the masala",
+      "text": "Add chopped tomatoes, half the ginger matchsticks, slit green chillies, and salt. Cook on high heat for 10\u201312 minutes, stirring frequently, until tomatoes collapse and red fat separates at the edges."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Slice the duck",
+      "text": "Slice each breast at a 45-degree angle into 8 mm pieces. The centre should still be visibly pink."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish duck in the gravy",
+      "text": "Reduce heat to medium. Add duck slices to the masala. Toss to coat and cook for 2\u20133 minutes, turning once."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Scatter over garam masala, lemon juice, fresh coriander, reserved raw ginger matchsticks, and sliced green chilli. Toss once, taste for salt, and serve immediately."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 serving (of 3)",
+    "calories": "420 kcal",
+    "proteinContent": "38 g",
+    "fatContent": "26 g",
+    "saturatedFatContent": "8 g",
+    "carbohydrateContent": "9 g",
+    "fiberContent": "2 g",
+    "sodiumContent": "720 mg"
+  }
+}
