@@ -1,0 +1,69 @@
+# Distribution plan for Duck Breast Karahi with Ginger and Green Chilli
+
+Post URL: https://mubashirr.com/duck-breast-karahi-magret-de-canard/
+
+
+## pinterest_sat (2026-08-08T20:00:00)
+```
+{
+  "title": "Duck Breast Karahi with Ginger and Green Chilli (Magret de Canard)",
+  "description": "Duck breast karahi takes the French magret de canard and drops it straight into a Pakistani spiced tomato, ginger and green chilli gravy. No alcohol, halal, done in 40 minutes. The fat renders into the sauce and the result is something neither cuisine does alone. Full recipe at the link."
+}
+```
+
+## pinterest_sun (2026-08-09T11:00:00)
+```
+{
+  "title": "Duck Breast Karahi with Ginger and Green Chilli (Magret de Canard)",
+  "description": "Duck breast karahi takes the French magret de canard and drops it straight into a Pakistani spiced tomato, ginger and green chilli gravy. No alcohol, halal, done in 40 minutes. The fat renders into the sauce and the result is something neither cuisine does alone. Full recipe at the link."
+}
+```
+
+## instagram (2026-08-09T11:30:00)
+```
+{
+  "caption": "Magret de canard is a French thing. Karahi is a Pakistani thing. This recipe is the argument that the two should have met sooner.\n\nI slice the duck breast thin, score the fat cap, and render it down before the tomatoes ever touch the pan. That fat is the whole point. It carries the ginger, the green chilli, the cumin, in a way that chicken oil simply does not. The result is a karahi that tastes like it has more going on underneath, a richness that isn't heavy but is unmistakably there.\n\nNo cream. No butter added. No alcohol. The duck does the work.\n\nReady in 40 minutes, halal throughout, and the kind of dish that makes people ask what they are actually eating before they ask for more. The full recipe is on the blog. Link in bio.",
+  "hashtags": [
+    "#duckbreastkarahi",
+    "#magretdecanard",
+    "#halalrecipes",
+    "#pakistanifusion",
+    "#karahi",
+    "#frenchpakistani",
+    "#fusionrecipes",
+    "#halalcooking",
+    "#weeknightdinner",
+    "#pakistanicooking",
+    "#curatedFusion",
+    "#duckrecipes"
+  ]
+}
+```
+
+## email (2026-08-11T09:00:00)
+```
+{
+  "subject": "Duck in a karahi. Hear me out.",
+  "preheader": "Magret de canard meets Pakistani spiced tomato gravy. 40 minutes, halal, worth it.",
+  "body_html": "<p>Most fusion cooking apologises for itself. It hedges. It explains too much. This recipe does not.</p><p>Duck breast karahi starts with a French magret de canard, scores the fat cap, and renders it down before anything else happens. That step matters. The fat that pools in the pan becomes the cooking medium for the ginger, the green chilli, the tomatoes. It is not a trick or a flourish. It is the reason the dish works.</p><p>Karahi is already a high-heat, fast-cooking format. Duck breast, sliced thin, suits that tempo. By the time the tomatoes have broken down and the oil has risen, the duck is cooked through and the sauce has taken on something deeper than a standard chicken karahi gives you.</p><p>A few things worth knowing before you cook it:</p><ul><li>No alcohol. Fully halal.</li><li>Ready in 40 minutes.</li><li>The fat cap is not optional. Do not trim it before cooking.</li></ul><p>This is the kind of recipe I write because I want to eat it, not because it fits a content calendar. If that sounds like your kind of cooking, the full recipe is below.</p><p><a href=\"https://mubashirr.com/duck-breast-karahi-magret-de-canard/\">Read the full recipe: Duck Breast Karahi with Ginger and Green Chilli</a></p>"
+}
+```
+
+## linkedin (2026-08-12T08:30:00)
+```
+{
+  "body": "French cuisine and Pakistani cooking do not have an obvious relationship. One is built on reduction, restraint, and classical method. The other is built on high heat, whole spices, and a gravy that tells you exactly where it is from the moment it hits the pan.\n\nWhat they share is a serious respect for fat.\n\nMagret de canard, the breast of a duck raised for foie gras, has a fat cap that French cooks spend considerable effort managing. Pakistani karahi cooks spend considerable effort ensuring enough cooking fat comes up through the gravy to signal the dish is done properly.\n\nMy duck breast karahi puts those two instincts in the same pan. Score the fat, render it low, then cook the karahi in what the duck gives you. The spiced tomato gravy picks up a richness that chicken never provides. The duck, sliced thin and added late, stays tender.\n\nNo alcohol. Halal throughout. Forty minutes from cold pan to table.\n\nI have been writing about Pakistani-French fusion for a while now, and the recipes that work are never the ones that force a concept. They are the ones where two techniques solve the same problem differently and you find the overlap.\n\nThis one found it in the fat.\n\nFull recipe: https://mubashirr.com/duck-breast-karahi-magret-de-canard/"
+}
+```
+
+## x_thread (2026-08-13T18:00:00)
+```
+{}
+```
+
+## facebook (2026-08-08T19:00:00)
+```
+{
+  "body": "Duck breast karahi is not a gimmick. It is what happens when you take a French magret de canard seriously and cook it the way a karahi deserves to be cooked.\n\nScore the fat cap, render it down, build your ginger and green chilli gravy in the fat the duck gives you. Slice the breast thin, add it late, let the tomatoes do their work. Ready in 40 minutes. Halal throughout. The kind of dish that makes people ask what they are eating before they ask for the recipe.\n\nFull recipe at the link: https://mubashirr.com/duck-breast-karahi-magret-de-canard/"
+}
+```
