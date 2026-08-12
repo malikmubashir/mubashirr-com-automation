@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-12T08:23:33.795681Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "guinea fowl korma",
+      "pintade korma",
+      "almond cardamom korma",
+      "halal guinea fowl recipe"
+    ],
+    "curated_index": 2,
+    "curated_n": 3
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Guinea Fowl Korma",
+    "concept": "French guinea fowl (pintade) braised slowly in a rich almond and cardamom korma sauce.",
+    "focus_keyword": "guinea fowl korma",
+    "secondary_keywords": [
+      "pintade korma",
+      "almond cardamom korma",
+      "halal guinea fowl recipe"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 2,
+    "n": 3
+  }
+}
