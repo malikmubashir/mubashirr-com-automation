@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Guinea Fowl Korma with Almond and Cardamom",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/guinea-fowl-korma-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "French guinea fowl (pintade) slow-braised in a Pakistani korma sauce built on toasted almond paste, green and black cardamom, deeply caramelised onions, and incrementally tempered yoghurt. A halal curated fusion recipe.",
+  "prepTime": "PT30M",
+  "cookTime": "PT1H45M",
+  "totalTime": "PT2H15M",
+  "recipeYield": "4 servings",
+  "recipeCuisine": [
+    "Pakistani",
+    "French"
+  ],
+  "recipeCategory": "Main Course",
+  "keywords": "guinea fowl korma, pintade korma, almond cardamom korma, halal guinea fowl recipe, slow braise korma, Pakistani French fusion",
+  "recipeIngredient": [
+    "1 guinea fowl (pintade), about 1.4 kg (3 lb), jointed into 8 pieces, skin on",
+    "1 tsp fine sea salt (for the bird)",
+    "\u00bd tsp ground turmeric",
+    "70 g (\u00bd cup) blanched almonds, lightly toasted",
+    "3 tbsp whole milk",
+    "\u00bd tsp ground green cardamom",
+    "4 tbsp ghee or neutral oil",
+    "5 green cardamom pods, lightly crushed",
+    "3 cloves",
+    "1 black cardamom pod, cracked",
+    "2 bay leaves",
+    "1 small piece mace (about \u00bc tsp ground)",
+    "2 medium onions (about 320 g / 11 oz), thinly sliced",
+    "1 tbsp fresh ginger paste",
+    "1 tbsp fresh garlic paste",
+    "1 tsp ground coriander",
+    "\u00bd tsp ground cumin",
+    "\u00bc tsp white pepper",
+    "240 g (1 cup) full-fat plain yoghurt, at room temperature, whisked smooth",
+    "200 ml (\u00be cup + 1 tbsp) water",
+    "1 tsp kewra water",
+    "1 tbsp single cream (optional)",
+    "Pinch of saffron steeped in 2 tbsp warm milk (optional)",
+    "1 tbsp toasted flaked almonds",
+    "4\u20135 dried rose petals, unsprayed",
+    "Fine sea salt to taste"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Salt and turmeric the bird",
+      "text": "Pat the guinea fowl pieces dry. Rub with 1 tsp salt and \u00bd tsp turmeric. Set aside at room temperature for 20 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the almond paste",
+      "text": "Blend toasted almonds, milk, and ground green cardamom to a smooth, thick paste. Set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Brown the guinea fowl",
+      "text": "Heat 2 tbsp ghee in a 5-litre Dutch oven over medium-high. Brown the guinea fowl in two batches, skin side down first, 4 minutes per side. Remove and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bloom the whole spices",
+      "text": "Reduce heat to medium. Add remaining 2 tbsp ghee. Add green cardamom, cloves, black cardamom, bay leaves, and mace. Stir for 60 to 90 seconds until aromatic."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the onions to deep mahogany",
+      "text": "Add sliced onions and a pinch of salt. Cook over medium heat, stirring every 4 to 5 minutes, for 30 to 35 minutes until deep mahogany in colour."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add ginger and garlic",
+      "text": "Add ginger and garlic pastes to the centre of the pot. Cook, stirring into the onions, for 3 to 4 minutes until the raw smell is gone."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add ground spices",
+      "text": "Add ground coriander, cumin, and white pepper. Stir for 1 minute."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add almond paste",
+      "text": "Stir in the almond-cardamom paste. Cook for 2 minutes, folding into the onion masala."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Temper in the yoghurt (bhunai)",
+      "text": "Reduce heat to low. Add whisked yoghurt 2 tablespoons at a time, stirring until each addition is absorbed before adding the next. Continue until all yoghurt is incorporated and the fat has separated back out, about 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Braise the guinea fowl",
+      "text": "Return the browned guinea fowl pieces to the pot. Add 200 ml water. Bring to a gentle simmer, cover, reduce heat to low, and braise for 45 to 55 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check and finish",
+      "text": "Taste and adjust salt. Stir in kewra water and saffron milk if using. Add single cream if desired. Simmer uncovered for 5 minutes if sauce needs thickening."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Rest and serve",
+      "text": "Turn off heat. Rest with lid on for 10 minutes. Scatter toasted flaked almonds and rose petals over the top before serving."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approx. 350 g)",
+    "calories": "520 kcal",
+    "proteinContent": "42 g",
+    "fatContent": "34 g",
+    "saturatedFatContent": "11 g",
+    "carbohydrateContent": "10 g",
+    "fiberContent": "2 g",
+    "sodiumContent": "480 mg"
+  }
+}
