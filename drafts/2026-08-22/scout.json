@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-19T07:44:13.762472Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "ratatouille masala",
+      "spiced ratatouille",
+      "indian french vegetable stew",
+      "masala ratatouille recipe"
+    ],
+    "curated_index": 3,
+    "curated_n": 4
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Ratatouille Masala",
+    "concept": "Provencal courgette, aubergine and pepper stew tempered with cumin, mustard seeds and turmeric.",
+    "focus_keyword": "ratatouille masala",
+    "secondary_keywords": [
+      "spiced ratatouille",
+      "indian french vegetable stew",
+      "masala ratatouille recipe"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 3,
+    "n": 4
+  }
+}
