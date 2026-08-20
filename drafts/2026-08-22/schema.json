@@ -1,0 +1,105 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Ratatouille Masala",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/ratatouille-masala-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "datePublished": "2025-01-01",
+  "description": "A Proven\u00e7al aubergine, courgette and pepper stew built on a South Asian temper of cumin, mustard seeds and turmeric. Vegetarian, halal, and deeply flavoured.",
+  "prepTime": "PT20M",
+  "cookTime": "PT50M",
+  "totalTime": "PT1H10M",
+  "keywords": "ratatouille masala, spiced ratatouille, indian french vegetable stew, masala ratatouille recipe, vegetarian fusion, halal ratatouille",
+  "recipeYield": "4 servings",
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "French-Pakistani Fusion",
+  "recipeIngredient": [
+    "350 g (12 oz) aubergine, cut into 2 cm cubes",
+    "400 g (14 oz) courgettes, cut into 2 cm half-moons",
+    "1 red bell pepper (200 g / 7 oz), cut into 2 cm pieces",
+    "1 yellow bell pepper (200 g / 7 oz), cut into 2 cm pieces",
+    "400 g (14 oz) ripe tomatoes, roughly chopped, or one 400 g tin whole plum tomatoes, crushed",
+    "1 medium onion (180 g / 6 oz), finely sliced",
+    "4 garlic cloves, thinly sliced",
+    "75 ml (5 tbsp) olive oil, divided",
+    "1 tsp cumin seeds",
+    "1 tsp brown mustard seeds",
+    "\u00bd tsp ground turmeric",
+    "1 tsp ground coriander",
+    "\u00bd tsp Kashmiri red chilli powder",
+    "1 tsp fine sea salt, plus more to taste",
+    "\u00bd tsp black pepper, freshly ground",
+    "1 tsp red wine vinegar",
+    "Small handful fresh coriander leaves",
+    "Small handful fresh basil leaves"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Salt the aubergine",
+      "text": "Toss the aubergine cubes with a generous pinch of salt and leave in a colander for 15 minutes. Pat dry with kitchen paper."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the aubergine",
+      "text": "Heat 2 tbsp olive oil in a wide heavy pan over medium-high heat. Fry aubergine in batches until golden brown on at least two sides, 6 to 8 minutes. Remove to a plate."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the courgettes",
+      "text": "Add 1 tbsp oil to the pan. Add courgettes and cook over medium-high heat without stirring for 2 minutes, then cook until lightly golden, about 5 minutes total. Remove to the plate."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the peppers",
+      "text": "Add a splash more oil if needed. Add the red and yellow peppers and cook over medium heat until softened and lightly coloured at the edges, about 6 minutes. Remove to the plate."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the temper",
+      "text": "Reduce heat to medium-low. Add remaining olive oil. Once shimmering, add cumin seeds and mustard seeds. When they pop (30 to 45 seconds), add the sliced onion."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the onion",
+      "text": "Cook onion over medium-low heat, stirring occasionally, until deep golden and beginning to caramelise, about 12 minutes. Add garlic and cook 2 more minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add the ground spices",
+      "text": "Add turmeric, ground coriander and Kashmiri chilli powder. Stir for 30 seconds over low heat. Add a splash of water if the pan looks dry."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add the tomatoes",
+      "text": "Add chopped fresh or crushed tinned tomatoes. Cook over medium heat, stirring occasionally, until tomatoes collapse and oil separates at the edges, about 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Combine everything",
+      "text": "Return cooked aubergine, courgettes and peppers to the pan. Stir gently to coat. Season with salt and black pepper. Cover partially and cook over low heat for 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Add red wine vinegar, stir once, and taste for seasoning. Scatter fresh coriander and torn basil over the top just before serving."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 serving (approx. 350 g)",
+    "calories": "210 kcal",
+    "fatContent": "14 g",
+    "saturatedFatContent": "2 g",
+    "carbohydrateContent": "18 g",
+    "fiberContent": "6 g",
+    "sugarContent": "9 g",
+    "proteinContent": "4 g",
+    "sodiumContent": "390 mg"
+  }
+}
