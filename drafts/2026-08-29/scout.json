@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-26T07:51:34.981564Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "steak au poivre nihari",
+      "nihari steak",
+      "french pakistani beef steak",
+      "peppered steak nihari jus"
+    ],
+    "curated_index": 4,
+    "curated_n": 5
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Steak au Poivre Nihari",
+    "concept": "French peppered beef steak served over a reduced, velvet-smooth nihari-spiced jus.",
+    "focus_keyword": "steak au poivre nihari",
+    "secondary_keywords": [
+      "nihari steak",
+      "french pakistani beef steak",
+      "peppered steak nihari jus"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 4,
+    "n": 5
+  }
+}
