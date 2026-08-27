@@ -1,0 +1,125 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Steak au Poivre Nihari",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/steak-au-poivre-nihari-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A halal French-Pakistani fusion recipe: pepper-crusted beef sirloin seared to medium-rare, served over a slow-reduced nihari jus made with marrow bones, long pepper, mace, and hing. Steak au poivre nihari bridges two culinary traditions without diluting either.",
+  "prepTime": "PT30M",
+  "cookTime": "PT2H15M",
+  "totalTime": "PT2H45M",
+  "recipeYield": "2 servings",
+  "recipeCuisine": [
+    "Pakistani",
+    "French"
+  ],
+  "recipeCategory": "Main Course",
+  "keywords": "steak au poivre nihari, nihari steak, french pakistani beef steak, peppered steak nihari jus, halal steak recipe, halal beef steak",
+  "recipeIngredient": [
+    "500 g beef marrow bones, cut into 5 cm rounds",
+    "300 g beef shin or shank, bone-in",
+    "1 large onion (about 200 g), halved, unpeeled",
+    "1.2 litres cold water",
+    "1 tbsp neutral oil",
+    "1 tsp whole black peppercorns",
+    "1 tsp long pepper (pipli), roughly broken",
+    "1 tsp fennel seeds",
+    "\u00bd tsp whole cumin seeds",
+    "4 green cardamom pods, lightly crushed",
+    "1 black cardamom pod",
+    "1 blade of mace",
+    "1 piece cassia bark, 3 cm",
+    "\u00bc tsp hing",
+    "1 tbsp ginger-garlic paste",
+    "1 tsp fine sea salt, plus more to taste",
+    "2 tsp nihari masala",
+    "1 tbsp whole wheat flour (atta), dissolved in 3 tbsp cold water",
+    "15 g cold unsalted butter for jus",
+    "2 halal beef sirloin or ribeye steaks, each 250 g, at least 2.5 cm thick",
+    "1\u00bd tsp coarsely cracked black peppercorns",
+    "\u00bd tsp coarsely cracked long pepper (pipli)",
+    "1 tsp flaky sea salt",
+    "1 tbsp neutral oil",
+    "1 tbsp unsalted butter",
+    "2 garlic cloves, skin on, lightly crushed",
+    "2 sprigs fresh thyme"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Blanch the bones",
+      "text": "Place marrow bones and beef shin in a cold pot, cover with cold water, bring to a boil, drain, and rinse under cold water."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Char the onion",
+      "text": "Char the onion halves cut-side down over a gas flame or under a hot grill until deeply blackened on the cut surface."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Toast the spices",
+      "text": "Heat 1 tbsp oil in a heavy pot over medium heat. Add peppercorns, pipli, fennel, cumin, both cardamoms, mace, and cassia. Stir for 45 seconds."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add hing and ginger-garlic paste",
+      "text": "Add hing, stir for five seconds, then add ginger-garlic paste and cook for two minutes until the raw smell is gone."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Simmer the jus",
+      "text": "Add blanched bones, charred onion, salt, nihari masala, and 1.2 litres water. Bring to a gentle boil then simmer partially covered for 2 hours."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Strain and thicken the jus",
+      "text": "Strain the stock, return to a clean pan, whisk in the atta-water slurry, and reduce to about 250 ml until it coats a spoon."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Dry-brine the steaks",
+      "text": "Pat steaks dry, salt with flaky sea salt, and rest uncovered on a rack in the refrigerator for at least one hour."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Crust the steaks",
+      "text": "Mix cracked black pepper and cracked pipli and press firmly onto both flat faces of each steak."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sear the steaks",
+      "text": "Heat a cast-iron skillet until smoking, add oil, and sear steaks for 2.5 to 3 minutes per side for medium-rare (52\u201354\u00b0C internal)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Baste with butter",
+      "text": "In the final 30 seconds, add butter, garlic, and thyme to the pan and baste the steaks continuously."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Rest the steaks",
+      "text": "Transfer steaks to a warm plate and rest for five minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish the jus and plate",
+      "text": "Warm the nihari jus over medium-low heat, whisk in cold butter, spoon onto warmed plates, and place the steak on or beside the jus. Finish with a pinch of flaky salt."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 steak with jus (approx. 350 g)",
+    "calories": "620 kcal",
+    "proteinContent": "52 g",
+    "fatContent": "38 g",
+    "saturatedFatContent": "15 g",
+    "carbohydrateContent": "10 g",
+    "fiberContent": "1 g",
+    "sodiumContent": "820 mg"
+  }
+}
