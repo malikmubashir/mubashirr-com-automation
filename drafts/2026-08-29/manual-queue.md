@@ -1,0 +1,69 @@
+# Distribution plan for Steak au Poivre Nihari: French Crust, Pakistani Soul
+
+Post URL: https://mubashirr.com/steak-au-poivre-nihari-french-peppered-steak-nihari-jus/
+
+
+## pinterest_sat (2026-08-29T20:00:00)
+```
+{
+  "title": "Steak au Poivre Nihari: French Crust, Pakistani Soul",
+  "description": "Steak au poivre nihari brings together a pepper-crusted halal beef tenderloin and a slow-reduced nihari jus that took hours to build. French technique, Pakistani spice memory. Full recipe and technique notes at mubashirr.com."
+}
+```
+
+## pinterest_sun (2026-08-30T11:00:00)
+```
+{
+  "title": "Steak au Poivre Nihari: French Crust, Pakistani Soul",
+  "description": "Steak au poivre nihari brings together a pepper-crusted halal beef tenderloin and a slow-reduced nihari jus that took hours to build. French technique, Pakistani spice memory. Full recipe and technique notes at mubashirr.com."
+}
+```
+
+## instagram (2026-08-30T11:30:00)
+```
+{
+  "caption": "Two cuisines that never spoke to each other — until this plate.\n\nSteak au poivre nihari started as a question: what if the slow, bone-deep warmth of a Sunday nihari pot became the sauce for a French peppered steak? Not a shortcut. Not a novelty. A real reduction — marrow, whole spices, time — finished with cream and green peppercorns the way a Parisian brasserie would finish it.\n\nThe steak gets a coarse pepper crust, a hard sear in a hot pan, butter-basted until the crust holds. Then it rests while the nihari jus comes forward, dark and glossy, smelling like a Lahori winter morning with a French accent.\n\nThis is what curated fusion actually means. Not throwing ingredients together and calling it creative. Asking whether two traditions can share a plate without either one apologizing for being there.\n\nThey can. Recipe is on the blog — link in bio.",
+  "hashtags": [
+    "#steakaupoivrenihari",
+    "#niharisteakjus",
+    "#halalsteak",
+    "#pakistanifrenchfusion",
+    "#beeftenderloinhalal",
+    "#niharirecipe",
+    "#frenchpakistani",
+    "#pansteaktechnique",
+    "#halalbeefdinner",
+    "#curatedfusion",
+    "#niharilovers",
+    "#mubashirr"
+  ]
+}
+```
+
+## email (2026-09-01T09:00:00)
+```
+{
+  "subject": "Nihari jus on a peppered steak.",
+  "preheader": "What happens when a Lahori winter morning meets a Parisian brasserie.",
+  "body_html": "<p>There is a version of nihari that never makes it to the table. It stays in the pot, reducing past the point of a stew into something darker and more concentrated — a liquid that carries the whole weight of the recipe inside it.</p><p>That reduction is what I wanted for a steak sauce.</p><p>Steak au poivre nihari is a pepper-crusted halal beef tenderloin seared hard in cast iron, basted in butter, rested properly — and served over a nihari jus built the slow way, with marrow bones, whole spices, and time. No shortcuts. The cream and green peppercorns come in at the end, which is where French technique takes over from Pakistani instinct.</p><p>The result is a plate that does not feel like a compromise. The crust is sharp and clean. The jus is deep and slightly floral from the mace and cardamom. They hold their ground next to each other.</p><p>I wrote up the full recipe with technique notes — sear timing, jus reduction stages, how to keep the pepper crust from burning before the steak is ready. It is the kind of detail that is easier to explain in writing than in a video.</p><p>If you cook it, I want to know how it went.</p><p><a href=\"https://mubashirr.com/steak-au-poivre-nihari-french-peppered-steak-nihari-jus/\">Read the full recipe and technique notes here.</a></p>"
+}
+```
+
+## linkedin (2026-09-02T08:30:00)
+```
+{
+  "body": "Most fusion food fails because it treats cultural cuisines as ingredient libraries rather than coherent systems with their own logic.\n\nSteak au poivre nihari started from a different premise. Nihari is one of the most technically demanding South Asian dishes — a slow braise built on marrow, whole spices, and a long reduction that develops into something almost European in its depth. When I looked at it next to a classic sauce au poivre, the structural similarity was hard to ignore. Both depend on fat, aromatics, heat management, and time. Both reward patience and punish shortcuts.\n\nSo the question became: can a properly reduced nihari jus stand in for the cognac-and-stock base of a French peppered sauce? And can it do so without losing what makes nihari worth making in the first place?\n\nThe answer, after several attempts, is yes — with conditions. The spice profile has to stay intact. The cream enters late. The pepper crust has to be coarse enough to hold through the sear without carbonizing.\n\nWhat I find interesting about this kind of cooking is that it does not require you to choose a side. The French technique is fully present. The Pakistani flavor memory is fully present. Neither is decorative.\n\nThe full recipe, including technique notes on sear timing and jus reduction, is on the blog: https://mubashirr.com/steak-au-poivre-nihari-french-peppered-steak-nihari-jus/"
+}
+```
+
+## x_thread (2026-09-03T18:00:00)
+```
+{}
+```
+
+## facebook (2026-08-29T19:00:00)
+```
+{
+  "body": "Nihari reduced past the stew stage becomes something else entirely. Darker. More concentrated. The kind of sauce a French kitchen would take seriously.\n\nThat is where steak au poivre nihari comes from. A pepper-crusted halal beef tenderloin seared in cast iron, rested properly, served over a nihari jus finished with cream and green peppercorns. French technique carrying a Pakistani flavor memory.\n\nThe full recipe, with technique notes on the sear and the reduction, is on the blog. Worth reading before you cook it."
+}
+```
