@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-09-02T12:03:07.628938Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "rabbit white korma",
+      "lapin korma",
+      "white korma recipe",
+      "halal rabbit curry"
+    ],
+    "curated_index": 5,
+    "curated_n": 6
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Rabbit White Korma",
+    "concept": "French rabbit (lapin) stew in a delicate white korma of cashews, cream and white pepper.",
+    "focus_keyword": "rabbit white korma",
+    "secondary_keywords": [
+      "lapin korma",
+      "white korma recipe",
+      "halal rabbit curry"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 5,
+    "n": 6
+  }
+}
