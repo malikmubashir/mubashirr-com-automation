@@ -1,0 +1,111 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Rabbit White Korma with Cashew Cream",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/rabbit-white-korma-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "French rabbit (lapin) slow-braised in a silky Pakistani-style white korma of cashew paste, heavy cream and white pepper. A halal fusion recipe combining Lahori korma technique with French braising discipline.",
+  "prepTime": "PT30M",
+  "cookTime": "PT75M",
+  "totalTime": "PT105M",
+  "recipeYield": "4 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "rabbit white korma, lapin korma, white korma recipe, halal rabbit curry, cashew korma, French-Pakistani fusion",
+  "recipeIngredient": [
+    "1 whole rabbit, about 1.3 kg (2 lb 14 oz), jointed into 8 pieces",
+    "150 g full-fat plain yoghurt",
+    "1 tsp fine sea salt (for marinade)",
+    "1 tsp ground white pepper (for marinade)",
+    "\u00bd tsp ground ginger (for marinade)",
+    "\u00bd tsp ground coriander (for marinade)",
+    "120 g raw cashews, soaked 30 min in hot water",
+    "80 ml warm water (for cashew paste)",
+    "1 tsp rose water",
+    "60 ml neutral oil (sunflower or rapeseed)",
+    "30 g unsalted butter",
+    "2 medium white onions, about 350 g total, thinly sliced",
+    "6 green cardamom pods, cracked",
+    "4 cloves",
+    "1 bay leaf",
+    "1 blade of mace",
+    "2.5 cm piece of cassia bark",
+    "1 tsp ground white pepper (for korma base)",
+    "\u00bd tsp ground ginger (for korma base)",
+    "\u00bd tsp fine sea salt (for korma base)",
+    "200 ml warm water or unsalted chicken stock",
+    "120 ml heavy cream (35% fat)",
+    "1 tsp kewra water",
+    "Small pinch of saffron, steeped in 2 tbsp warm milk",
+    "Flaked almonds, lightly toasted, to serve",
+    "Fresh mint leaves, to serve"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Marinate the rabbit",
+      "text": "Mix the yoghurt, salt, white pepper, ground ginger and ground coriander in a large bowl. Add the rabbit pieces and turn to coat thoroughly. Cover and refrigerate for a minimum of 2 hours, or overnight. Bring to room temperature 30 minutes before cooking."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the cashew paste",
+      "text": "Drain the soaked cashews, transfer to a blender with 80 ml warm water, and blend on high for 2 minutes until completely smooth. Add the rose water, pulse once to combine, and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Fry the whole spices",
+      "text": "In a wide, heavy-bottomed pot, heat the oil and butter together over medium heat until the butter foam subsides. Add the cardamom, cloves, bay leaf, mace and cassia. Stir for 60 to 90 seconds until the cloves swell and the cassia uncurls."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the onions",
+      "text": "Add the sliced onions and a pinch of salt. Cook over medium-low heat, stirring every few minutes, for 22 to 28 minutes, until the onions are deep mahogany."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add ground spices and bhunno",
+      "text": "Add the ground white pepper and ground ginger. Stir constantly for 2 minutes until the oil separates at the edges of the pan."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add cashew paste and bhunno again",
+      "text": "Pour in the cashew paste. Cook over medium heat, stirring frequently, for 5 to 7 minutes until the paste tightens, sticks slightly at the edges, and the oil separates again."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Brown the rabbit",
+      "text": "Push the masala to the sides of the pot. Increase heat to medium-high. Add the marinated rabbit pieces and brown lightly on both sides, 2 to 3 minutes per side."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Braise",
+      "text": "Add the warm water or stock, stir once to integrate, and bring to a gentle simmer. Cover tightly, reduce to low, and cook for 55 to 65 minutes, turning the rabbit pieces once at the halfway point."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish the sauce",
+      "text": "Uncover the pot and raise heat to medium. Reduce any excess liquid for 5 minutes if needed. Add the cream, stir gently, and cook for 3 minutes. Add the kewra water and saffron-steeped milk. Taste and adjust salt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Serve",
+      "text": "Transfer to a warmed serving dish. Scatter toasted flaked almonds and torn mint over the top. Serve with layered paratha, plain basmati, or a French baguette."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approximately 350 g)",
+    "calories": "540 kcal",
+    "proteinContent": "42 g",
+    "fatContent": "36 g",
+    "saturatedFatContent": "14 g",
+    "carbohydrateContent": "12 g",
+    "fiberContent": "1 g",
+    "sodiumContent": "520 mg"
+  }
+}
