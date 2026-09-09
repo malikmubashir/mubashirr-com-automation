@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-09-09T12:15:34.677246Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "beef bourguignon pasanda",
+      "beef pasanda recipe",
+      "french pakistani beef stew",
+      "bourguignon pasanda"
+    ],
+    "curated_index": 6,
+    "curated_n": 7
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Beef Bourguignon Pasanda",
+    "concept": "French beef marinated in papaya and yogurt, slow-cooked pasanda-style with whole spices and shallots.",
+    "focus_keyword": "beef bourguignon pasanda",
+    "secondary_keywords": [
+      "beef pasanda recipe",
+      "french pakistani beef stew",
+      "bourguignon pasanda"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 6,
+    "n": 7
+  }
+}
