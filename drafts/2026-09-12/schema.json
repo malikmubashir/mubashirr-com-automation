@@ -1,0 +1,132 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Beef Bourguignon Pasanda",
+  "image": [
+    "https://mubashirr.com/images/beef-bourguignon-pasanda-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "Beef bourguignon pasanda combines French slow-braise technique with Pakistani whole spices and a papaya-yogurt marinade. Halal, alcohol-free, and deeply flavoured.",
+  "prepTime": "PT30M",
+  "cookTime": "PT3H",
+  "totalTime": "PT7H30M",
+  "recipeYield": "4-5 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "beef bourguignon pasanda, beef pasanda recipe, french pakistani beef stew, bourguignon pasanda, halal beef stew, no alcohol beef braise, papaya marinated beef",
+  "recipeIngredient": [
+    "1 kg (2.2 lb) beef shin or chuck, cut into 5 cm pieces",
+    "80 g (3 oz) raw green papaya, grated",
+    "150 g (5 oz) full-fat plain yogurt",
+    "1 teaspoon fine salt",
+    "1 teaspoon ground white pepper",
+    "1 teaspoon ground cumin",
+    "1 teaspoon ground coriander",
+    "4 green cardamom pods, lightly cracked",
+    "2 black cardamom pods, lightly cracked",
+    "1 cinnamon stick, 5 cm",
+    "4 cloves",
+    "1 dried bay leaf",
+    "8 black peppercorns",
+    "1 star anise",
+    "50 ml neutral oil or clarified butter",
+    "300 g (10.5 oz) shallots, peeled",
+    "4 garlic cloves, thinly sliced",
+    "2 cm fresh ginger, minced",
+    "2 medium tomatoes, roughly chopped (about 200 g)",
+    "1 tablespoon tomato paste",
+    "600 ml (2\u00bd cups) beef stock",
+    "150 ml (\u2154 cup) verjus",
+    "1 teaspoon kashmiri red chilli powder",
+    "Salt to taste",
+    "2 tablespoons unsalted butter",
+    "Small handful flat-leaf parsley, roughly chopped",
+    "1 tablespoon fresh lemon juice"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Marinate the beef",
+      "text": "Combine grated papaya pulp, yogurt, salt, white pepper, cumin, and coriander in a large bowl. Add the beef pieces and coat thoroughly. Cover and refrigerate for 4 to 6 hours."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bring beef to room temperature",
+      "text": "Remove the beef from the refrigerator 45 minutes before cooking."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Brown the shallots",
+      "text": "Heat oil in a large heavy-based pot over medium heat. Add shallots cut-side down and cook for 6 to 8 minutes until deep golden. Remove and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bloom the whole spices",
+      "text": "In the same pot over medium-low heat, add cardamom, black cardamom, cinnamon, cloves, bay leaf, peppercorns, and star anise. Stir for 60 to 90 seconds."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook garlic and ginger",
+      "text": "Add sliced garlic and minced ginger to the spices. Stir for 2 minutes until pale gold."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Brown the beef in batches",
+      "text": "Scrape excess marinade off the beef. Brown in two batches over medium-high heat, about 3 minutes per side until deep mahogany. Transfer to a plate."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the tomato base",
+      "text": "Add chopped tomatoes and tomato paste to the pot. Cook over medium heat for 8 to 10 minutes until thick, dark red, and beginning to separate from the oil."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add chilli powder",
+      "text": "Stir in the kashmiri red chilli powder and cook for 1 minute."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Deglaze with verjus",
+      "text": "Pour in the verjus and scrape the bottom of the pot to lift the fond. Reduce for 3 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Return beef and add stock",
+      "text": "Return the browned beef to the pot. Pour in the beef stock until liquid reaches two-thirds up the meat. Bring to a gentle simmer."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add shallots and braise",
+      "text": "Return the browned shallots to the pot. Cover tightly and cook on lowest possible simmer for 2 hours, checking every 45 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check for tenderness",
+      "text": "After 2 hours, test the beef with a fork. It should yield without resistance. If not, cook for a further 30 to 45 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Reduce and finish the sauce",
+      "text": "Remove beef and shallots. Increase heat and reduce the braising liquid for 10 to 12 minutes until it coats a spoon. Adjust salt. Off heat, stir in butter and lemon juice."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Serve",
+      "text": "Return beef and shallots to the pot and warm through for 2 minutes. Scatter with flat-leaf parsley and serve over basmati rice, naan, or egg noodles."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approx 350g)",
+    "calories": "480 kcal",
+    "proteinContent": "42 g",
+    "fatContent": "26 g",
+    "saturatedFatContent": "10 g",
+    "carbohydrateContent": "18 g",
+    "fiberContent": "3 g",
+    "sodiumContent": "620 mg"
+  }
+}
