@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-09-16T12:31:49.526355Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "goat cheese stuffed aubergine",
+      "stuffed baingan recipe",
+      "chevre aubergine",
+      "walnut stuffed eggplant"
+    ],
+    "curated_index": 7,
+    "curated_n": 8
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Goat Cheese Stuffed Baingan",
+    "concept": "Baby aubergines stuffed with crushed walnuts, spice mix and warm French goat cheese (chevre).",
+    "focus_keyword": "goat cheese stuffed aubergine",
+    "secondary_keywords": [
+      "stuffed baingan recipe",
+      "chevre aubergine",
+      "walnut stuffed eggplant"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 7,
+    "n": 8
+  }
+}
