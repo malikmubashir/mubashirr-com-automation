@@ -1,0 +1,96 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Goat Cheese Stuffed Aubergine with Spiced Walnuts",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/goat-cheese-stuffed-aubergine-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "Baby aubergines stuffed with toasted walnuts, bloomed cumin and coriander, and warm French chevre \u2014 a Pakistani-French fusion starter or vegetarian main that is halal and alcohol-free.",
+  "prepTime": "PT15M",
+  "cookTime": "PT30M",
+  "totalTime": "PT45M",
+  "recipeYield": "4 servings as a starter, 2 as a main",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Starter, Vegetarian Main",
+  "keywords": "goat cheese stuffed aubergine, stuffed baingan recipe, chevre aubergine, walnut stuffed eggplant, halal, vegetarian",
+  "recipeIngredient": [
+    "8 baby aubergines (about 80\u201390 g / 3 oz each)",
+    "3 tbsp olive oil",
+    "\u00bd tsp fine sea salt",
+    "100 g (3\u00bd oz) walnut halves, lightly toasted",
+    "1 small red onion (about 80 g / 3 oz), finely minced",
+    "2 garlic cloves, minced",
+    "1 green chilli, finely chopped",
+    "1 tsp ground cumin",
+    "\u00bd tsp ground coriander",
+    "\u00bc tsp smoked paprika",
+    "\u00bc tsp ground black pepper",
+    "1 tbsp lemon juice",
+    "1 tbsp olive oil",
+    "3 tbsp fresh coriander leaves, roughly chopped",
+    "\u00bd tsp fine sea salt",
+    "150 g (5\u00bd oz) soft fresh chevre, at room temperature",
+    "1 tbsp olive oil",
+    "Pinch of dried thyme",
+    "Black pepper to taste",
+    "Pomegranate molasses to finish (optional)"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Preheat oven",
+      "text": "Preheat the oven to 200\u00b0C / 400\u00b0F (fan 180\u00b0C). Line a baking tray with parchment."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Prepare aubergines",
+      "text": "Make two perpendicular slits in each baby aubergine from the stem end downward, leaving the base intact so the aubergine opens like a flower when pressed. Rub olive oil into the slits and over the skin. Season with salt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "First roast",
+      "text": "Place the aubergines on the baking tray and roast for 18\u201320 minutes until the skins are wrinkled and the flesh is beginning to soften but not fully collapsed."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the spiced walnut filling",
+      "text": "Heat 1 tbsp olive oil in a small frying pan over medium heat. Cook the red onion for 5 minutes until soft. Add garlic and green chilli and cook 90 seconds. Add cumin, coriander, smoked paprika, and black pepper; stir 30 seconds. Remove from heat and mix with crushed walnuts, lemon juice, fresh coriander, and salt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Prepare the chevre",
+      "text": "Work the room-temperature chevre with olive oil, dried thyme, and black pepper until smooth and spreadable."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Fill the aubergines",
+      "text": "Remove aubergines from the oven. Gently press each open at the slits. Press a generous teaspoon of chevre into the base of each cavity, then pack 1\u20132 tablespoons of walnut filling on top."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Second roast",
+      "text": "Return the filled aubergines to the oven for 10\u201312 minutes until the chevre is visibly melted and the walnut filling is darkened at the edges."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Transfer to a serving plate. Scatter fresh coriander and walnut pieces over the top. Drizzle with pomegranate molasses if using (about \u00bd tsp per aubergine). Serve immediately."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "2 stuffed baby aubergines",
+    "calories": "320 kcal",
+    "fatContent": "27 g",
+    "saturatedFatContent": "8 g",
+    "carbohydrateContent": "10 g",
+    "sugarContent": "5 g",
+    "fiberContent": "4 g",
+    "proteinContent": "10 g",
+    "sodiumContent": "380 mg"
+  }
+}
