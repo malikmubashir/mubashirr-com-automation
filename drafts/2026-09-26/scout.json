@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-09-23T12:41:21.929628Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "merguez biryani",
+      "lamb sausage biryani",
+      "french pakistani biryani",
+      "merguez rice recipe"
+    ],
+    "curated_index": 8,
+    "curated_n": 9
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Merguez Biryani",
+    "concept": "Basmati rice layered with spiced merguez lamb sausages and caramelised onions.",
+    "focus_keyword": "merguez biryani",
+    "secondary_keywords": [
+      "lamb sausage biryani",
+      "french pakistani biryani",
+      "merguez rice recipe"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 8,
+    "n": 9
+  }
+}
