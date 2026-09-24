@@ -1,0 +1,97 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Merguez Biryani with Caramelised Onions",
+  "image": [
+    "https://mubashirr.com/images/merguez-biryani-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A layered basmati rice dish combining Pakistani dum-cooking technique with North African halal merguez lamb sausage, deep-caramelised onions, saffron milk, and fresh herbs. A French-Pakistani fusion biryani.",
+  "prepTime": "PT20M",
+  "cookTime": "PT55M",
+  "totalTime": "PT1H15M",
+  "recipeYield": "4 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "merguez biryani, lamb sausage biryani, french pakistani biryani, merguez rice recipe, halal biryani, dum biryani",
+  "recipeIngredient": [
+    "350 g aged basmati rice",
+    "1.2 litres water for parboiling",
+    "2 tsp fine sea salt (for parboiling)",
+    "1 bay leaf",
+    "4 green cardamom pods, lightly cracked",
+    "1 black cardamom pod",
+    "500 g halal merguez sausages",
+    "3 large onions (about 500 g), halved and thinly sliced",
+    "3 tbsp neutral oil",
+    "1 tsp cumin seeds",
+    "1 tsp coriander powder",
+    "1/2 tsp smoked paprika",
+    "1/4 tsp ground cinnamon",
+    "1/4 tsp hing",
+    "2 medium tomatoes (about 200 g), roughly chopped",
+    "1 tbsp tomato paste",
+    "1 tsp fine sea salt (for masala)",
+    "Juice of 1/2 lemon",
+    "3 tbsp full-fat plain yoghurt, whisked",
+    "Small handful fresh mint leaves",
+    "Small handful fresh coriander leaves",
+    "2 tbsp warm milk with a large pinch of saffron, steeped 10 min",
+    "1 tbsp ghee or unsalted butter"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Soak the rice",
+      "text": "Rinse the basmati in cold water three times until the water runs almost clear. Soak in fresh cold water for 30 minutes. Drain."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Parboil the rice",
+      "text": "Bring 1.2 litres of water to a rolling boil with the salt, bay leaf, and cardamoms. Add the drained rice. Cook uncovered on high heat for exactly 6 minutes. The rice should be about 70% cooked. Drain immediately and spread on a wide tray to stop the cooking."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Brown the merguez",
+      "text": "Slice the sausages into 3 cm coins. Heat 1 tbsp oil in a heavy-bottomed pot over high heat. Sear the merguez coins without moving them for 90 seconds per side until deeply browned. Work in batches. Remove and set aside, leaving the orange fat in the pot."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Caramelise the onions",
+      "text": "Add remaining 2 tbsp oil to the merguez fat. Add sliced onions and cumin seeds. Cook over medium-high heat, stirring every 2 to 3 minutes, for 22 to 25 minutes until deep mahogany. Add a splash of water if the pan threatens to scorch."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the masala",
+      "text": "Push onions to the side. Add hing to the bare centre, let it sizzle 15 seconds, then stir in coriander powder, smoked paprika, and cinnamon. Add chopped tomatoes and tomato paste. Cook until tomatoes collapse and oil separates, about 8 minutes. Season with salt and lemon juice. Return sausage coins to the pot and mix gently. Remove from heat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Layer the biryani",
+      "text": "Spread the masala-sausage mix across the bottom of the pot. Drop spoonfuls of whisked yoghurt over it in five or six places. Scatter half the mint and coriander. Lay the parboiled rice over the top in a mound, higher in the centre. Drizzle saffron milk over the rice. Dot with ghee. Scatter remaining herbs."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Seal and cook on dum",
+      "text": "Cover the pot tightly with a damp kitchen towel under the lid, weighed down, or seal with a dough rope. Place on a tawa or heat diffuser over the lowest possible flame. Cook sealed for 20 minutes without opening."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Rest and serve",
+      "text": "Turn off the heat and rest, still sealed, for 5 minutes. Open at the table. Serve with a wide spoon, lifting from the bottom to combine both the saffron-tinted top rice and the bottom layer."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 portion (approx 450 g)",
+    "calories": "620 kcal",
+    "proteinContent": "28 g",
+    "fatContent": "28 g",
+    "carbohydrateContent": "65 g",
+    "fiberContent": "3 g",
+    "sodiumContent": "980 mg"
+  }
+}
