@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-09-30T13:32:27.364057Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "trout coconut curry",
+      "coconut mustard fish",
+      "french trout curry",
+      "mustard curry leaf fish"
+    ],
+    "curated_index": 9,
+    "curated_n": 10
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Trout in Coconut Mustard Gravy",
+    "concept": "Fresh mountain trout poached in a coconut milk, mustard seed and curry leaf reduction.",
+    "focus_keyword": "trout coconut curry",
+    "secondary_keywords": [
+      "coconut mustard fish",
+      "french trout curry",
+      "mustard curry leaf fish"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 9,
+    "n": 10
+  }
+}
