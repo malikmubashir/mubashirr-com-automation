@@ -1,0 +1,92 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Trout Coconut Curry with Mustard and Curry Leaf",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/trout-coconut-curry-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "Fresh rainbow trout fillets poached in a fragrant coconut milk reduction with bloomed black mustard seeds, fresh curry leaves, green chilli, and a touch of Dijon mustard. A Pakistani-French fusion fish curry that comes together in 35 minutes.",
+  "prepTime": "PT15M",
+  "cookTime": "PT20M",
+  "totalTime": "PT35M",
+  "recipeYield": "4 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "trout coconut curry, coconut mustard fish, french trout curry, mustard curry leaf fish, halal fish curry",
+  "recipeIngredient": [
+    "4 rainbow trout fillets, skin on, pin-boned, approximately 180 g (6 oz) each",
+    "1 tsp fine sea salt",
+    "\u00bd tsp ground turmeric",
+    "\u00bd tsp Kashmiri chilli powder",
+    "2 tbsp neutral oil (sunflower or grapeseed)",
+    "1 tsp black mustard seeds",
+    "1 tsp cumin seeds",
+    "12\u201315 fresh curry leaves",
+    "1 medium white onion, finely diced (about 150 g / 5 oz)",
+    "4 garlic cloves, minced",
+    "1 tsp fresh ginger, grated fine",
+    "2 green chillies, slit lengthwise",
+    "1 tsp ground coriander",
+    "\u00bd tsp ground cumin",
+    "\u00bc tsp ground black pepper",
+    "400 ml (14 fl oz) full-fat coconut milk",
+    "100 ml (3\u00bd fl oz) fish stock or light chicken stock",
+    "1 tsp Dijon mustard",
+    "1 tsp fresh lime juice",
+    "Salt to taste",
+    "Small handful of fresh coriander leaves",
+    "Thinly sliced green chilli, to finish"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Season the fish",
+      "text": "Pat the trout fillets dry with kitchen paper. Mix the salt, turmeric, and Kashmiri chilli powder, then dust the flesh side of each fillet evenly. Set aside at room temperature for 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bloom the seeds",
+      "text": "Heat the oil in a wide, deep skillet over medium-high heat. When the oil shimmers, add the black mustard seeds and cumin seeds. Once they pop and the cumin is fragrant, add the curry leaves immediately."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the base",
+      "text": "Add the onion and reduce heat to medium. Cook, stirring occasionally, until the onion is deep golden and softened at the edges, about 8\u201310 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add aromatics and spices",
+      "text": "Add the garlic, ginger, and green chillies. Stir continuously for 90 seconds. Add the ground coriander, ground cumin, and black pepper. Stir for another 30 seconds to toast the spices in the residual fat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the sauce",
+      "text": "Pour in the coconut milk and stock. Stir in the Dijon mustard. Bring to a gentle simmer. Taste and adjust salt. Simmer uncovered for 4 minutes to let the sauce reduce slightly."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Poach the trout",
+      "text": "Reduce heat to low. Lay the trout fillets skin-side down into the sauce. Spoon a little liquid over each fillet. Cover the pan and cook for 6\u20138 minutes until the flesh is opaque throughout and flakes with gentle pressure."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and serve",
+      "text": "Remove from heat. Add the lime juice to the sauce around the fish. Scatter fresh coriander leaves and sliced green chilli over the top. Serve immediately with steamed basmati rice."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 fillet with sauce",
+    "calories": "420 kcal",
+    "proteinContent": "38 g",
+    "fatContent": "26 g",
+    "saturatedFatContent": "14 g",
+    "carbohydrateContent": "8 g",
+    "fiberContent": "1 g",
+    "sodiumContent": "620 mg"
+  }
+}
