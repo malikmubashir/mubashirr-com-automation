@@ -1,0 +1,98 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Cod Curry en Papillote with Kashmiri Chilli",
+  "image": [
+    "https://mubashirr.com/images/cod-curry-en-papillote-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "Fresh cod fillets spiced with Kashmiri chilli, cumin, ginger, and coconut oil, sealed in parchment and steam-baked. A curated fusion of Pakistani spice logic and French en papillote technique.",
+  "prepTime": "PT15M",
+  "cookTime": "PT20M",
+  "totalTime": "PT35M",
+  "recipeYield": "4 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "cod curry en papillote, baked cod curry, fish en papillote curry, kashmiri cod recipe, halal fish recipe, French technique Pakistani spice",
+  "recipeIngredient": [
+    "4 cod fillets, skin-off, 160\u2013180 g each",
+    "2 tbsp coconut oil, melted",
+    "1 tsp Kashmiri chilli powder",
+    "\u00bd tsp ground cumin",
+    "\u00bd tsp ground coriander",
+    "\u00bc tsp turmeric",
+    "1 tsp fine sea salt",
+    "1 tbsp fresh lemon juice",
+    "20 g fresh ginger, peeled and cut into matchsticks",
+    "3 garlic cloves, thinly sliced",
+    "2 medium tomatoes, finely diced (about 180 g total)",
+    "1 small red onion, halved and thinly sliced",
+    "8 fresh curry leaves (or 12 dried)",
+    "1 green chilli, slit lengthways",
+    "4 tsp coconut oil (to finish, one per parcel)",
+    "4 thin lemon slices",
+    "2 tbsp fresh coriander leaves, roughly torn",
+    "Flaky sea salt, to finish"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Preheat oven",
+      "text": "Preheat the oven to 200\u00b0C (400\u00b0F / Gas 6). Ensure it is fully up to temperature before the parcels go in."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the spice paste",
+      "text": "In a small bowl, combine the melted coconut oil, Kashmiri chilli powder, cumin, coriander, turmeric, salt, and lemon juice. Stir until it forms a loose, even paste."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Coat the fish",
+      "text": "Pat the cod fillets dry with kitchen paper. Coat each fillet all over with the spice paste and leave for 10 minutes at room temperature."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cut parchment",
+      "text": "Cut four sheets of parchment paper, each approximately 40 \u00d7 30 cm (16 \u00d7 12 inches)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build each parcel",
+      "text": "In the centre of each parchment sheet, layer red onion, diced tomato, garlic slices, ginger matchsticks, two curry leaves, and a quarter of the green chilli."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add fish and finish",
+      "text": "Place a cod fillet on top of the aromatics. Add one lemon slice, drizzle over 1 tsp coconut oil, and scatter torn coriander leaves."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Seal the parcel",
+      "text": "Bring the long edges of parchment up over the fish and fold together in tight, overlapping pleats. Fold or twist the short ends closed firmly to hold in the steam."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bake",
+      "text": "Bake for 18\u201320 minutes. Do not open the parcels during cooking."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Rest and serve",
+      "text": "Rest the parcels for 2 minutes on a board. Open at the table, finish with flaky sea salt and fresh coriander leaves."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 parcel (approx. 250 g)",
+    "calories": "290 kcal",
+    "proteinContent": "34 g",
+    "fatContent": "14 g",
+    "saturatedFatContent": "11 g",
+    "carbohydrateContent": "6 g",
+    "fiberContent": "1.5 g",
+    "sodiumContent": "620 mg"
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-04T11:18:09Z",
-  "stock": 1,
+  "updated_at": "2026-10-04T11:24:08Z",
+  "stock": 2,
   "next_due": "2026-10-10",
   "complete": [
     {
@@ -14,6 +14,12 @@
       "slug": "chicken-tikka-quiche-leeks-gruyere",
       "title": "Chicken Tikka Quiche with Leeks and Gruy\u00e8re",
       "manifest_created_at": "2026-10-04T11:18:09Z"
+    },
+    {
+      "date": "2026-10-17",
+      "slug": "cod-curry-en-papillote-kashmiri-chilli",
+      "title": "Cod Curry en Papillote with Kashmiri Chilli",
+      "manifest_created_at": "2026-10-04T11:24:08Z"
     }
   ],
   "partial": [],

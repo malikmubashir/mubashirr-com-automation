@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "slug": "cod-curry-en-papillote-kashmiri-chilli",
+  "title": "Cod Curry en Papillote with Kashmiri Chilli",
+  "created_at": "2026-10-04T11:24:08Z",
+  "files": {
+    "meta.json": {
+      "sha256": "e6eee7b1e4805ed5e9a7dbc5a27ed1b5d5fe65298310d32ad4dffdd590936168",
+      "bytes": 2938
+    },
+    "post.md": {
+      "sha256": "d7fd6b84c1cc7c1cb557113de3e9b86f0906bab172df769c98b266215518c261",
+      "bytes": 9161
+    },
+    "schema.json": {
+      "sha256": "f72be10446943fe272ee57c19240f307967eaa42b117d0ddd4c132e36299f431",
+      "bytes": 3876
+    },
+    "images/hero.png": {
+      "sha256": "618580632765880dacbdbc19299c829259dd55d62bb90f4602b01826b04e04cc",
+      "bytes": 321389
+    },
+    "images/ingredients.png": {
+      "sha256": "c84d4fd3f51216095d96830fa87f8645f1475919dd73703b88fa342b9be45cb0",
+      "bytes": 418845
+    },
+    "images/process.png": {
+      "sha256": "c663ec56ef52a0048679e269441daeca1ff82aa963c6aef3ee7c589761031dc1",
+      "bytes": 282093
+    },
+    "images/plated.png": {
+      "sha256": "fe3246252a69e5eebd691e9edebeb85461d8bfd2fe2bc552208b68f58e594b67",
+      "bytes": 304348
+    }
+  }
+}

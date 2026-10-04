@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-04T11:22:20.050519Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "cod curry en papillote",
+      "baked cod curry",
+      "fish en papillote curry",
+      "kashmiri cod recipe"
+    ],
+    "curated_index": 11,
+    "curated_n": 12
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Cod Curry en Papillote",
+    "concept": "Fresh cod baked in paper with coconut oil, ginger, lemon and Kashmiri chilli.",
+    "focus_keyword": "cod curry en papillote",
+    "secondary_keywords": [
+      "baked cod curry",
+      "fish en papillote curry",
+      "kashmiri cod recipe"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 11,
+    "n": 12
+  }
+}
