@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-03",
+  "slug": "trout-coconut-curry-mustard-curry-leaf",
+  "title": "Trout Coconut Curry with Mustard and Curry Leaf",
+  "created_at": "2026-10-04T11:12:03Z",
+  "files": {
+    "meta.json": {
+      "sha256": "4f50c0855c6ac23cf2f5c6d828ff0baa05c782a0ce7c5bde70377ec69279c59c",
+      "bytes": 2962
+    },
+    "post.md": {
+      "sha256": "62ecbc8c7c20b70e2188a9acf0b169f31dc9fca295e83637e26c626cfa80b4ee",
+      "bytes": 10588
+    },
+    "schema.json": {
+      "sha256": "09b39f31f63a2ab19493b4c8080e3e6d3f24607261ee288b1827435f8d858b27",
+      "bytes": 4082
+    },
+    "images/hero.png": {
+      "sha256": "fce35a3c0524558d694992c888e51301456606bc3884d6ea9822a79b9a2b165b",
+      "bytes": 366142
+    },
+    "images/ingredients.png": {
+      "sha256": "724d53a1818e70bf624b45fdc470e9a9edc8b5f4b2e50ec58db962e637523ed9",
+      "bytes": 465594
+    },
+    "images/process.png": {
+      "sha256": "40c951d545cb23ce121f0ee4c8736778322eb7f1995fe8aba1f47cdced8ea9fa",
+      "bytes": 353855
+    },
+    "images/plated.png": {
+      "sha256": "3cff2ea0bdaf55941e597c6a709c99e3c6eb73f37eb67faf2cc911bed92965c4",
+      "bytes": 314181
+    }
+  }
+}
