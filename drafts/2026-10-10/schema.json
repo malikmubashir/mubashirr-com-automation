@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Chicken Tikka Quiche with Leeks and Gruy\u00e8re",
+  "image": [
+    "https://mubashirr.com/images/chicken-tikka-quiche-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A whole-wheat cumin shortcrust filled with spiced tikka chicken cubes, slow-cooked leeks, Gruy\u00e8re and a hing-scented custard. Halal, no alcohol, Pakistani-French fusion.",
+  "prepTime": "PT40M",
+  "cookTime": "PT35M",
+  "totalTime": "PT1H45M",
+  "recipeYield": "6 servings",
+  "recipeCuisine": [
+    "Pakistani",
+    "French"
+  ],
+  "recipeCategory": "Main Course",
+  "keywords": "chicken tikka quiche, halal quiche recipe, spiced chicken quiche, tikka quiche lorraine, Pakistani French fusion, whole wheat quiche",
+  "recipeIngredient": [
+    "150 g whole-wheat flour",
+    "75 g plain flour",
+    "\u00bd tsp fine sea salt (pastry)",
+    "\u00bd tsp ground cumin (pastry)",
+    "\u00bc tsp ground coriander (pastry)",
+    "130 g cold unsalted butter",
+    "3\u20134 tbsp ice-cold water",
+    "400 g boneless skinless chicken thighs",
+    "3 tbsp plain full-fat yoghurt",
+    "1 tbsp neutral oil (marinade)",
+    "1 tsp Kashmiri red chilli powder",
+    "1 tsp ground cumin (marinade)",
+    "\u00bd tsp ground coriander (marinade)",
+    "\u00bd tsp garam masala",
+    "\u00bd tsp ground turmeric",
+    "\u00bd tsp fine sea salt (marinade)",
+    "1 tsp ginger-garlic paste",
+    "1 tsp lemon juice",
+    "2 medium leeks, trimmed and thinly sliced (approx. 250 g)",
+    "1 tbsp unsalted butter (filling)",
+    "1 tbsp neutral oil (filling)",
+    "\u00bc tsp fine sea salt (filling)",
+    "100 g Gruy\u00e8re, coarsely grated",
+    "3 large eggs",
+    "1 large egg yolk",
+    "250 ml double cream",
+    "100 ml whole milk",
+    "\u00bc tsp fine sea salt (custard)",
+    "\u00bc tsp white pepper",
+    "1 small pinch of hing",
+    "2 tbsp finely chopped flat-leaf parsley"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Marinate the chicken",
+      "text": "Combine all tikka marinade ingredients in a bowl. Add the chicken thighs, coat thoroughly, cover and refrigerate for at least 1 hour."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the pastry",
+      "text": "Combine both flours, salt, cumin and coriander. Rub in cold butter until the mixture resembles coarse breadcrumbs. Add ice-cold water one tablespoon at a time until the dough just comes together. Flatten into a disc, wrap and refrigerate for 30 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Grill the chicken",
+      "text": "Heat a grill pan over high heat until smoking. Cook the marinated thighs for 5\u20136 minutes per side until charred and cooked through (internal temperature 75\u00b0C / 167\u00b0F). Rest 5 minutes, then cut into 2 cm cubes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook the leeks",
+      "text": "Melt butter with oil in a saucepan over medium-low heat. Add leeks and salt. Cook uncovered for 18\u201320 minutes, stirring occasionally, until completely soft and pale golden. Cool on a plate."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Blind-bake the shell",
+      "text": "Preheat oven to 190\u00b0C (375\u00b0F). Roll pastry to 3 mm and line a 23 cm loose-bottomed tart tin. Prick base, line with baking paper and baking beans. Blind-bake 15 minutes, remove beans and paper, bake a further 8 minutes. Reduce oven to 170\u00b0C (340\u00b0F)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the custard",
+      "text": "Whisk together eggs, egg yolk, cream, milk, salt, white pepper and hing until smooth. Stir in parsley. Allow baked shell to cool 5 minutes before filling."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Assemble",
+      "text": "Scatter leeks over the pastry base. Add tikka chicken cubes. Sprinkle three-quarters of the Gruy\u00e8re over the top. Pour custard to within 3 mm of the rim. Scatter remaining Gruy\u00e8re on the surface."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bake",
+      "text": "Place tart tin on a baking sheet and bake at 170\u00b0C (340\u00b0F) for 32\u201336 minutes until the custard is just set at the edges with a slight wobble at the centre (internal temperature 72\u00b0C / 162\u00b0F). Cool at least 15 minutes before unmoulding."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 slice (1/6 of quiche)",
+    "calories": "520 kcal",
+    "proteinContent": "28 g",
+    "fatContent": "35 g",
+    "saturatedFatContent": "19 g",
+    "carbohydrateContent": "24 g",
+    "fiberContent": "3 g",
+    "sodiumContent": "520 mg"
+  }
+}

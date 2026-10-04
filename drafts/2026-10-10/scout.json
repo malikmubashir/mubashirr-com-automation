@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-04T11:16:11.778450Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "chicken tikka quiche",
+      "tikka quiche lorraine",
+      "halal quiche recipe",
+      "spiced chicken quiche"
+    ],
+    "curated_index": 10,
+    "curated_n": 11
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Quiche Lorraine Tikka",
+    "concept": "Whole-wheat quiche loaded with spiced chicken tikka cubes, leeks and Gruyere.",
+    "focus_keyword": "chicken tikka quiche",
+    "secondary_keywords": [
+      "tikka quiche lorraine",
+      "halal quiche recipe",
+      "spiced chicken quiche"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 10,
+    "n": 11
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "slug": "chicken-tikka-quiche-leeks-gruyere",
+  "title": "Chicken Tikka Quiche with Leeks and Gruy\u00e8re",
+  "created_at": "2026-10-04T11:18:09Z",
+  "files": {
+    "meta.json": {
+      "sha256": "ef94e12ac013afe456faaaf6e734665682fa3cc9ec0ce7742652318d234cb504",
+      "bytes": 2988
+    },
+    "post.md": {
+      "sha256": "154d729fa6dc190fb10a9508dfe323eebda90a838840fcd932af47cc91227c53",
+      "bytes": 10419
+    },
+    "schema.json": {
+      "sha256": "44357b14ae05818926557bb30c2a309f343d8d869f86ae0c4ceea2680c6432c7",
+      "bytes": 4728
+    },
+    "images/hero.png": {
+      "sha256": "7aca7dbbf59fc80094010a27d6fc9cd455ff4f562f6ecf49741bd5ec5c69c1df",
+      "bytes": 336126
+    },
+    "images/ingredients.png": {
+      "sha256": "20f48420ed914a57432d37c79510e3638a5e4eb1fe4957b3767e5c445ec53ab1",
+      "bytes": 445949
+    },
+    "images/process.png": {
+      "sha256": "33d20bfcadcbd367d03eece55bda525ca151ae68d04e1b836a0b88ea07992670",
+      "bytes": 309373
+    },
+    "images/plated.png": {
+      "sha256": "c3d418f8b133e2cd7ad03ce09ac65f7244a11394b62d6c8a0a0965a47ec1419a",
+      "bytes": 428489
+    }
+  }
+}
