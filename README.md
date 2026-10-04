@@ -1,6 +1,9 @@
 # mubashirr.com automation
 
-Six agents on GitHub Actions cron, publishing one original recipe to WordPress every Saturday and fanning it across social channels. English at launch. One-tap Telegram approval before publish.
+One GitHub Actions job keeps a stock of complete, verified recipe drafts in
+`drafts/`; a daily Claude task delivers and publishes them to WordPress.
+**Start with `PIPELINE-V2.md`.** The documents below describe the v1 design
+(six cron agents, host cron-pull) and are kept for history.
 
 ## Read in this order
 

@@ -1,0 +1,56 @@
+name: distribute
+
+# Manual only. The old Saturday cron queued social posts for a URL built from
+# the slug without checking the post existed (2026-10-03: promoted a 404).
+# Now: you pass the real published URL, the job refuses unless it returns 200.
+#
+# Caveat: the host's Cloudflare setup sometimes challenges GitHub egress. If
+# the gate fails with 403 while the page is clearly live, run the distributor
+# from the daily delivery task instead; do not weaken the gate.
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_url:
+        description: "Published post URL exactly as WordPress returned it (with /YYYY/MM/DD/)."
+        required: true
+      draft_date:
+        description: "Draft folder date the post came from (YYYY-MM-DD)."
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: gate - the post must be live
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0 Safari/537.36" \
+            "${{ github.event.inputs.post_url }}")
+          echo "HTTP $code for ${{ github.event.inputs.post_url }}"
+          [ "$code" = "200" ] || { echo "::error::post is not live (HTTP $code). Refusing to distribute."; exit 1; }
+      - name: gate - the draft must be complete
+        run: test -f "drafts/${{ github.event.inputs.draft_date }}/manifest.json" || { echo "::error::no manifest for that draft"; exit 1; }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - name: run distributor
+        run: python -c "from pipeline.agents.distributor import run; run(post_url='${{ github.event.inputs.post_url }}')"
+        env:
+          DRAFT_DATE: ${{ github.event.inputs.draft_date }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
+      - name: commit distribution log
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+          git add drafts/
+          git diff --staged --quiet || git commit -m "distribute: ${{ github.event.inputs.draft_date }}"
+          git pull --rebase
+          git push

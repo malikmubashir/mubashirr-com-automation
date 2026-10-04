@@ -163,6 +163,15 @@ def validate(post: dict) -> None:
         log.warning("Word count out of band: %d", words)
     if len(post["image_briefs"]) != 4:
         raise ValueError("Need exactly 4 image briefs")
+    # 2026-10-03: the model emitted {"shot": "ingredients", "ingredients": ...}
+    # instead of "prompt", which would crash Visual. Enforce the shape here so
+    # a malformed brief fails in the writer, before anything is persisted.
+    shots = sorted(b.get("shot") for b in post["image_briefs"])
+    if shots != ["hero", "ingredients", "plated", "process"]:
+        raise ValueError(f"image_briefs shots must be hero/ingredients/process/plated, got {shots}")
+    for b in post["image_briefs"]:
+        if not str(b.get("prompt", "")).strip() or not str(b.get("alt", "")).strip():
+            raise ValueError(f"image brief {b.get('shot')!r} must have non-empty 'prompt' and 'alt'")
     if post["recipe_schema"].get("@type") != "Recipe":
         raise ValueError("Schema must be @type=Recipe")
 

@@ -1,0 +1,40 @@
+name: archive
+
+# Weekly encrypted DB backup to B2. Unchanged from the old weekly-pipeline
+# archivist job; split out so backup failures and content failures never
+# mask each other.
+
+on:
+  schedule:
+    - cron: "20 20 * * SUN"   # Sun 20:20 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archivist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: |
+          pip install -r pipeline/requirements.txt b2
+          sudo apt-get update && sudo apt-get install -y age default-mysql-client
+      - name: configure git
+        run: |
+          git config user.email "bot@mubashirr.com"
+          git config user.name "mubashirr-bot"
+      - name: run archivist
+        run: python -m pipeline.agents.archivist
+        env:
+          MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          MYSQL_DB: ${{ secrets.MYSQL_DB }}
+          AGE_RECIPIENT: ${{ secrets.AGE_RECIPIENT }}
+          B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          B2_APP_KEY: ${{ secrets.B2_APP_KEY }}
+          B2_BUCKET: ${{ secrets.B2_BUCKET }}

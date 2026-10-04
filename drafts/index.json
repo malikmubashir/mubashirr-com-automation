@@ -1,0 +1,118 @@
+{
+  "updated_at": "2026-10-04T10:34:57Z",
+  "stock": 0,
+  "next_due": null,
+  "complete": [],
+  "partial": [
+    {
+      "date": "2026-10-03",
+      "slug": "trout-coconut-curry-mustard-curry-leaf",
+      "title": "Trout Coconut Curry with Mustard and Curry Leaf",
+      "problems": [
+        "manifest.json missing"
+      ]
+    }
+  ],
+  "legacy": [
+    {
+      "date": "2026-05-16",
+      "slug": "vadouvan-spiced-roast-leg-of-lamb-halal-french-fusion",
+      "title": "Vadouvan-Spiced Roast Leg of Lamb"
+    },
+    {
+      "date": "2026-05-23",
+      "slug": "lamb-shanks-red-mole-sauce-halal-french-cooking",
+      "title": "Lamb Shanks in Red Mole Sauce"
+    },
+    {
+      "date": "2026-05-30",
+      "slug": "halal-lamb-shank-warm-escarole-salad",
+      "title": "Braised Lamb Shank and Escarole Warm Salad"
+    },
+    {
+      "date": "2026-06-06",
+      "slug": "halal-lamb-shank-scotch-broth-pearl-barley",
+      "title": "Lamb Shank Scotch Broth with Pearl Barley"
+    },
+    {
+      "date": "2026-06-13",
+      "slug": "lamb-shank-scotch-broth-pearl-barley-halal",
+      "title": "Lamb Shank Scotch Broth with Pearl Barley"
+    },
+    {
+      "date": "2026-06-20",
+      "slug": "halal-beef-olive-tagine-preserved-lemon",
+      "title": "Beef and Olive Tagine with Preserved Lemon"
+    },
+    {
+      "date": "2026-06-27",
+      "slug": "moroccan-beef-olive-tagine-halal-french-cooking",
+      "title": "Moroccan Beef and Olive Tagine"
+    },
+    {
+      "date": "2026-07-04",
+      "slug": null,
+      "title": null
+    },
+    {
+      "date": "2026-07-11",
+      "slug": "moroccan-beef-olive-tagine-halal-french-cooking",
+      "title": "Moroccan Beef and Olive Tagine"
+    },
+    {
+      "date": "2026-07-18",
+      "slug": "halal-beef-olive-tagine-preserved-lemon",
+      "title": "Beef and Olive Tagine with Preserved Lemon"
+    },
+    {
+      "date": "2026-07-25",
+      "slug": "beef-olive-tagine-preserved-lemon-halal-french-cooking",
+      "title": "Beef and Olive Tagine with Preserved Lemon"
+    },
+    {
+      "date": "2026-08-01",
+      "slug": "harissa-tikka-roast-chicken",
+      "title": "Harissa Tikka Roast Chicken"
+    },
+    {
+      "date": "2026-08-08",
+      "slug": "duck-breast-karahi-magret-de-canard",
+      "title": "Duck Breast Karahi with Ginger and Green Chilli"
+    },
+    {
+      "date": "2026-08-15",
+      "slug": "guinea-fowl-korma-almond-cardamom",
+      "title": "Guinea Fowl Korma with Almond and Cardamom"
+    },
+    {
+      "date": "2026-08-22",
+      "slug": "ratatouille-masala-provencal-vegetables-south-asian-temper",
+      "title": "Ratatouille Masala: Proven\u00e7al Vegetables, South Asian Temper"
+    },
+    {
+      "date": "2026-08-29",
+      "slug": "steak-au-poivre-nihari-french-peppered-steak-nihari-jus",
+      "title": "Steak au Poivre Nihari: French Crust, Pakistani Soul"
+    },
+    {
+      "date": "2026-09-05",
+      "slug": "rabbit-white-korma-cashew-cream",
+      "title": "Rabbit White Korma with Cashew Cream"
+    },
+    {
+      "date": "2026-09-12",
+      "slug": "beef-bourguignon-pasanda-french-pakistani-beef-stew",
+      "title": "Beef Bourguignon Pasanda: French Technique Meets Lahori Soul"
+    },
+    {
+      "date": "2026-09-19",
+      "slug": "goat-cheese-stuffed-aubergine-walnut-spice",
+      "title": "Goat Cheese Stuffed Aubergine with Walnuts"
+    },
+    {
+      "date": "2026-09-26",
+      "slug": "merguez-biryani-caramelised-onions",
+      "title": "Merguez Biryani with Caramelised Onions"
+    }
+  ]
+}

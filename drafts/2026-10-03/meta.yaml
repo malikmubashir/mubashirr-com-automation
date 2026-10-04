@@ -32,10 +32,10 @@ image_briefs:
   alt: Trout coconut curry with mustard seeds and curry leaves in a shallow ceramic
     bowl
 - shot: ingredients
-  ingredients: Flat lay of rainbow trout fillets on parchment, a small tin of coconut
-    milk, a bowl of black mustard seeds, a bunch of fresh curry leaves on the stem,
-    green chillies, garlic, ginger, and a small jar of Dijon mustard on a light grey
-    stone surface.
+  prompt: Flat lay of rainbow trout fillets on parchment, a small tin of coconut milk,
+    a bowl of black mustard seeds, a bunch of fresh curry leaves on the stem, green
+    chillies, garlic, ginger, and a small jar of Dijon mustard on a light grey stone
+    surface.
   alt: Ingredients for trout coconut curry including fresh curry leaves, mustard seeds,
     and coconut milk
 - shot: process
