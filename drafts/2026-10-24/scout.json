@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-12T13:11:44.168755Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "lamb shank haleem",
+      "tagine haleem",
+      "lamb shank barley stew",
+      "halal haleem recipe"
+    ],
+    "curated_index": 12,
+    "curated_n": 13
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Lamb Shank Tagine Haleem",
+    "concept": "Slow-cooked lamb shanks with barley, lentils and aromatic garam masala.",
+    "focus_keyword": "lamb shank haleem",
+    "secondary_keywords": [
+      "tagine haleem",
+      "lamb shank barley stew",
+      "halal haleem recipe"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 12,
+    "n": 13
+  }
+}

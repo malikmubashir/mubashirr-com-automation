@@ -1,0 +1,103 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Lamb Shank Haleem with Barley and Lentils",
+  "image": [
+    "https://mubashirr.com/images/lamb-shank-haleem-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A curated lamb shank haleem built with Pakistani spice logic and French braising technique. Whole shanks are seared and slow-braised until collagen-rich, then pulled and folded into pearl barley and split lentils spiced with garam masala. Halal, deeply satisfying, made for a weekend.",
+  "prepTime": "PT1H",
+  "cookTime": "PT3H",
+  "totalTime": "PT4H",
+  "recipeYield": "4-5 servings",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "recipeCategory": "Main Course",
+  "keywords": "lamb shank haleem, halal haleem recipe, lamb shank barley stew, tagine haleem, Pakistani haleem, barley lentil stew",
+  "recipeIngredient": [
+    "2 lamb shanks (approx. 1.2 kg / 2 lb 10 oz total)",
+    "2 tbsp neutral oil",
+    "1 large onion, halved and thinly sliced",
+    "6 garlic cloves, crushed",
+    "25 g (1 oz) fresh ginger, grated",
+    "1 tsp cumin seeds",
+    "1 tsp coriander seeds, lightly crushed",
+    "1 tsp turmeric",
+    "1.5 tsp Kashmiri red chilli powder",
+    "1.5 tsp salt (for braise)",
+    "1.2 litres (5 cups) water or light lamb stock",
+    "120 g (2/3 cup) pearl barley, soaked 1 hour and drained",
+    "80 g (1/3 cup) chana dal, soaked 30 minutes and drained",
+    "60 g (1/4 cup) masoor dal (red split lentils)",
+    "1 tsp salt (for grains)",
+    "1.5 tsp garam masala",
+    "1 tsp dried fenugreek leaves (kasuri methi)",
+    "1 tbsp ghee or butter",
+    "Juice of 1/2 lemon",
+    "3 tbsp neutral oil (for tarka)",
+    "1 medium onion, sliced thin (for tarka)",
+    "4 dried red chillies",
+    "1 tsp cumin seeds (for tarka)",
+    "Fresh ginger julienned, green chillies, fresh coriander, lemon wedges to serve"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Sear the shanks",
+      "text": "Pat lamb shanks dry. Heat oil in a heavy Dutch oven over high heat until shimmering. Sear shanks on all sides until deeply browned, 8 to 10 minutes. Remove and set aside."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build the masala",
+      "text": "Reduce heat to medium. Cook sliced onion in the same pot until deep mahogany, 18 to 22 minutes. Add garlic and ginger, stir 90 seconds. Add cumin seeds, coriander seeds, turmeric, Kashmiri chilli, and salt. Stir 1 minute."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Braise the shanks",
+      "text": "Return shanks to pot. Add water or stock. Bring to a boil, skim foam, reduce to a gentle simmer. Cover and cook for 2 hours, turning shanks once halfway, until meat is falling off the bone."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cook grains and lentils",
+      "text": "In a separate pot, combine drained barley, chana dal, and masoor dal with 900 ml water and 1 tsp salt. Bring to a boil, reduce to a simmer, cover and cook 45 to 55 minutes until all are completely soft."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Pull the meat",
+      "text": "Lift shanks from pot. Remove bones. Shred meat with two forks. Reserve braising liquid."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Combine",
+      "text": "Add cooked grain mixture and pulled meat to the braising pot. Stir to combine. Adjust consistency with reserved liquid or water. Cook uncovered over medium heat, stirring, if too thin."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish seasoning",
+      "text": "Stir in garam masala, kasuri methi, ghee, and lemon juice. Taste and adjust salt. Cook on low heat for 5 minutes, stirring constantly."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the tarka",
+      "text": "In a small frying pan, heat oil over medium-high. Cook sliced onion until crisp and deep brown, 10 to 12 minutes. Add dried chillies and cumin seeds, stir 30 seconds. Pour over haleem."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Serve",
+      "text": "Ladle into bowls. Top with julienned ginger, green chillies, and fresh coriander. Serve with lemon wedges."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 bowl (approx. 350g)",
+    "calories": "480 kcal",
+    "proteinContent": "38g",
+    "fatContent": "18g",
+    "carbohydrateContent": "42g",
+    "fiberContent": "9g",
+    "sodiumContent": "620mg"
+  }
+}

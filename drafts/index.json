@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-09T11:55:20Z",
+  "updated_at": "2026-10-12T13:13:45Z",
   "stock": 2,
-  "next_due": "2026-10-10",
+  "next_due": "2026-10-17",
   "complete": [
     {
       "date": "2026-10-03",
@@ -20,6 +20,12 @@
       "slug": "cod-curry-en-papillote-kashmiri-chilli",
       "title": "Cod Curry en Papillote with Kashmiri Chilli",
       "manifest_created_at": "2026-10-04T11:24:08Z"
+    },
+    {
+      "date": "2026-10-24",
+      "slug": "lamb-shank-haleem-barley-lentils",
+      "title": "Lamb Shank Haleem with Barley and Lentils",
+      "manifest_created_at": "2026-10-12T13:13:45Z"
     }
   ],
   "partial": [],
