@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-19T10:48:11.847891Z",
+  "theme": {
+    "theme": "curated_fusion",
+    "constraints": [
+      "halal",
+      "no_alcohol",
+      "no_pork"
+    ],
+    "heritage_mode": false,
+    "target_word_count": 1500,
+    "seed_keywords": [
+      "butternut squash cumin soup",
+      "veloute de courge",
+      "roasted cumin squash soup",
+      "spiced butternut soup"
+    ],
+    "curated_index": 13,
+    "curated_n": 14
+  },
+  "top_candidate": {
+    "source": "curated",
+    "title": "Butternut Veloute with Roasted Cumin",
+    "concept": "Butternut squash soup (veloute) finished with tempered ghee and roasted cumin seeds.",
+    "focus_keyword": "butternut squash cumin soup",
+    "secondary_keywords": [
+      "veloute de courge",
+      "roasted cumin squash soup",
+      "spiced butternut soup"
+    ],
+    "group": "Fusion Main",
+    "cuisine": [
+      "Pakistani",
+      "French"
+    ],
+    "ingredients": [],
+    "source_url": null
+  },
+  "alternates": [],
+  "stats": {
+    "mode": "curated",
+    "index": 13,
+    "n": 14
+  }
+}

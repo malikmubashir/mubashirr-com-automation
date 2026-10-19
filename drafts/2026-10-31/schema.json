@@ -1,0 +1,92 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Butternut Squash Cumin Soup with Ghee Tarka",
+  "image": [
+    "https://mubashirr.com/wp-content/uploads/butternut-squash-cumin-soup-hero.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dr Mubashir"
+  },
+  "description": "A silky butternut squash cumin soup built on French velout\u00e9 technique and finished with a Pakistani ghee tarka of whole cumin seeds and Kashmiri chilli. Deep, warming, and ready in 55 minutes.",
+  "prepTime": "PT15M",
+  "cookTime": "PT40M",
+  "totalTime": "PT55M",
+  "recipeYield": "4 servings",
+  "recipeCategory": "Soup",
+  "recipeCuisine": "Pakistani-French Fusion",
+  "keywords": "butternut squash cumin soup, veloute de courge, roasted cumin squash soup, spiced butternut soup, ghee tarka, halal soup",
+  "recipeIngredient": [
+    "1 kg (2.2 lb) butternut squash, peeled and cut into 3 cm cubes",
+    "2 tbsp neutral oil",
+    "1 medium onion (about 180 g), roughly chopped",
+    "3 garlic cloves, smashed",
+    "1 tsp ground coriander",
+    "\u00bd tsp ground turmeric",
+    "\u00bd tsp white pepper",
+    "900 ml (3\u00be cups) chicken or vegetable stock",
+    "80 ml (\u2153 cup) double cream",
+    "Salt to taste",
+    "2 tbsp ghee",
+    "1\u00bd tsp whole cumin seeds",
+    "\u00bd tsp Kashmiri chilli powder",
+    "Pinch of hing",
+    "Small handful of fresh coriander leaves",
+    "A few drops of lemon juice per bowl"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "name": "Roast the squash",
+      "text": "Preheat the oven to 200\u00b0C / 400\u00b0F. Toss the cubed squash with 1 tbsp oil and a generous pinch of salt. Spread on a baking tray in a single layer. Roast for 25 to 30 minutes until the edges are caramelized and the flesh is completely soft."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sweat the aromatics",
+      "text": "Warm the remaining 1 tbsp oil in a large saucepan over medium-low heat. Add the onion with a pinch of salt and cook for 12 to 15 minutes until soft and pale gold. Add the garlic and cook for another 2 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add the dry spices",
+      "text": "Stir in the ground coriander, turmeric, and white pepper. Cook for 60 seconds, stirring constantly, until fragrant."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Combine and simmer",
+      "text": "Add the roasted squash and the stock to the pot. Bring to a gentle simmer and cook for 10 minutes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Blend until smooth",
+      "text": "Use a stick blender or standing blender and blend for at least 90 seconds until completely smooth and coating the back of a spoon."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add cream and adjust seasoning",
+      "text": "Return the pot to low heat. Stir in the double cream and heat gently without boiling. Taste and correct the salt. Add a few drops of lemon juice if the soup tastes flat."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Make the tarka",
+      "text": "Heat the ghee in a small pan over medium-high heat until shimmering. Add the cumin seeds and cook for 20 to 30 seconds until crackling and one shade darker. Remove from heat, add the Kashmiri chilli powder and hing, and swirl once."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Serve",
+      "text": "Ladle the soup into warm bowls. Pour the tarka over the surface of each bowl. Finish with coriander leaves and a drop of lemon juice. Serve immediately."
+    }
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "servingSize": "1 bowl (approx. 350 ml)",
+    "calories": "285 kcal",
+    "fatContent": "17 g",
+    "saturatedFatContent": "9 g",
+    "carbohydrateContent": "28 g",
+    "sugarContent": "9 g",
+    "fiberContent": "4 g",
+    "proteinContent": "5 g",
+    "sodiumContent": "420 mg"
+  }
+}

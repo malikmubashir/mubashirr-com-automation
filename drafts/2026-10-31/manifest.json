@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "slug": "butternut-squash-cumin-soup-ghee-tarka",
+  "title": "Butternut Squash Cumin Soup with Ghee Tarka",
+  "created_at": "2026-10-19T10:50:00Z",
+  "files": {
+    "meta.json": {
+      "sha256": "b70dc56f8e1cb21a53790b10c6546016b97d2115ae3d381cd973cde7a0cdb4c9",
+      "bytes": 2890
+    },
+    "post.md": {
+      "sha256": "07d89f35b98c097c4e2ac2e86a1af5afb8850ba63121765a46d19b093536c216",
+      "bytes": 9886
+    },
+    "schema.json": {
+      "sha256": "3f628b9c493bbaa96bfe10e6dd4a9464c75edfaaeecd9140207247df153993d0",
+      "bytes": 3914
+    },
+    "images/hero.png": {
+      "sha256": "2133e471b87006d32b351e05610cb549c918cbc1c49a2751c8602370487aa6c1",
+      "bytes": 424837
+    },
+    "images/ingredients.png": {
+      "sha256": "5de4ea7a4db35b45235a6168d3c5eeb3ae0b007a3c97be4f8d7d12c6a29ca9ce",
+      "bytes": 448285
+    },
+    "images/process.png": {
+      "sha256": "2d62293673e9678995749bcb8fb3dbe572d02beacc9fb2ca1fcc0dabd28ffabc",
+      "bytes": 227026
+    },
+    "images/plated.png": {
+      "sha256": "bb366b010ae04b402cd7805caac536971b6fc789178ee48eb4810fe7d67a5ae6",
+      "bytes": 319651
+    }
+  }
+}
